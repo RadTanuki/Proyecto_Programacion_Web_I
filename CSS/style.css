@@ -4,12 +4,24 @@
     box-sizing: border-box;
 }
 
+@font-face {
+    font-family: 'Fuente';
+    src: url('../font/Merriweather.ttf') format("truetype");
+    font-style: normal;
+}
+
+h1,h2,h3,h4,h5,h6 {
+
+    font-family: 'Fuente', sans-serif;
+    
+}
+
 html{
     font-size: 16px;
     scroll-behavior: smooth;
 }
 
-body{ /*Especifícaciones temporales*/
+body{
     font-family: 'Times New Roman', Times, serif;
     background-color: antiquewhite;
     color: #1f2937;
@@ -24,6 +36,131 @@ a{
     width: 90%;
     margin: 0 auto;
     display: block;
+}
+
+/* --------------------------
+            Hero
+--------------------------- */
+
+.hero {
+    background-color: white;
+    padding: 70px 0;
+}
+
+.hero-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.hero-text {
+    flex: 1;
+    text-align: center;
+}
+
+.hero-text h1 {
+    font-size: clamp(2rem, 5vw, 2.8rem);
+    color: black;
+    margin-bottom: 2px;
+    line-height: 1.2;
+    padding: 15px;
+}
+
+.hero-text p {
+    font-family: sans-serif;
+    font-size: 1.1rem;
+    color: black;
+    margin-bottom: 2px;
+    line-height: 2;
+    padding: 15px;
+}
+
+.hero-text ul{
+
+    list-style-position: inside;
+    padding-left: 12px;
+    line-height: 2;
+    font-family: 'Fuente', sans-serif;
+    
+}
+
+.hero-text li{
+
+    list-style-type: none;
+
+}
+
+.hero-image {
+    flex: 1;
+    background-color: #34393f;
+    padding: 15px;
+    border-radius: 18px;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.hero-image img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.hero-info {
+    margin-top: 25px;
+    padding: 28px 18px 18px 18px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-left: 5px solid #00b4d8;
+    border-radius: 10px;
+    position: relative;
+}
+
+.info-label {
+    position: absolute;
+    top: -12px;
+    right: 18px;
+    background-color: #00194a;
+    color: white;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    z-index: 2;
+}
+
+/* -------------------------
+            Botones
+---------------------------- */
+
+.btn-primary {
+    display: inline-block;
+    background-color: #34393f;
+    color: white;
+    padding: 12px 22px;
+    border-radius: 12px;
+    font-weight: bold;
+    margin-top: 27px;
+    margin-left: 5px;
+}
+
+/* Hover del botón principal */
+.btn-primary:hover {
+    background-color: white;
+    color: black;
+}
+
+/* Botón secundario */
+.btn-secondary {
+    background-color: #00b4d8;
+    color: #00194a;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Hover del botón secundario */
+.btn-secondary:hover {
+    background-color: #0096c7;
+    color: white;
 }
 
 /*============================
