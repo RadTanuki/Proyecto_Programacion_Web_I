@@ -38,6 +38,47 @@ a{
     display: block;
 }
 
+/*============================
+Header
+============================*/
+.site-header{
+    padding: 18px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #34393f;
+    position: sticky;
+    top: 0;
+}
+
+header a{
+    color: seashell;
+}
+
+header a:hover{
+    color: rgb(71, 82, 236);
+}
+
+.logo{
+    font-size: 1.4rem;
+    margin-bottom: 0;
+    float: left;
+    color: seashell;
+}
+
+.header-interactables{
+    font-size: 1rem;
+    margin-bottom: 0;
+    margin-right: 10px;
+    background-color: #1f2937;
+    color: seashell;
+}
+
+.header-interactables:hover{
+    background-color: seashell;
+    color: #1f2937;
+}
+
 /* --------------------------
             Hero
 --------------------------- */
@@ -164,35 +205,48 @@ a{
 }
 
 /*============================
+About
+============================*/
+
+.about {
+    background-color: antiquewhite;
+    padding: 70px;
+}
+
+.about-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.about-image {
+    flex: 1;
+    background-color: antiquewhite;
+    padding: 8px;
+    border-radius: 18px;
+}
+
+.about-image img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.about-info {
+    margin-top: 25px;
+    padding: 28px 18px 18px 18px;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-left: 5px solid #00b4d8;
+    border-radius: 10px;
+    position: relative;
+}
+
+/*============================
 Utilities
 ============================*/
 p{
     margin-bottom: 16px;
 }
 
-/*============================
-Header
-============================*/
-.site-header{
-    padding: 18px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #34393f;
-    color: seashell;
-}
-
-.logo{
-    font-size: 1.4rem;
-    margin-bottom: 0;
-    float: left;
-}
-
-.interact{
-    font-size: 1rem;
-    margin-bottom: 0;
-    margin-right: 10px;
-}
 
 /*============================
 Footer

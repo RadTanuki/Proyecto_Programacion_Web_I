@@ -13,28 +13,28 @@
 </head>
 
 <body>
-    <header class="site-header">
-        <p class="logo"><strong>Grade Manager</strong></p>
-        <p class="interact">
-        <select>
-            <option><a href="#contact">Secciones</a></option>
-            <option>Seccion 1</option>
-            <option>Seccion 2</option>
-            <option>Seccion 3</option>
-            <option>Contacto</option>
-        </select>
+    <header class="site-header" id="header">
+        <p class="logo"><strong><a href="#header">Grade Manager</a></strong></p>
+        <nav>
+        <select class="header-interactables" name="Secciones" onchange="if(this.value) window.location.href=this.value">
+            <option value="">Secciones</option>
+            <option value="#hero">Inicio</option>
+            <option value="https://campus.utn.ac.cr/login/index.php" target="blank">Link</option>
+            <option value="">Seccion 3</option>
+            <option value="#contact">Contacto</option>
+        </select>   
         <select>
             <option>Soluciones</option>
             <option>Asignaciones</option>
             <option>Calcular notas</option>
         </select>
-        </p>
-        <p style="float: right" class="interact">
-            <button style="margin-right: 5px;">Acceder</button>
-            <button style="margin-right: 10px;">Registrarse</button>
-        </p>
-
+        </nav>
+        <nav>
+            <button class="header-interactables btn-header:hover">Acceder</button>
+            <button class="header-interactables btn-header:hover">Registrarse</button>
+        </nav>
     </header>
+
     <hr>
     <main>
     <section id="hero" class="hero">
@@ -50,23 +50,30 @@
                 <li><strong>✓ Cálculo automático</strong></li>
                 <li><strong>✓ Organización por cursos</strong></li>
                 <li><strong>✓ Orden académico</strong></li>
-
             </ul>
             <button class="btn-primary">Calcular mi nota</button>
             <button class="btn-primary">¿Cómo funciona?</button>
             </div>
-             <figure class="hero-image">
+            <figure class="hero-image">
                     <img src="assets/images/notas.jpg" alt="Notas de estudiante">
                 </figure>
         </div>
-
-
     </section>
     
-    <section id="acerca-de">
-        <p>
-                 
-        </p>
+    <hr>
+
+    <section id="about" class="about">
+            <div class="container about-content"> 
+                <figure class="about-image">
+                    <img src="assets/images/notas.jpg" alt="Logo de la página">
+                </figure>
+            <div>
+            </div>
+            <h1> Acerca de Grade Manager </h1>
+            <p>
+                Grade Manager se encarga del
+            </p>
+        </div>
 
     </section>
     
