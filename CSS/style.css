@@ -12,8 +12,8 @@
 
 h1,h2,h3,h4,h5,h6 {
     font-family: 'Fuente', sans-serif;
+    color: black;
 }
-
 
 html{
     font-size: 16px;
@@ -41,8 +41,6 @@ hr {
     margin: 0 auto;
     display: block;
 }
-
-
 
 /*============================
 Header
@@ -81,7 +79,6 @@ header a:hover{
     color: seashell;
     border-radius: 30px;
     padding: 8px;
-    
 }
 
 .header-interactables:hover{
@@ -109,8 +106,9 @@ header a:hover{
     flex: 1;
     text-align: center;
     background-color: antiquewhite;
-    padding-top: 10px;
-    border-radius: 20px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    border-radius: 125px;
 }
 
 .hero-text h1 {
@@ -164,29 +162,6 @@ header a:hover{
     border-radius: 12px;
 }
 
-/*.hero-info {
-    margin-top: 10px;
-    padding: 15px;
-    background-color: white;
-    border: 10px solid black;
-    border-radius: 15px;
-    border-style: double;
-    position: relative;
-}
-
-.info-label {
-    position: absolute;
-    top: -19px;
-    right: 30px;
-    background-color: #00194a;
-    color: white;
-    padding: 10px;
-    border-radius: 8px;
-    font-size: 0.75rem;
-    font-weight: bold;
-    z-index: 2;
-}*/
-
 /* -------------------------
             Botones
 ---------------------------- */
@@ -202,14 +177,11 @@ header a:hover{
     font-size: 15px;
 }
 
-/* Hover del botón principal */
 .btn-primary:hover {
     background-color: white;
     color: black;
 }
 
-
-/* Botón secundario */
 .btn-secondary {
     background-color: #00b4d8;
     color: #00194a;
@@ -220,7 +192,6 @@ header a:hover{
     cursor: pointer;
 }
 
-/* Hover del botón secundario */
 .btn-secondary:hover {
     background-color: #0096c7;
     color: white;
@@ -237,28 +208,38 @@ About
 
 .about-content {
     display: flex;
-    align-items: normal;
+    align-items: center;
     gap: 50px;
 }
 
 .about-text {
     flex: 1;
-    text-align: left;
+    text-align: center;
     padding-top: 10px;
-    border-radius: 20px;
+    border-radius: 200px;
 }
 
-.about-image {
-    flex: 1;
-    background-color: antiquewhite;
-    padding: 8px;
-    border-radius: 18px;
-    width: 80%;
+.about-text p {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.1rem;
+    color: black;
+    margin-bottom: 2px;
+    padding: 15px;
+    line-height: 1.7;
+}
+
+.about-image{
+    flex:1;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background-color:antiquewhite;
 }
 
 .about-image img {
-    width: 100%;
-    border-radius: 12px;
+    width: 250px;
 }
 
 .about-info {
@@ -328,9 +309,6 @@ About
     line-height: 2;
 }
 
-
-
-
 /*============================
 Utilities
 ============================*/
@@ -338,13 +316,12 @@ p{
     margin-bottom: 16px;
 }
 
-
 /*============================
 Footer
 ============================*/
 
 footer{
-    background-color: #1f2937;
+    background-color: #34393f;
     color: azure;
     font-size: 1rem;
     text-align: center;
@@ -354,6 +331,69 @@ footer a{
     color: azure;
 }
 
+footer h2 {
+    padding: 8px;
+}
+
 footer a:hover{
     color: rgb(71, 82, 236);
+}
+
+footer ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    list-style: none;
+}
+
+footer li img {
+    width: 80%;
+    padding: 20px ;
+    
+}
+
+@media (max-width: 600px) {
+
+    .hero-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .hero-text, .hero-image {
+        width: 140%;
+    }
+
+    .hero-text {
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .hero-image {
+        max-width: 450px;
+    }
+
+    .main-nav ul {
+        gap: 6px;
+    }
+
+    .main-nav a {
+        font-size: 0.9rem;
+        padding: 7px 8px;
+    }
+
+
+    .about-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-text {
+        text-align: center;
+    }
+    
+    .about-image img {
+        width: 110px;
+    }
+
 }
