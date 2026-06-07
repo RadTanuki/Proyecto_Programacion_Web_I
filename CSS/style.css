@@ -60,7 +60,7 @@ header a{
 }
 
 header a:hover{
-    color: rgb(71, 82, 236);
+    text-decoration: underline;
 }
 
 .logo{
@@ -106,6 +106,9 @@ header a:hover{
 .hero-text {
     flex: 1;
     text-align: center;
+    background-color: antiquewhite;
+    padding-top: 10px;
+    border-radius: 20px;
 }
 
 .hero-text h1 {
@@ -232,8 +235,15 @@ About
 
 .about-content {
     display: flex;
-    align-items: center;
+    align-items: normal;
     gap: 50px;
+}
+
+.about-text {
+    flex: 1;
+    text-align: left;
+    padding-top: 10px;
+    border-radius: 20px;
 }
 
 .about-image {
@@ -241,6 +251,7 @@ About
     background-color: antiquewhite;
     padding: 8px;
     border-radius: 18px;
+    width: 80%;
 }
 
 .about-image img {
