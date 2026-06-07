@@ -6,15 +6,14 @@
 
 @font-face {
     font-family: 'Fuente';
-    src: url('../font/Merriweather.ttf') format("truetype");
+    src: url('../assets/font/Merriweather/Merriweather.ttf') format("truetype");
     font-style: normal;
 }
 
 h1,h2,h3,h4,h5,h6 {
-
     font-family: 'Fuente', sans-serif;
-    
 }
+
 
 html{
     font-size: 16px;
@@ -22,7 +21,7 @@ html{
 }
 
 body{
-    font-family: 'Times New Roman', Times, serif;
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     background-color: antiquewhite;
     color: #1f2937;
     line-height: 1.6;
@@ -32,11 +31,18 @@ a{
     text-decoration: none;
 }
 
+hr {
+    height: 4px;
+    background-color: #34393f;
+}
+
 .container{
     width: 90%;
     margin: 0 auto;
     display: block;
 }
+
+
 
 /*============================
 Header
@@ -62,6 +68,7 @@ header a:hover{
 .logo{
     font-size: 1.4rem;
     margin-bottom: 0;
+    margin-left: 10px;
     float: left;
     color: seashell;
 }
@@ -72,11 +79,15 @@ header a:hover{
     margin-right: 10px;
     background-color: #1f2937;
     color: seashell;
+    border-radius: 30px;
+    padding: 8px;
+    
 }
 
 .header-interactables:hover{
     background-color: seashell;
     color: #1f2937;
+    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
 /* --------------------------
@@ -85,7 +96,7 @@ header a:hover{
 
 .hero {
     background-color: white;
-    padding: 70px 0;
+    padding: 70px;
 }
 
 .hero-content {
@@ -103,39 +114,45 @@ header a:hover{
     font-size: clamp(2rem, 5vw, 2.8rem);
     color: black;
     margin-bottom: 2px;
-    line-height: 1.2;
     padding: 15px;
+    line-height: 1.2;
 }
 
 .hero-text p {
-    font-family: sans-serif;
     font-size: 1.1rem;
     color: black;
     margin-bottom: 2px;
-    line-height: 2;
     padding: 15px;
+    line-height: 1.7;
 }
 
-.hero-text ul{
-
-    list-style-position: inside;
-    padding-left: 12px;
-    line-height: 2;
-    font-family: 'Fuente', sans-serif;
+.hero-text span {
+    display: inline-block; 
+    background-color: #34393f;
+    color: white;
+    font-weight: 500;
+    font-size: 14px;
+    padding: 5px 16px;
+    border-radius: 20px; 
+    font-family: 'Fuente', serif;
     
 }
 
+.hero-text ul{
+    padding: 15px;
+    line-height: 1.9;
+    margin-bottom: 2px;
+}
+
 .hero-text li{
-
     list-style-type: none;
-
 }
 
 .hero-image {
     flex: 1;
-    background-color: #34393f;
-    padding: 15px;
-    border-radius: 18px;
+    background-color: #1f2937;
+    padding: 10px;
+    border-radius: 20px;
     box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
 }
 
@@ -144,27 +161,28 @@ header a:hover{
     border-radius: 12px;
 }
 
-.hero-info {
-    margin-top: 25px;
-    padding: 28px 18px 18px 18px;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-left: 5px solid #00b4d8;
-    border-radius: 10px;
+/*.hero-info {
+    margin-top: 10px;
+    padding: 15px;
+    background-color: white;
+    border: 10px solid black;
+    border-radius: 15px;
+    border-style: double;
     position: relative;
 }
 
 .info-label {
     position: absolute;
-    top: -12px;
-    right: 18px;
+    top: -19px;
+    right: 30px;
     background-color: #00194a;
     color: white;
-    padding: 4px 10px;
-    border-radius: 20px;
+    padding: 10px;
+    border-radius: 8px;
     font-size: 0.75rem;
     font-weight: bold;
     z-index: 2;
-}
+}*/
 
 /* -------------------------
             Botones
@@ -174,11 +192,11 @@ header a:hover{
     display: inline-block;
     background-color: #34393f;
     color: white;
-    padding: 12px 22px;
-    border-radius: 12px;
+    border-radius: 25px;
     font-weight: bold;
-    margin-top: 27px;
-    margin-left: 5px;
+    margin: 15px 15px 9px 15px;
+    padding: 15px 18px 15px 18px;
+    font-size: 15px;
 }
 
 /* Hover del botón principal */
@@ -186,6 +204,7 @@ header a:hover{
     background-color: white;
     color: black;
 }
+
 
 /* Botón secundario */
 .btn-secondary {
@@ -239,6 +258,67 @@ About
     border-radius: 10px;
     position: relative;
 }
+
+/*============================
+        Funcionamiento
+============================*/
+
+.funcionamiento {
+    background-color: white;
+    padding: 50px;
+}
+
+.funcionamiento-content {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+.funcionamiento-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-top: 20px;
+}
+
+.funcionamiento-card {
+    background-color: antiquewhite;
+    border: 1px solid #dbeafe;
+    border-radius: 14px;
+    padding: 20px;
+}
+
+.funcionamiento-image{
+    flex: 1;
+    background-color: #1f2937;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+}
+
+.funcionamiento-image img{
+    width: 100%;
+    border-radius: 12px;
+}
+
+.funcionamiento-h2{
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.funcionamiento-h4 {
+    font-size: larger;
+    text-align: center;
+}
+
+.funcionamiento-ul {
+    margin: 15px 15px 15px 15px;
+    list-style: square;
+    line-height: 2;
+}
+
+
+
 
 /*============================
 Utilities
