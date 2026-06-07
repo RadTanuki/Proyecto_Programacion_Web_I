@@ -62,7 +62,7 @@ header a{
 }
 
 header a:hover{
-    color: rgb(71, 82, 236);
+    text-decoration: underline;
 }
 
 .logo{
