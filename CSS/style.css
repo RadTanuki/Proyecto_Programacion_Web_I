@@ -92,7 +92,10 @@ header a:hover{
 --------------------------- */
 
 .hero {
-    background-color: white;
+    background-image: url(../assets/images/study.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
     padding: 70px;
 }
 
@@ -105,7 +108,7 @@ header a:hover{
 .hero-text {
     flex: 1;
     text-align: center;
-    background-color: antiquewhite;
+    background-color: rgba(250, 235, 215, 0.548);;
     padding-top: 25px;
     padding-bottom: 25px;
     border-radius: 125px;
@@ -213,6 +216,12 @@ About
 }
 
 .about-text {
+    flex: 1;
+    text-align: justify;
+    border-radius: 200px;
+}
+
+.about-title{
     flex: 1;
     text-align: center;
     padding-top: 10px;
@@ -325,6 +334,7 @@ footer{
     color: azure;
     font-size: 1rem;
     text-align: center;
+    padding-bottom: 10px;
 }
 
 footer a{
@@ -336,7 +346,7 @@ footer h2 {
 }
 
 footer a:hover{
-    color: rgb(71, 82, 236);
+    text-decoration: underline;
 }
 
 footer ul {

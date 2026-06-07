@@ -20,8 +20,8 @@
                 onchange="if(this.value) window.location.href=this.value">
                 <option value="">Secciones</option>
                 <option value="#hero">Inicio</option>
-                <option value="https://campus.utn.ac.cr/login/index.php" target="blank">Link</option>
-                <option value="">Seccion 3</option>
+                <option value="#about">Acerca de</option>
+                <option value="#funcionamiento">Tutorial</option>
                 <option value="#contact">Contacto</option>
             </select>
             <select class="header-interactables" name="Soluciones">
@@ -68,10 +68,11 @@
                 <figure class="about-image">
                     <img src="assets/images/informacion.png" alt="Notas de estudiante">
                 </figure>
-                <div class="about-text">
+                <div class="about-title">
                     <h1> Acerca de Grade Manager </h1>
                     <br>
-                    <p>Ayuda a estudiantes universitarios a llevar un mejor control sobre
+                    <p class="about-text">
+                    &#9;Ayuda a estudiantes universitarios a llevar un mejor control sobre
                     sus calificaciones permitiendo dividir entre cada curso, sus
                     diferentes asignaciones y su valor porcentual no solo para tener
                     un mejor orden, sino también para poder verificar el progreso en
@@ -144,7 +145,6 @@
             </div>
         </section>
 
-        <hr>
     </main>
     <footer id="contact">
         <h2>Contacto</h2>
@@ -153,15 +153,15 @@
             Correo: gaariaspa@est.utn.ac.cr | romoraca@est.utn.ac.cr
             <ul>
                 <li>
-                    <a class="active-link" href="https://www.instagram.com/">
+                    <a class="active-link" href="https://www.instagram.com/" target="_blank">
                         <img src="assets/images/instagram.png">
                     </a>
                 </li>
-                <li><a class="active-link" href="https://www.facebook.com/?locale=es_LA">
+                <li><a class="active-link" href="https://www.facebook.com/?locale=es_LA" target="_blank">
                         <img src="assets/images/facebook.png">
                     </a>
                 </li>
-                <li><a class="active-link" href="https://x.com/?lang=es">
+                <li><a class="active-link" href="https://x.com/?lang=es" target="_blank">
                         <img src="assets/images/x.png">
                     </a>
                 </li>
@@ -176,6 +176,8 @@
         <h5>Enlaces rápidos</h5>
         <ul>
             <li><a href="index.html">Inicio</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="login.html">Asignaciones</a></li><!--Habría que poner un if sesión iniciada mandar a esa ventana, sino, a login-->
         </ul>
     </footer>
 </body>
