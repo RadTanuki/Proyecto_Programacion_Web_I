@@ -55,20 +55,20 @@ Header
     top: 0;
 }
 
-header a{
-    color: seashell;
-}
-
-header a:hover{
-    text-decoration: underline;
-}
-
 .logo{
     font-size: 1.4rem;
     margin-bottom: 0;
     margin-left: 10px;
     float: left;
     color: seashell;
+}
+
+.logo a{
+    color: seashell;
+}
+
+.logo a:hover {
+    text-decoration: underline;
 }
 
 .header-interactables{
@@ -79,6 +79,7 @@ header a:hover{
     color: seashell;
     border-radius: 30px;
     padding: 8px;
+    align-items: center;
 }
 
 .header-interactables:hover{
