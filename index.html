@@ -14,7 +14,7 @@
 
 <body>
     <header class="site-header" id="header">
-        <p class="logo"><strong><a href="#header">Grade Manager</a></strong></p>
+        <p class="logo"><strong><a href="index.html">Grade Manager</a></strong></p>
         <nav>
             <select class="header-interactables" name="Secciones"
                 onchange="if(this.value) window.location.href=this.value">
@@ -31,8 +31,8 @@
             </select>
         </nav>
         <nav>
-            <button class="header-interactables btn-header:hover">Acceder</button>
-            <button class="header-interactables btn-header:hover">Registrarse</button>
+            <button class="header-interactables">Acceder</button>
+            <button class="header-interactables">Registrarse</button>
         </nav>
     </header>
 
@@ -62,27 +62,54 @@
         </section>
 
         <hr>
-        
+
         <section id="about" class="about">
             <div class="container about-content">
                 <figure class="about-image">
-                    <img src="assets/images/informacion.png" alt="Notas de estudiante">
+                    <img src="assets/images/informacion.png" alt="Información">
                 </figure>
-                <div class="about-title">
-                    <h1> Acerca de Grade Manager </h1>
-                    <br>
+                <div>
+                    <h1 class="about-title"> Acerca de Grade Manager </h1>
                     <p class="about-text">
-                    &#9;Ayuda a estudiantes universitarios a llevar un mejor control sobre
-                    sus calificaciones permitiendo dividir entre cada curso, sus
+                        Grade Manager le permite llevar un mejor control sobre sus asignaciones,
+                        cálculo de sus notas y manejo sus horarios
+                        <!--permitiendo dividir entre cada curso, sus
                     diferentes asignaciones y su valor porcentual no solo para tener
                     un mejor orden, sino también para poder verificar el progreso en
-                    cada curso y calcular la nota de cada asignación
+                    cada curso y calcular la nota de cada asignación-->
                     </p>
+
+                    <div class="about-grid">
+                        <article class="about-card">
+                            <h3>Asignaciones</h3>
+                            <p>
+                                Permite dividir cursos y sus asignaciones
+                                con fechas límite y puntajes obtenidos con cálculo
+                                de porcentajes.
+                                
+                            </p>
+                        </article>
+                        <article class="about-card">
+                            <h3>Cálculo de Notas</h3>
+                            <p>
+                                Calcula el porcentaje obtenido de las asignaciones
+                                además de hacer suma de porcentajes
+                                parar comprobar promedio de los cursos.
+                            </p>
+                        </article>
+                        <article class="about-card">
+                            <h3>Horarios</h3>
+                            <p>
+                                Agregación de horarios o actividades cada semana
+                                para mejor control del tiempo.    
+                            </p>
+                        </article>
+                    </div>
                 </div>
             </div>
         </section>
 
-        
+
         <hr>
 
         <section id="funcionamiento" class="funcionamiento">
@@ -177,7 +204,8 @@
         <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="login.html">Login</a></li>
-            <li><a href="login.html">Asignaciones</a></li><!--Habría que poner un if sesión iniciada mandar a esa ventana, sino, a login-->
+            <li><a href="login.html">Asignaciones</a></li><!--Habría que poner un if sesión iniciada mandar a esa 
+            ventana, sino, a login-->
         </ul>
     </footer>
 </body>

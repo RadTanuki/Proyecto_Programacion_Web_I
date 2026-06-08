@@ -92,11 +92,11 @@ header a:hover{
 --------------------------- */
 
 .hero {
-    background-image: url(../assets/images/study.jpg);
+    background-image: url(../assets/images/study.png);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
-    padding: 70px;
+    padding: 20px;
 }
 
 .hero-content {
@@ -219,6 +219,7 @@ About
     flex: 1;
     text-align: justify;
     border-radius: 200px;
+    font-size: 1.3rem;
 }
 
 .about-title{
@@ -237,6 +238,7 @@ About
     margin-bottom: 2px;
     padding: 15px;
     line-height: 1.7;
+    text-indent: 30px;
 }
 
 .about-image{
@@ -248,7 +250,7 @@ About
 }
 
 .about-image img {
-    width: 250px;
+    width: 200px;
 }
 
 .about-info {
@@ -258,6 +260,20 @@ About
     border-left: 5px solid #00b4d8;
     border-radius: 10px;
     position: relative;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-top: 24px;
+}
+
+.about-card {
+    background-color: #f8fafc;
+    border: 1px solid #dbeafe;
+    border-radius: 14px;
+    padding: 20px;
 }
 
 /*============================
