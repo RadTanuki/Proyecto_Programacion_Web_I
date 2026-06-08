@@ -444,6 +444,7 @@ footer li img {
     .hero-content {
         flex-direction: column;
         align-items: center;
+        width: 70%;
     }
 
     .hero-text, .hero-image {
@@ -468,10 +469,10 @@ footer li img {
         padding: 7px 8px;
     }
 
-
     .about-content {
         flex-direction: column;
         align-items: center;
+        text-align: center;
     }
 
     .about-text {
