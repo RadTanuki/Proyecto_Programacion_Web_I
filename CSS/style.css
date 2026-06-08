@@ -87,12 +87,36 @@ header a:hover{
     transition: cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
+#menu-toggle{
+    display:none;
+}
+
+.hamburguesa{
+    display:none;
+    cursor:pointer;
+}
+
+.hamburguesa span{
+    display:block;
+    width:30px;
+    height:4px;
+    background-color:white;
+    margin:5px 0;
+    border-radius:2px;
+}
+
+.menu-nav{
+    display:flex;
+    gap:10px;
+}
+
+
 /* --------------------------
             Hero
 --------------------------- */
 
 .hero {
-    background-image: url(../assets/images/study.png);
+    background-image: url(../assets/images/wallpaper.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
@@ -380,6 +404,41 @@ footer li img {
 }
 
 @media (max-width: 600px) {
+
+    .hamburguesa{
+        display:block;
+        margin-right:15px;
+    }
+
+    .menu-nav{
+        display: none;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background-color: #34393f;
+        padding: 20px;
+        flex-direction: column;
+    }
+
+    .menu-nav nav{
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .menu-nav select {
+        text-align: center;
+    }
+
+    .logo {
+
+        margin: 0 auto;
+    }
+
+    #menu-toggle:checked ~ .menu-nav{
+        display:flex;
+    }
 
     .hero-content {
         flex-direction: column;

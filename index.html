@@ -15,25 +15,37 @@
 <body>
     <header class="site-header" id="header">
         <p class="logo"><strong><a href="index.html">Grade Manager</a></strong></p>
-        <nav>
-            <select class="header-interactables" name="Secciones"
-                onchange="if(this.value) window.location.href=this.value">
-                <option value="">Secciones</option>
-                <option value="#hero">Inicio</option>
-                <option value="#about">Acerca de</option>
-                <option value="#funcionamiento">Tutorial</option>
-                <option value="#contact">Contacto</option>
-            </select>
-            <select class="header-interactables" name="Soluciones">
-                <option>Soluciones</option>
-                <option>Asignaciones</option>
-                <option>Calcular notas</option>
-            </select>
-        </nav>
-        <nav>
-            <button class="header-interactables">Acceder</button>
-            <button class="header-interactables">Registrarse</button>
-        </nav>
+
+        <input type="checkbox" id="menu-toggle">
+
+        <label for="menu-toggle" class="hamburguesa">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <div class="menu-nav">
+            <nav>
+                <select class="header-interactables" name="Secciones"
+                    onchange="if(this.value) window.location.href=this.value">
+                    <option value="">Secciones</option>
+                    <option value="#hero">Inicio</option>
+                    <option value="#about">Acerca de</option>
+                    <option value="#funcionamiento">Tutorial</option>
+                    <option value="#contact">Contacto</option>
+                </select>
+                <select class="header-interactables" name="Soluciones">
+                    <option>Soluciones</option>
+                    <option>Asignaciones</option>
+                    <option>Calcular notas</option>
+                </select>
+            </nav>
+            <nav>
+                <button class="header-interactables">Acceder</button>
+                <button class="header-interactables">Registrarse</button>
+            </nav>
+        </div>
+
     </header>
 
     <main>
@@ -86,7 +98,7 @@
                                 Permite dividir cursos y sus asignaciones
                                 con fechas límite y puntajes obtenidos con cálculo
                                 de porcentajes.
-                                
+
                             </p>
                         </article>
                         <article class="about-card">
@@ -101,7 +113,7 @@
                             <h3>Horarios</h3>
                             <p>
                                 Agregación de horarios o actividades cada semana
-                                para mejor control del tiempo.    
+                                para mejor control del tiempo.
                             </p>
                         </article>
                     </div>
