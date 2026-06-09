@@ -85,7 +85,7 @@ Header
 .header-interactables:hover{
     background-color: seashell;
     color: #1f2937;
-    transition: cubic-bezier(0.075, 0.82, 0.165, 1);
+    transition: background-color 0.3s;
 }
 
 #menu-toggle{
@@ -208,6 +208,7 @@ Header
 .btn-primary:hover {
     background-color: white;
     color: black;
+    transition: background-color 0.3s;
 }
 
 .btn-secondary {
@@ -591,7 +592,8 @@ Login Window
 }
 
 .login-form .btn-primary:hover {
-    background-color: #0090ad;
+    background-color: antiquewhite;
+    color: #1f2937;
 }
 
 .login-link {
