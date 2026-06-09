@@ -307,7 +307,10 @@ About
 ============================*/
 
 .funcionamiento {
-    background-color: white;
+    background-image: url(../assets/images/fondo-funcionamiento.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
     padding: 50px;
 }
 
