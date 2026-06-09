@@ -494,7 +494,7 @@ Login Window
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    background-color: antiquewhite;
+    background-image: url(../assets/images/wallpaper.jpg);
     padding: 20px;
 }
 
@@ -600,7 +600,7 @@ Login Window
 }
 
 .login-link a {
-    color: #1f2937;
+    color: #00b4d8;
     text-decoration: none;
 }
 
