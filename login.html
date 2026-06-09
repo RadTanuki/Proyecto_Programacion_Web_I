@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
     <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Grade Manager | Login</title>
 </head>
 
 <body>
@@ -25,29 +27,38 @@
                 <select class="header-interactables" name="Secciones"
                     onchange="if(this.value) window.location.href=this.value">
                     <option value="">Secciones</option>
-                    <option value="#hero">Inicio</option>
-                    <option value="#about">Acerca de</option>
-                    <option value="#funcionamiento">Tutorial</option>
+                    <option value="#authenticate">Login</option>
                     <option value="#contact">Contacto</option>
                 </select>
-                <select class="header-interactables" name="Soluciones">
-                    <option>Soluciones</option>
-                    <option>Asignaciones</option>
-                    <option>Calcular notas</option>
-                </select>
+                
             </nav>
             <nav>
-                <button class="header-interactables">Acceder</button>
-                <button class="header-interactables">Registrarse</button>
+                <button class="header-interactables" onclick="showTab(event, 'login')">Acceder</button>
+                <button class="header-interactables" onclick="showTab(event, 'register')">Registrarse</button>
             </nav>
         </div>
 
-
-
-
     </header>
-    <main>
-        <hr>
+    <main id="authenticate">
+
+<script>
+    function showTab(event, tabId) {
+    // Evitar que el botón recargue la página si está dentro de un form
+    event.preventDefault();
+
+    // Ocultar todos los formularios
+    const forms = document.querySelectorAll('.login-form');
+    forms.forEach(form => form.classList.remove('active'));
+
+    // Quitar la clase 'active' de todos los botones
+    const tabs = document.querySelectorAll('.login-tab');
+    tabs.forEach(tab => tab.classList.remove('active'));
+
+    // Mostrar el formulario seleccionado y activar el botón
+    document.getElementById(tabId).classList.add('active');
+    event.currentTarget.classList.add('active');
+}
+</script>
 
         <div class="login-container">
     <div class="login-box">
@@ -101,7 +112,6 @@
         </div>
     </div>
 </div>
-        <hr>
     </main>
 
 
@@ -136,7 +146,7 @@
         <h5>Enlaces rápidos</h5>
         <ul>
             <li><a href="index.html">Inicio</a></li>
-            <li><a href="login.html">Login</a></li>
+            <li><a href="#authenticate">Login</a></li>
             <li><a href="login.html">Asignaciones</a></li><!--Habría que poner un if sesión iniciada mandar a esa 
             ventana, sino, a login-->
         </ul>
