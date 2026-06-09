@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
+
 <body>
     <header class="site-header" id="header">
         <p class="logo"><strong><a href="index.html">Grade Manager</a></strong></p>
@@ -40,10 +42,70 @@
             </nav>
         </div>
 
+
+
+
     </header>
     <main>
+        <hr>
 
+        <div class="login-container">
+    <div class="login-box">
+        <div class="tabs-container">
+            <button class="login-tab active" onclick="showTab(event, 'login')">Iniciar Sesión</button>
+            <button class="login-tab" onclick="showTab(event, 'register')">Registrarse</button>
+        </div>
+        
+        <div id="login" class="login-form active">
+            <h2>Iniciar Sesión</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input type="email" id="login-email" name="email" placeholder="ejemplo@correo.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Contraseña</label>
+                    <input type="password" id="login-password" name="password" placeholder="***********" required>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <input type="checkbox" name="remember"> Recordarme
+                    </label>
+                </div>
+                <button type="submit" class="btn-primary">Ingresar</button>
+                <p class="login-link"><a href="#">¿Olvidó su contraseña?</a></p>
+            </form>
+        </div>
+        
+        <div id="register" class="login-form">
+            <h2>Registrarse</h2>
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label for="register-name">Nombre de Usuario</label>
+                    <input type="text" id="register-name" name="name" placeholder="Usuario" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-email">Email</label>
+                    <input type="email" id="register-email" name="email" placeholder="ejemplo@correo.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-password">Contraseña</label>
+                    <input type="password" id="register-password" name="password" placeholder="***********" required>
+                </div>
+                <div class="form-group">
+                    <label for="register-confirm">Confirmar Contraseña</label>
+                    <input type="password" id="register-confirm" name="password" placeholder="***********" required>
+                </div>
+                <button type="submit" class="btn-primary">Registrarse</button>
+            </form>
+        </div>
+    </div>
+</div>
+        <hr>
     </main>
+
+
+
     <footer id="contact">
         <h2>Contacto</h2>
         <address>
@@ -80,4 +142,5 @@
         </ul>
     </footer>
 </body>
+
 </html>
