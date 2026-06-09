@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/styleCurso.css">
     <title>Document</title>
 </head>
+
 <body>
     <header class="site-header" id="header">
         <p class="logo"><strong><a href="index.html">Grade Manager</a></strong></p>
@@ -30,6 +32,25 @@
         </nav>
     </header>
     <main>
+
+        <section id="form" class="form">
+
+            <div class="container form-content">
+
+                <h4>Curso</h4>
+                <label>Código</label> <input type="text">
+                <label>Nombre</label> <input type="text">
+                <label>Nota</label> <input type="text">
+                <label>Evaluaciones</label> <input type="text">
+                <div class="form-buttons">
+                    <button>Enviar</button>
+                    <button>Limpiar</button>
+                </div>
+            </div>
+
+
+
+        </section>
 
     </main>
     <footer id="contact">
@@ -63,8 +84,10 @@
         <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="login.html">Login</a></li>
-            <li><a href="login.html">Asignaciones</a></li><!--Habría que poner un if sesión iniciada mandar a esa ventana, sino, a login-->
+            <li><a href="login.html">Asignaciones</a></li>
+            <!--Habría que poner un if sesión iniciada mandar a esa ventana, sino, a login-->
         </ul>
     </footer>
 </body>
+
 </html>
