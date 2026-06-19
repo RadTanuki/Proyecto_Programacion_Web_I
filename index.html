@@ -26,23 +26,22 @@
 
         <div class="menu-nav">
             <nav>
-                <select class="header-interactables" name="Secciones"
-                    onchange="if(this.value) window.location.href=this.value">
+                <select class="header-interactables" id="sections">
                     <option value="">Secciones</option>
                     <option value="#hero">Inicio</option>
                     <option value="#about">Acerca de</option>
                     <option value="#funcionamiento">Tutorial</option>
                     <option value="#contact">Contacto</option>
                 </select>
-                <select class="header-interactables" name="Soluciones">
+                <select class="header-interactables" id="solutions">
                     <option>Soluciones</option>
                     <option>Asignaciones</option>
                     <option>Calcular notas</option>
                 </select>
             </nav>
             <nav>
-                <button class="header-interactables">Acceder</button>
-                <button class="header-interactables">Registrarse</button>
+                <button class="header-interactables" data-href="login.html">Acceder</button>
+                <button class="header-interactables" data-href="login.html">Registrarse</button>
             </nav>
         </div>
 
@@ -213,11 +212,11 @@
             <li><a href="index.html">Inicio</a></li>
             <li><a href="login.html">Login</a></li>
             <li><a href="login.html">Asignaciones</a></li>
-            <li><a href="login.html">Calcular Notas</a></li>
             <!--Habría que poner un if sesión iniciada mandar a esa 
             ventana, sino, a login-->
         </ul>
     </footer>
+    <script src="js/buttons.js"></script>
 </body>
 
 </html>

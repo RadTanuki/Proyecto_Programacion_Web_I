@@ -5,10 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/styleCurso.css">
-    <title>Grade Manager | Cursos</title>
-=======
     <title>Grade Manager | Curso</title>
->>>>>>> a85d9e88d2e5595960064bdd5ceca550c748a37f
 </head>
 
 <body>
@@ -23,17 +20,17 @@
             <span></span>
         </label>
 
+        <!--Modificar-->
         <div class="menu-nav">
             <nav>
-                <select class="header-interactables" name="Secciones"
-                    onchange="if(this.value) window.location.href=this.value">
+                <select class="header-interactables" id="sections">
                     <option value="">Secciones</option>
                     <option value="#hero">Inicio</option>
                     <option value="#about">Acerca de</option>
                     <option value="#funcionamiento">Tutorial</option>
                     <option value="#contact">Contacto</option>
                 </select>
-                <select class="header-interactables" name="Soluciones">
+                <select class="header-interactables" id="solutions">
                     <option>Soluciones</option>
                     <option>Asignaciones</option>
                     <option>Calcular notas</option>
@@ -103,6 +100,7 @@
             <!--Habría que poner un if sesión iniciada mandar a esa ventana, sino, a login-->
         </ul>
     </footer>
+    <script src="js/buttons.js"></script>
 </body>
 
 </html>

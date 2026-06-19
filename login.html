@@ -5,9 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/style.css">
-    <title>Document</title>
-    <link rel="stylesheet" href="css/style.css">
     <title>Grade Manager | Login</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="CSS/styleLogin.css">
+
 </head>
 
 <body>
@@ -24,13 +25,12 @@
 
         <div class="menu-nav">
             <nav>
-                <select class="header-interactables" name="Secciones"
-                    onchange="if(this.value) window.location.href=this.value">
+                <select id="sections" class="header-interactables">
                     <option value="">Secciones</option>
                     <option value="#authenticate">Login</option>
                     <option value="#contact">Contacto</option>
                 </select>
-                
+
             </nav>
             <nav>
                 <button class="header-interactables" onclick="showTab(event, 'login')">Acceder</button>
@@ -41,77 +41,62 @@
     </header>
     <main id="authenticate">
 
-<script>
-    function showTab(event, tabId) {
-    // Evitar que el botón recargue la página si está dentro de un form
-    event.preventDefault();
-
-    // Ocultar todos los formularios
-    const forms = document.querySelectorAll('.login-form');
-    forms.forEach(form => form.classList.remove('active'));
-
-    // Quitar la clase 'active' de todos los botones
-    const tabs = document.querySelectorAll('.login-tab');
-    tabs.forEach(tab => tab.classList.remove('active'));
-
-    // Mostrar el formulario seleccionado y activar el botón
-    document.getElementById(tabId).classList.add('active');
-    event.currentTarget.classList.add('active');
-}
-</script>
-
         <div class="login-container">
-    <div class="login-box">
-        <div class="tabs-container">
-            <button class="login-tab active" onclick="showTab(event, 'login')">Iniciar Sesión</button>
-            <button class="login-tab" onclick="showTab(event, 'register')">Registrarse</button>
+            <div class="login-box">
+                <div class="tabs-container">
+                    <button class="login-tab active" onclick="showTab(event, 'login')">Iniciar Sesión</button>
+                    <button class="login-tab" onclick="showTab(event, 'register')">Registrarse</button>
+                </div>
+
+                <div id="login" class="login-form active">
+                    <h2>Iniciar Sesión</h2>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="login-email">Email</label>
+                            <input type="email" id="login-email" name="email" placeholder="ejemplo@correo.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="login-password">Contraseña</label>
+                            <input type="password" id="login-password" name="password" placeholder="***********"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label>
+                                <input type="checkbox" name="remember"> Recordarme
+                            </label>
+                        </div>
+                        <button type="submit" class="btn-primary">Ingresar</button>
+                        <p class="login-link"><a href="#">¿Olvidó su contraseña?</a></p>
+                    </form>
+                </div>
+
+                <div id="register" class="login-form">
+                    <h2>Registrarse</h2>
+                    <form action="#" method="POST">
+                        <div class="form-group">
+                            <label for="register-name">Nombre de Usuario</label>
+                            <input type="text" id="register-name" name="name" placeholder="Usuario" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-email">Email</label>
+                            <input type="email" id="register-email" name="email" placeholder="ejemplo@correo.com"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-password">Contraseña</label>
+                            <input type="password" id="register-password" name="password" placeholder="***********"
+                                required>
+                        </div>
+                        <div class="form-group">
+                            <label for="register-confirm">Confirmar Contraseña</label>
+                            <input type="password" id="register-confirm" name="password" placeholder="***********"
+                                required>
+                        </div>
+                        <button type="submit" class="btn-primary">Registrarse</button>
+                    </form>
+                </div>
+            </div>
         </div>
-        
-        <div id="login" class="login-form active">
-            <h2>Iniciar Sesión</h2>
-            <form action="#" method="POST">
-                <div class="form-group">
-                    <label for="login-email">Email</label>
-                    <input type="email" id="login-email" name="email" placeholder="ejemplo@correo.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="login-password">Contraseña</label>
-                    <input type="password" id="login-password" name="password" placeholder="***********" required>
-                </div>
-                <div class="form-group">
-                    <label>
-                        <input type="checkbox" name="remember"> Recordarme
-                    </label>
-                </div>
-                <button type="submit" class="btn-primary">Ingresar</button>
-                <p class="login-link"><a href="#">¿Olvidó su contraseña?</a></p>
-            </form>
-        </div>
-        
-        <div id="register" class="login-form">
-            <h2>Registrarse</h2>
-            <form action="#" method="POST">
-                <div class="form-group">
-                    <label for="register-name">Nombre de Usuario</label>
-                    <input type="text" id="register-name" name="name" placeholder="Usuario" required>
-                </div>
-                <div class="form-group">
-                    <label for="register-email">Email</label>
-                    <input type="email" id="register-email" name="email" placeholder="ejemplo@correo.com" required>
-                </div>
-                <div class="form-group">
-                    <label for="register-password">Contraseña</label>
-                    <input type="password" id="register-password" name="password" placeholder="***********" required>
-                </div>
-                <div class="form-group">
-                    <label for="register-confirm">Confirmar Contraseña</label>
-                    <input type="password" id="register-confirm" name="password" placeholder="***********" required>
-                </div>
-                <button type="submit" class="btn-primary">Registrarse</button>
-            </form>
-        </div>
-    </div>
-</div>
     </main>
 
 
@@ -148,11 +133,11 @@
             <li><a href="index.html">Inicio</a></li>
             <li><a href="#authenticate">Login</a></li>
             <li><a href="login.html">Asignaciones</a></li>
-            <li><a href="login.html">Calcular Notas</a></li>
             <!--Habría que poner un if sesión iniciada mandar a esa 
             ventana, sino, a login-->
         </ul>
     </footer>
+    <script src="js/login.js"></script>
 </body>
 
 </html>

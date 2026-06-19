@@ -1,0 +1,124 @@
+
+/*============================
+Login Page
+============================*/
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(../assets/images/wallpaper.jpg);
+    padding: 20px;
+}
+
+.login-box {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 450px;
+    overflow: hidden;
+}
+
+.tabs-container {
+    display: flex;
+    background-color: #374151;
+}
+
+.login-tab {
+    flex: 1;
+    padding: 15px;
+    border: none;
+    background-color: transparent;
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 16px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-family: inherit;
+}
+
+.login-tab:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.login-tab.active {
+    color: white;
+    background-color: #1f2937;
+    font-weight: bold;
+}
+
+.login-form {
+    display: none;
+    padding: 30px;
+}
+
+.login-form.active {
+    display: block;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    color: #4b5563;
+    font-weight: 500;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+}
+
+.form-group input[type="text"]:focus,
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus {
+    outline: none;
+    border-color: #00b4d8;
+}
+
+.form-group input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.login-form .btn-primary {
+    width: 100%;
+    padding: 14px;
+    font-size: 16px;
+    margin: 10px 0;
+    background-color: #1f2937;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.login-form .btn-primary:hover {
+    background-color: #00b4d8;
+    color: #1f2937;
+}
+
+.login-link {
+    text-align: center;
+    margin-top: 15px;
+}
+
+.login-link a {
+    color: #00b4d8;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
