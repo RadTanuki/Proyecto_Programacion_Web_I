@@ -11,8 +11,20 @@ function useSelect (selectElement){
 useSelect(document.getElementById('sections'));
 useSelect(document.getElementById('solutions'));
 
+//Método para permitir el funcionamiento de los botones
 function navButtons(reference) {
-    window.location.href = reference;
+    //Si es una referencia a una sección
+    if(reference.startsWith('#')) {
+        const element = document.querySelector(reference);
+        if (element) {
+            element.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
+    } else {
+        window.location.href = reference;
+    }
 }
 
 document.addEventListener('click', function(e) {

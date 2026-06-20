@@ -1,0 +1,118 @@
+/*============================
+Courses Page
+============================*/
+
+.courses-container{
+    max-width: 1200px;
+    margin: 0;
+    padding: 30px 20px;
+}
+
+/*============================
+Toolbar
+============================*/
+
+.courses-toolbar {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: center;
+}
+
+/*============================
+Search Bar
+============================*/
+
+.search-container {
+    flex: 1;
+    min-width: 200px;
+    position: relative;
+}
+
+.search-container input {
+    width: 100%;
+    padding: 12px 40px 12px 15px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+    box-sizing: border-box;
+    background-color: white;
+}
+
+.search-container input:focus {
+    outline: none;
+    border-color: #00b4d8;
+}
+
+.search-container .search-icon {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9ca3af;
+}
+
+/*============================
+Filters
+============================*/
+
+.filter-select {
+    padding: 11px 15px;
+    border: 2px solid #e5e7eb;
+    border-radius: 8px;
+    font-size: 14px;
+    background-color: white;
+    color: #4b5563;
+    transition: border-color 0.3s;
+    font-family: inherit;
+}
+
+.filter-select:focus {
+    outline: none;
+    border-color: #00b4d8;
+}
+
+.filter-select:hover {
+    border-color: #00b4d8;
+}
+
+/*============================
+Courses Grid
+============================*/
+
+.courses-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.course-card {
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 25px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.course-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+}
+
+/*============================
+Counter
+============================*/
+
+.courses-counter {
+    color: #6b7280;
+    font-size: 14px;
+    margin-top: 14px;
+    text-align: center;
+}

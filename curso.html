@@ -4,8 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="CSS/styleCurso.css">
-    <title>Grade Manager | Curso</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/styleCourse.css">
+    <title>Grade Manager | Cursos</title>
 </head>
 
 <body>
@@ -45,26 +46,53 @@
     </header>
     <main>
 
-        <section class="form">
+        <section class="courses-container">
+            <h1 class="page-title">Mis cursos</h1>
 
-            <div class="container form-content">
-
-                <h4>Curso</h4>
-                <label>Código</label> <input type="text">
-                <label>Nombre</label> <input type="text">
-                <label>Nota</label> <input type="text">
-                <label>Evaluaciones</label> <input type="text">
-                <div class="form-buttons">
-                    <button>Guardar</button>
-                    <button>Limpiar</button>
+            <!--Toolbar-->
+            <div class="courses-toolbar">
+                <div class="search-container">
+                    <input type="text" id="searchCourses" placeholder="Buscar Curso" class="search-input">
+                    <span class="search-icon">&#x1F50E;</span>
                 </div>
+
+                <div class="filters-container">
+                    <select id="filterOrder" class="filter-select">
+                        <option value="name">Ordenar por: Nombre</option>
+                        <option value="creationDate">Ordenar por: Más reciente</option>
+                        <option value="lastUpdate">Ordenar por: Última modificación</option>
+                    </select>
+
+                    <select id="filterStatus" class="filter-select">
+                        <option value="all">Todos los cursos</option>
+                        <option value="approved">Aprobados</option>
+                        <option value="pending">Pendientes</option>
+                    </select>
+
+                    <select id="filterSemester" class="filter-select">
+                        <option value="all">Todos los Semestres</option>
+                        <option value="asdasd">(Cargarlos por el JSON)</option>
+                    </select>
+                </div>
+
+                <button id="btnCreateCourse" class="btn-primary">
+                    <span>+</span> Crear Curso
+                </button>
             </div>
 
+            <!--Courses grid-->
+            <div id="coursesContainer" class="courses-grid">
+                <!--It's loaded with js-->
+            </div>
 
-
+            <div class="courses-counter" id="coursesCounter">
+                Mostrando 0 de 0 Cursos
+            </div>
         </section>
-
     </main>
+
+    <div></div>
+
     <footer id="contact">
         <h2>Contacto</h2>
         <address>
