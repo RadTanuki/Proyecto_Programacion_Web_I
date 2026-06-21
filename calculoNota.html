@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="[Tittle of the webpage] is a webpage dedicated to
+    help students manage their university assignments and projects">
+    <meta name="keywords" content="College, Study, Knowledge, Management,
+        Students, Time management, Programming, Artificial Inteligence">
+    <link rel="stylesheet" href="CSS/styleCalculoNota.css">
+    <link rel="stylesheet" href="CSS/style.css">
+
+    <title>Grade Manager | Cálculo de nota </title>
+</head>
+
+<body>
+
+    <header class="site-header" id="header">
+        <p class="logo"><strong><a href="index.html">Grade Manager</a></strong></p>
+
+        <input type="checkbox" id="menu-toggle">
+
+        <label for="menu-toggle" class="hamburguesa">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
+        <div class="menu-nav">
+            <nav>
+                <select class="header-interactables" id="sections">
+                    <option value="">Secciones</option>
+                    <option value="#hero">Inicio</option>
+                    <option value="#about">Acerca de</option>
+                    <option value="#funcionamiento">Tutorial</option>
+                    <option value="#contact">Contacto</option>
+                </select>
+                <select class="header-interactables" id="solutions">
+                    <option>Soluciones</option>
+                    <option>Asignaciones</option>
+                    <option>Calcular notas</option>
+                </select>
+            </nav>
+            <nav>
+                <button class="header-interactables" data-href="login.html">Acceder</button>
+                <button class="header-interactables" data-href="login.html">Registrarse</button>
+            </nav>
+        </div>
+
+    </header>
+
+    <main>
+
+        <form class="container-calculo">
+
+            <h1>Cálculo de nota</h1>
+
+            <div class="rubros-container">
+                
+                <div class="rubro-card">
+
+                    <label>Rubro #1</label> 
+                    <input type="number" class="input-nota" placeholder="Nota" min="0" max="100">
+                    <input type="number" class="input-porcentaje" placeholder="%" min="0" max="100">
+
+                </div>
+
+                <div class="rubro-card">
+
+                    <label>Rubro #2</label>
+                    <input class="btn-eliminar" type="button" value="❌">
+                    <input type="number" class="input-nota" placeholder="Nota" min="0" max="100">
+                    <input type="number" class="input-porcentaje" placeholder="%" min="0" max="100">
+
+                </div>
+
+                <div class="acciones">
+                    <button class="btn-primary-calculo" id="agregarRubro">+ Agregar rubro</button>
+                    <button class="btn-primary-calculo" id="limpiar">Limpiar</button>
+                    <button class="btn-primary-calculo" id="calcularNota">Calcular nota</button>
+                </div>
+
+
+            </div>
+
+
+            
+            <div id="result">
+                <h3>Aquí se mostrará un detalle de la nota</h3>
+            </div>
+
+
+
+        </form>
+
+
+
+
+
+        </div>
+
+
+
+    </main>
+
+    <footer id="contact">
+        <h2>Contacto</h2>
+        <address>
+            Grade Manager<br>
+            Correo: gaariaspa@est.utn.ac.cr | romoraca@est.utn.ac.cr
+            <ul>
+                <li>
+                    <a class="active-link" href="https://www.instagram.com/" target="_blank">
+                        <img src="assets/images/instagram.png">
+                    </a>
+                </li>
+                <li><a class="active-link" href="https://www.facebook.com/?locale=es_LA" target="_blank">
+                        <img src="assets/images/facebook.png">
+                    </a>
+                </li>
+                <li><a class="active-link" href="https://x.com/?lang=es" target="_blank">
+                        <img src="assets/images/x.png">
+                    </a>
+                </li>
+            </ul>
+            Alajuela, Costa Rica
+        </address>
+
+        <p>
+            <small>&copy; 2026 Grade Manager. Todos los derechos reservados.</small>
+        </p>
+
+        <h5>Enlaces rápidos</h5>
+        <ul>
+            <li><a href="index.html">Inicio</a></li>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="login.html">Asignaciones</a></li>
+            <!--Habría que poner un if sesión iniciada mandar a esa 
+            ventana, sino, a login-->
+        </ul>
+    </footer>
+
+    <script src="js/grade.js"></script>
+
+</body>
+
+</html>
