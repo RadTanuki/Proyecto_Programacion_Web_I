@@ -57,6 +57,7 @@ Header
     background-color: #34393f;
     position: sticky;
     top: 0;
+    z-index: 1000;
 }
 
 .logo{

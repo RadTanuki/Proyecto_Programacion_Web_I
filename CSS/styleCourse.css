@@ -3,7 +3,7 @@ Courses Page
 ============================*/
 
 .courses-container{
-    max-width: 1200px;
+    max-width: 100%;
     margin: 0;
     padding: 30px 20px;
 }
@@ -32,6 +32,7 @@ Search Bar
     flex: 1;
     min-width: 200px;
     position: relative;
+    z-index: 1;
 }
 
 .search-container input {
