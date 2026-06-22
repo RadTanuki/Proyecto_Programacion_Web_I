@@ -51,6 +51,72 @@
   text-align: center;
 }
 
+.notaMinima-card {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: aqua;
+  padding: 20px;
+  border-radius: 100px;
+  gap: 10px;
+  font-family: "Fuente";
+  background-color: white;
+  color: black;
+  font-weight: bold;
+}
+
+.notaMinima-card label {
+  margin-right: auto;
+}
+
+.notaMinima-card input {
+  width: 90px;
+  padding: 7px;
+  border-radius: 100px;
+  border-width: 3px;
+  text-align: center;
+}
+
+.aprobado {
+  align-self: center;
+  background-color: #7ef067;
+  width: 100px;
+  border-radius: 100px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.reprobado {
+  align-self: center;
+  background-color: #f06767;
+  width: 100px;
+  border-radius: 100px;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.input-error {
+  border-color: #dc2626 !important;
+  background-color: #fef2f2 !important;
+}
+
+.input-success {
+  border-color: #16a34a !important;
+  background-color: #f0fdf4 !important;
+}
+
+.warning {
+  font-family: "Fuente", sans-serif;
+  color: black;
+
+  align-self: center;
+  background-color: #f2f57a;
+
+  border-radius: 100px;
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
 .acciones {
   display: flex;
 }
@@ -89,7 +155,7 @@
   justify-content: center;
   text-align: center;
 
-  width: 60%;
+  width: 62%;
   height: 350px;
   flex-shrink: 0;
 
@@ -101,7 +167,7 @@
 }
 
 #result h2 {
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   margin-top: 25px;
 }
 
