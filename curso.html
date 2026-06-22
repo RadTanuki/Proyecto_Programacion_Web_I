@@ -89,6 +89,56 @@
                 Mostrando 0 de 0 Cursos
             </div>
         </section>
+
+        <!--Floating window to create courses-->
+        <div id="windowOverlay" class="window-overlay hidden">
+            <div class="window-box">
+                <div class="window-header">
+                    <h2>Crear curso</h2>
+                    <button id="btnCloseWindow" class="window-close" type="button">
+                        X
+                    </button>
+                </div>
+
+                <!--Form to create the courses-->
+                <form id="formCreateCourse" class="window-form">
+                    <div class="form-group">
+                        <label for="inputCourseName">Nombre del curso</label>
+                        <input type="text" id="inputCourseName" required>
+                        <span class="error-message" id="errorName"></span>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputCourseDescription">Descripción</label>
+                        <textarea id="inputCourseDescription" rows="3"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="CourseCategory">Categoría</label>
+                        <select id="CourseCategory">
+                            <option value="it">Tecnología</option>
+                            <option value="math">Matemáticas</option>
+                            <option value="science">Ciencias</option>
+                            <option value="languages">Idiomas</option>
+                            <option value="socialSciences">Sociales</option>
+                            <option value="sports">Deportes</option>
+                            <option value="economics">Economía</option>
+                            <option value="others">Otros</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="inputCourseSemester">Semestre</label>
+                        <input type="text" id="inputCourseSemester" placeholder="I, II, III, IV...">
+                    </div>
+
+                    <div class="window-actions">
+                        <button type="button" id="btnCancelCreate" class="btn-secondary">Cancelar</button>
+                        <button id="btn" type="submit" class="btn-primary">Gurdar Curso</button>
+                    </div>
+                </form>
+            </div>
+        </div>
     </main>
 
     <div></div>
