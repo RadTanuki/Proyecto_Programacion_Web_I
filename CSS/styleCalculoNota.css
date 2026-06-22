@@ -1,8 +1,8 @@
 .container-calculo {
   display: flex;
   flex-wrap: wrap;
-  width: 60%;
-  margin: 123px auto;
+  width: 80%;
+  margin: 200px auto;
   background-color: #1f2937;
   padding: 40px;
   gap: 20px;
@@ -155,8 +155,8 @@
   justify-content: center;
   text-align: center;
 
-  width: 62%;
-  height: 350px;
+  width: 65%;
+  height: 370px;
   flex-shrink: 0;
 
   background-color: white;
