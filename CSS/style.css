@@ -307,6 +307,12 @@ About Section
     border: 1px solid #dbeafe;
     border-radius: 14px;
     padding: 20px;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.about-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 /*============================
