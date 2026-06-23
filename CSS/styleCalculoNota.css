@@ -186,3 +186,97 @@ td {
 .table-detalleNota th {
   background-color: antiquewhite;
 }
+
+@media (max-width: 768px) {
+
+  html,
+  body {
+  overflow-x: hidden;
+}
+
+
+  .hamburguesa {
+    display: block;
+    margin-right: 30px;
+  }
+
+  .menu-nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #34393f;
+    padding: 20px;
+    flex-direction: column;
+  }
+
+  .menu-nav nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .menu-nav select {
+    text-align: center;
+  }
+
+  .logo {
+    margin-left: 93px;
+  }
+
+  #menu-toggle:checked ~ .menu-nav {
+    display: flex;
+  }
+
+  .main-nav ul {
+    gap: 6px;
+  }
+
+  .main-nav a {
+    font-size: 0.9rem;
+    padding: 7px 8px;
+  }
+
+  .container-calculo {
+    margin-top: 35px;
+    margin-bottom: 35px;
+    width: 95%;
+    padding: 20px 5px;
+  }
+
+  .rubro-card {
+    padding: 20px;
+    margin-left: 5px;
+    width: 82%;
+  }
+
+  .rubro-card label {
+    text-align: center;
+  }
+
+  .notaMinima-card {
+    padding: 20px;
+    margin-left: 5px;
+    width: 82%;
+  }
+
+  .acciones {
+    width: 85%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .btn-primary-calculo {
+    width: 70%;
+    margin: 10px 0;
+  }
+
+  #result {
+    width: 94%;
+    margin-left: 10px;
+    margin-right: 10px;
+    height: 100%;
+  }
+}
