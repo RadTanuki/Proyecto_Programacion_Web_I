@@ -25,28 +25,26 @@
         <div class="menu-nav">
             <nav>
                 <select class="header-interactables" id="sections">
-                    <option value="">Secciones</option>
-                    <option value="#hero">Inicio</option>
-                    <option value="#about">Acerca de</option>
-                    <option value="#funcionamiento">Tutorial</option>
+                    <option>Secciones</option>
+                    <option value="#toolbar">Cursos</option>
+                    <option value="#rubros">Rubros</option>
                     <option value="#contact">Contacto</option>
                 </select>
                 <select class="header-interactables" id="solutions">
                     <option>Soluciones</option>
-                    <option>Asignaciones</option>
-                    <option>Calcular notas</option>
+                    <option value="#toolbar">Asignaciones</option>
+                    <option value="calculoNota.html">Calcular notas</option>
                 </select>
             </nav>
             <nav>
-                <button class="header-interactables">Acceder</button>
-                <button class="header-interactables">Registrarse</button>
+                <button class="header-interactables" data-href="index.html">Cerrar Sesión</button>
             </nav>
         </div>
 
     </header>
     <main>
 
-        <section class="courses-container">
+        <section id="toolbar" class="courses-container">
             <h1 class="page-title">Mis cursos</h1>
 
             <!--Toolbar-->
@@ -115,15 +113,15 @@
 
                     <div class="form-group">
                         <label for="CourseCategory">Categoría</label>
-                        <select id="CourseCategory">
-                            <option value="it">Tecnología</option>
-                            <option value="math">Matemáticas</option>
-                            <option value="science">Ciencias</option>
-                            <option value="languages">Idiomas</option>
-                            <option value="socialSciences">Sociales</option>
-                            <option value="sports">Deportes</option>
-                            <option value="economics">Economía</option>
-                            <option value="others">Otros</option>
+                        <select id="CourseCategory" class="window-select">
+                            <option value="it">Tecnología &#x1F4BB</option>
+                            <option value="math">Matemáticas &#x1F4D0</option>
+                            <option value="science">Ciencias &#x1F52C</option>
+                            <option value="languages">Idiomas &#x1F5E3</option>
+                            <option value="socialSciences">Sociales &#x1F30E</option>
+                            <option value="sports">Deportes &#x1F3C6</option>
+                            <option value="economics">Economía &#x1F4B5</option>
+                            <option value="others">Otros &#x1F5FF</option>
                         </select>
                     </div>
 
@@ -141,7 +139,9 @@
         </div>
     </main>
 
-    <div></div>
+    <section id="rubros">
+        Aquí van los rubros
+    </section>
 
     <footer id="contact">
         <h2>Contacto</h2>

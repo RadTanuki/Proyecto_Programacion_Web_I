@@ -189,7 +189,7 @@ function renderCourses(list) {
     if (list.length === 0) {
         coursesContainer.innerHTML = `
             <div class="empty-state">
-                <span class="empty-icon">Cursos</span>
+                <span class="empty-icon">&#x1F4DA</span>
                 <p>Aquí aparecerán los cursos creados</p>
             </div>
         `;
