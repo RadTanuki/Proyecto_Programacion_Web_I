@@ -2,197 +2,200 @@
 Main CSS
 ============================*/
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 @font-face {
-    font-family: 'Fuente';
-    src: url('../assets/font/Merriweather/Merriweather.ttf') format("truetype");
-    font-style: normal;
+  font-family: "Fuente";
+  src: url("../assets/font/Merriweather/Merriweather.ttf") format("truetype");
+  font-style: normal;
 }
 
-h1,h2,h3,h4,h5,h6 {
-    font-family: 'Fuente', sans-serif;
-    color: black;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Fuente", sans-serif;
+  color: black;
 }
 
-html{
-    font-size: 16px;
-    scroll-behavior: smooth;
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
 }
 
-body{
-    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-    background-color: antiquewhite;
-    color: #1f2937;
-    line-height: 1.6;
+body {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: antiquewhite;
+  color: #1f2937;
+  line-height: 1.6;
 }
 
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
 
 hr {
-    height: 4px;
-    background-color: #34393f;
+  height: 4px;
+  background-color: #34393f;
 }
 
-.container{
-    width: 90%;
-    margin: 0 auto;
-    display: block;
+.container {
+  width: 90%;
+  margin: 0 auto;
+  display: block;
 }
 
 /*============================
 Header
 ============================*/
-.site-header{
-    padding: 18px 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background-color: #34393f;
-    position: sticky;
-    top: 0;
-    z-index: 1000;
+.site-header {
+  padding: 18px 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #34393f;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.logo{
-    font-size: 1.4rem;
-    margin-bottom: 0;
-    margin-left: 10px;
-    float: left;
-    color: seashell;
+.logo {
+  font-size: 1.4rem;
+  margin-bottom: 0;
+  margin-left: 10px;
+  float: left;
+  color: seashell;
 }
 
-.logo a{
-    color: seashell;
+.logo a {
+  color: seashell;
 }
 
 .logo a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
-.header-interactables{
-    font-size: 1rem;
-    margin-bottom: 0;
-    margin-right: 10px;
-    background-color: #1f2937;
-    color: seashell;
-    border-radius: 30px;
-    padding: 8px;
-    align-items: center;
+.header-interactables {
+  font-size: 1rem;
+  margin-bottom: 0;
+  margin-right: 10px;
+  background-color: #1f2937;
+  color: seashell;
+  border-radius: 30px;
+  padding: 8px;
+  align-items: center;
 }
 
-.header-interactables:hover{
-    background-color: seashell;
-    color: #1f2937;
-    transition: background-color 0.3s;
+.header-interactables:hover {
+  background-color: seashell;
+  color: #1f2937;
+  transition: background-color 0.3s;
 }
 
-#menu-toggle{
-    display:none;
+#menu-toggle {
+  display: none;
 }
 
-.hamburguesa{
-    display:none;
-    cursor:pointer;
+.hamburguesa {
+  display: none;
+  cursor: pointer;
 }
 
-.hamburguesa span{
-    display:block;
-    width:30px;
-    height:4px;
-    background-color:white;
-    margin:5px 0;
-    border-radius:2px;
+.hamburguesa span {
+  display: block;
+  width: 30px;
+  height: 4px;
+  background-color: white;
+  margin: 5px 0;
+  border-radius: 2px;
 }
 
-.menu-nav{
-    display:flex;
-    gap:10px;
+.menu-nav {
+  display: flex;
+  gap: 10px;
 }
-
 
 /* --------------------------
 Hero Section
 --------------------------- */
 
 .hero {
-    background-image: url(../assets/images/wallpaper.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    padding: 20px;
+  background-image: url(../assets/images/wallpaper.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 20px;
 }
 
 .hero-content {
-    display: flex;
-    align-items: center;
-    gap: 50px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
 }
 
 .hero-text {
-    flex: 1;
-    text-align: center;
-    background-color: rgba(250, 235, 215, 0.548);;
-    padding-top: 25px;
-    padding-bottom: 25px;
-    border-radius: 125px;
+  flex: 1;
+  text-align: center;
+  background-color: rgba(250, 235, 215, 0.548);
+  padding-top: 25px;
+  padding-bottom: 25px;
+  border-radius: 125px;
 }
 
 .hero-text h1 {
-    font-size: clamp(2rem, 5vw, 2.8rem);
-    color: black;
-    margin-bottom: 2px;
-    padding: 15px;
-    line-height: 1.2;
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  color: black;
+  margin-bottom: 2px;
+  padding: 15px;
+  line-height: 1.2;
 }
 
 .hero-text p {
-    font-size: 1.1rem;
-    color: black;
-    margin-bottom: 2px;
-    padding: 15px;
-    line-height: 1.7;
+  font-size: 1.1rem;
+  color: black;
+  margin-bottom: 2px;
+  padding: 15px;
+  line-height: 1.7;
 }
 
 .hero-text span {
-    display: inline-block; 
-    background-color: #34393f;
-    color: white;
-    font-weight: 500;
-    font-size: 14px;
-    padding: 5px 16px;
-    border-radius: 20px; 
-    font-family: 'Fuente', serif;
-    
+  display: inline-block;
+  background-color: #34393f;
+  color: white;
+  font-weight: 500;
+  font-size: 14px;
+  padding: 5px 16px;
+  border-radius: 20px;
+  font-family: "Fuente", serif;
 }
 
-.hero-text ul{
-    padding: 15px;
-    line-height: 1.9;
-    margin-bottom: 2px;
+.hero-text ul {
+  padding: 15px;
+  line-height: 1.9;
+  margin-bottom: 2px;
 }
 
-.hero-text li{
-    list-style-type: none;
+.hero-text li {
+  list-style-type: none;
 }
 
 .hero-image {
-    flex: 1;
-    background-color: #1f2937;
-    padding: 10px;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+  flex: 1;
+  background-color: #1f2937;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
 }
 
 .hero-image img {
-    width: 100%;
-    border-radius: 12px;
+  width: 100%;
+  border-radius: 12px;
 }
 
 /* -------------------------
@@ -200,37 +203,37 @@ Buttons
 ---------------------------- */
 
 .btn-primary {
-    display: inline-block;
-    background-color: #34393f;
-    color: white;
-    border-radius: 25px;
-    font-weight: bold;
-    margin: 15px 15px 9px 15px;
-    padding: 15px 18px 15px 18px;
-    font-size: 15px;
+  display: inline-block;
+  background-color: #34393f;
+  color: white;
+  border-radius: 25px;
+  font-weight: bold;
+  margin: 15px 15px 9px 15px;
+  padding: 15px 18px 15px 18px;
+  font-size: 15px;
 }
 
 .btn-primary:hover {
-    background-color: white;
-    color: black;
-    transition: background-color 0.3s;
+  background-color: white;
+  color: black;
+  transition: background-color 0.3s;
 }
 
 .btn-secondary {
-    display: inline-block;
-    background-color: #e5e7eb;
-    color: #374151;
-    border-radius: 25px;
-    font-weight: bold;
-    margin: 15px 15px 9px 15px;
-    padding: 15px 18px 15px 18px;
-    font-size: 15px;
+  display: inline-block;
+  background-color: #e5e7eb;
+  color: #374151;
+  border-radius: 25px;
+  font-weight: bold;
+  margin: 15px 15px 9px 15px;
+  padding: 15px 18px 15px 18px;
+  font-size: 15px;
 }
 
 .btn-secondary:hover {
-    background-color: #374151;
-    color: #e5e7eb;
-    transition: backgroud-color 0.3s;
+  background-color: #374151;
+  color: #e5e7eb;
+  transition: backgroud-color 0.3s;
 }
 
 /*============================
@@ -238,81 +241,83 @@ About Section
 ============================*/
 
 .about {
-    background-color: antiquewhite;
-    padding: 70px;
+  background-color: antiquewhite;
+  padding: 70px;
 }
 
 .about-content {
-    display: flex;
-    align-items: center;
-    gap: 50px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
 }
 
 .about-text {
-    flex: 1;
-    text-align: justify;
-    border-radius: 200px;
-    font-size: 1.3rem;
+  flex: 1;
+  text-align: justify;
+  border-radius: 200px;
+  font-size: 1.3rem;
 }
 
-.about-title{
-    flex: 1;
-    text-align: center;
-    padding-top: 10px;
-    border-radius: 200px;
+.about-title {
+  flex: 1;
+  text-align: center;
+  padding-top: 10px;
+  border-radius: 200px;
 }
 
 .about-text p {
-    max-width: 700px;
-    margin: 0 auto;
-    text-align: center;
-    font-size: 1.1rem;
-    color: black;
-    margin-bottom: 2px;
-    padding: 15px;
-    line-height: 1.7;
-    text-indent: 30px;
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 1.1rem;
+  color: black;
+  margin-bottom: 2px;
+  padding: 15px;
+  line-height: 1.7;
+  text-indent: 30px;
 }
 
-.about-image{
-    flex:1;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    background-color:antiquewhite;
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: antiquewhite;
 }
 
 .about-image img {
-    width: 200px;
+  width: 200px;
 }
 
 .about-info {
-    margin-top: 25px;
-    padding: 28px 18px 18px 18px;
-    background-color: rgba(255, 255, 255, 0.7);
-    border-left: 5px solid #00b4d8;
-    border-radius: 10px;
-    position: relative;
+  margin-top: 25px;
+  padding: 28px 18px 18px 18px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-left: 5px solid #00b4d8;
+  border-radius: 10px;
+  position: relative;
 }
 
 .about-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 18px;
-    margin-top: 24px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 24px;
 }
 
 .about-card {
-    background-color: #f8fafc;
-    border: 1px solid #dbeafe;
-    border-radius: 14px;
-    padding: 20px;
-    transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #f8fafc;
+  border: 1px solid #dbeafe;
+  border-radius: 14px;
+  padding: 20px;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 
 .about-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 /*============================
@@ -320,184 +325,245 @@ Funcionamiento
 ============================*/
 
 .funcionamiento {
-    background-image: url(../assets/images/fondo-funcionamiento.jpg);
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover;
-    padding: 50px;
+  background-image: url(../assets/images/fondo-funcionamiento.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  padding: 50px;
 }
 
 .funcionamiento-content {
-    display: flex;
-    align-items: center;
-    gap: 50px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
 }
 
 .funcionamiento-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 18px;
-    margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 18px;
+  margin-top: 20px;
 }
 
 .funcionamiento-card {
-    background-color: antiquewhite;
-    border: 1px solid #dbeafe;
-    border-radius: 14px;
-    padding: 20px;
+  background-color: antiquewhite;
+  border: 1px solid #dbeafe;
+  border-radius: 14px;
+  padding: 20px;
 }
 
-.funcionamiento-image{
-    flex: 1;
-    background-color: #1f2937;
-    padding: 10px;
-    border-radius: 20px;
-    box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+.funcionamiento-image {
+  flex: 1;
+  background-color: #1f2937;
+  padding: 10px;
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
 }
 
-.funcionamiento-image img{
-    width: 100%;
-    border-radius: 12px;
+.funcionamiento-image img {
+  width: 100%;
+  border-radius: 12px;
 }
 
-.funcionamiento-h2{
-    text-align: center;
-    margin-bottom: 30px;
+.funcionamiento-h2 {
+  text-align: center;
+  margin-bottom: 30px;
 }
 
 .funcionamiento-h4 {
-    font-size: larger;
-    text-align: center;
+  font-size: larger;
+  text-align: center;
 }
 
 .funcionamiento-ul {
-    margin: 15px 15px 15px 15px;
-    list-style: square;
-    line-height: 2;
+  margin: 15px 15px 15px 15px;
+  list-style: square;
+  line-height: 2;
 }
 
 /*============================
 Utilities
 ============================*/
-p{
-    margin-bottom: 16px;
+p {
+  margin-bottom: 16px;
 }
 
 /*============================
 Footer
 ============================*/
 
-footer{
-    background-color: #34393f;
-    color: azure;
-    font-size: 1rem;
-    text-align: center;
-    padding-bottom: 10px;
+footer {
+  background-color: #34393f;
+  color: azure;
+  font-size: 1rem;
+  text-align: center;
+  padding-bottom: 10px;
 }
 
-footer a{
-    color: azure;
+footer a {
+  color: azure;
 }
 
 footer h2 {
-    padding: 8px;
+  padding: 8px;
 }
 
-footer a:hover{
-    text-decoration: underline;
+footer a:hover {
+  text-decoration: underline;
 }
 
 footer ul {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 10px;
-    list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  list-style: none;
 }
 
 footer li img {
-    width: 80%;
-    padding: 20px ;
-    
+  width: 80%;
+  padding: 20px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
+  .hamburguesa {
+    display: block;
+    margin-right: 30px;
+  }
 
-    .hamburguesa{
-        display:block;
-        margin-right:15px;
-    }
+  .menu-nav {
+    display: none;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #34393f;
+    padding: 20px;
+    flex-direction: column;
+  }
 
-    .menu-nav{
-        display: none;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background-color: #34393f;
-        padding: 20px;
-        flex-direction: column;
-    }
+  .menu-nav nav {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 
-    .menu-nav nav{
-        display: flex;
-        flex-direction: column;
-        gap: 10px;
-    }
+  .menu-nav select {
+    text-align: center;
+  }
 
-    .menu-nav select {
-        text-align: center;
-    }
+  .logo {
+    margin-left: 93px;
+  }
 
-    .logo {
+  #menu-toggle:checked ~ .menu-nav {
+    display: flex;
+  } 
+  
+  .hero {
 
-        margin: 0 auto;
-    }
+    padding: 30px 5px;
 
-    #menu-toggle:checked ~ .menu-nav{
-        display:flex;
-    }
+  }
 
-    .hero-content {
-        flex-direction: column;
-        align-items: center;
-        width: 70%;
-    }
+  .hero-content {
+    flex-direction: column;
+    align-items: center;
+    /*width: 77%;*/
+  }
 
-    .hero-text, .hero-image {
-        width: 140%;
-    }
-
-    .hero-text {
-        padding-top: 15px;
-        padding-bottom: 15px;
-    }
-
-    .hero-image {
-        max-width: 450px;
-    }
-
-    .main-nav ul {
-        gap: 6px;
-    }
-
-    .main-nav a {
-        font-size: 0.9rem;
-        padding: 7px 8px;
-    }
-
-    .about-content {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-    }
-
-    .about-text {
-        text-align: center;
-    }
+  .hero-text,
+  .hero-image {
+    /*width: 150%;*/
     
-    .about-image img {
-        width: 110px;
-    }
+  }
+
+  .hero-text {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
+  
+  .hero-text h1 {
+
+    font-size: 35px;
+    
+
+  }
+
+  .hero-text p {
+
+    font-size: 16px;
+    
+
+  }
+
+  .hero-image {
+    max-width: 450px;
+  }
+
+  .main-nav ul {
+    gap: 6px;
+  }
+
+  .main-nav a {
+    font-size: 0.9rem;
+    padding: 7px 8px;
+  }
+
+  .about {
+    padding: 30px 10px;
+  }
+
+  .about-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-text {
+    text-align: center;
+    font-size: 20px;
+    margin-bottom: 40px;
+  }
+
+  .about-image img {
+    width: 150px;
+  }
+
+  .about-title {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+
+  .about-card {
+    margin-bottom: 15px;
+  }
+
+  .about-card p {
+    font-size: 20px;
+  }
+
+  .about-card h3 {
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+
+  .funcionamiento {
+    padding: 30px 15px;
+  }
+
+  .funcionamiento-h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+  }
+
+  .funcionamiento-h4 {
+    font-size: 25px;
+    margin-bottom: 10px;
+  }
+
+  .funcionamiento-ul {
+    font-size: 20px;
+  }
 
 }
