@@ -16,7 +16,10 @@
 
 <body>
     <header class="site-header" id="header">
-        <p class="logo"><strong><a href="index.html">Grade Manager</a></strong></p>
+        
+        <a href="index.html">
+            <img src="assets/images/logoHeader.png" class="logo" alt="Logo de Grade Manager">
+        </a>
 
         <input type="checkbox" id="menu-toggle">
 
@@ -54,10 +57,11 @@
                 <div class="hero-text">
                     <span class="hero-badge">Plataforma académica</span>
                     <h1> Grade Manager </h1>
-                    <p> <strong>Calcula tus notas en segundos</strong>
-                        <br>Organiza cursos y porcentajes para
-                        conocer <br>tu promedio y dar seguimiento
-                        a tu progreso académico.
+                    <p> <strong>Calcula tus notas y organiza tus
+                        tareas en segundos</strong>
+                        <br>Herramienta diseñada para ayudarte a 
+                        administrar <br>tu progreso y mejorar tu rendimiento
+                        académico. 
                     </p>
                     <ul>
                         <li><strong>✓ Cálculo automático</strong></li>
@@ -68,7 +72,7 @@
                     <button class="btn-primary" data-href="curso.html">Ir a Asignaciones</button>
                 </div>
                 <figure class="hero-image">
-                    <img src="assets/images/notas.jpg" alt="Notas de estudiante">
+                    <img src="assets/images/logo.png" alt="Notas de estudiante">
                 </figure>
             </div>
         </section>
@@ -81,37 +85,14 @@
                     <img src="assets/images/informacion.png" alt="Información">
                 </figure>
                 <div>
-                    <h1 class="about-title"> Acerca de Grade Manager </h1>
+                    <h1 class="about-title">Acerca de Grade Manager</h1>
                     <p class="about-text">
-                        Grade Manager le permite llevar un mejor control sobre sus asignaciones,
-                        cálculo de sus notas y manejo sus horarios
+                        Somos una aplicación web enfocada en ayudar a los estudiantes a administrar mejor sus 
+                        responsabilidades <br> académicas, permitiendo organizar cursos, llevar un control de sus asignaciones y calcular promedios.
                     </p>
 
-                    <div class="about-grid">
-                        <article class="about-card">
-                            <h3>Asignaciones</h3>
-                            <p>
-                                Permite dividir cursos y sus asignaciones
-                                con fechas límite y puntajes obtenidos con cálculo
-                                de porcentajes.
-
-                            </p>
-                        </article>
-                        <article class="about-card">
-                            <h3>Cálculo de Notas</h3>
-                            <p>
-                                Calcula el porcentaje obtenido de las asignaciones
-                                además de hacer suma de porcentajes
-                                parar comprobar promedio de los cursos.
-                            </p>
-                        </article>
-                        <article class="about-card">
-                            <h3>Horarios</h3>
-                            <p>
-                                Agregación de horarios o actividades cada semana
-                                para mejor control del tiempo.
-                            </p>
-                        </article>
+                    <div id="about-grid">
+                        
                     </div>
                 </div>
             </div>
@@ -121,20 +102,21 @@
         <hr>
 
         <section id="funcionamiento" class="funcionamiento">
-            <h2 class="funcionamiento-h2">¿Cómo funciona?</h2>
+
+            <h1 class="funcionamiento-h2">¿Cómo funciona?</h1>
 
             <div class="funcionamiento-grid">
 
                 <article class="funcionamiento-card">
-                    <h4 class="funcionamiento-h4">Paso 1</h4>
-                    <ul class="funcionamiento-ul">
-                        <li class="funcionamiento-li">Intruccion 1</li>
-                        <li>Intruccion 2</li>
-                        <li>Intruccion 3</li>
-                        <li>Intruccion 4</li>
-                    </ul>
+                    <h4 class="funcionamiento-h4">Cálculo de nota manual</h4>
+                    <ol class="funcionamiento-ol">
+                        <li>Agrega los rubros que desees.</li>
+                        <li>Ingresa la nota que obtuviste y el valor porcentual de cada uno.</li>
+                        <li>Opcionalmente, ingresa la nota mínima para aprobar y conocer tu condición.</li>
+                        <li>Haz clic en el botón de "Calcular nota".</li>
+                    </ol>
                     <figure class="funcionamiento-image">
-                        <img src="assets/images/notas.jpg" alt="">
+                        <img src="assets/images/despicable-me-minion.gif" alt="">
                     </figure>
                 </article>
 
@@ -218,6 +200,6 @@
         </ul>
     </footer>
     <script src="js/buttons.js"></script>
+    <script src="js/index.js"></script>
 </body>
-
 </html>

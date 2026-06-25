@@ -1,0 +1,26 @@
+[
+    {
+        "id": 1,
+        "titulo": "Administración de cursos",
+        "descripcion": "Organiza tus cursos y encuéntralos fácilmente gracias a los filtros de búsqueda.",
+        "imagen": "assets/images/adminCursos.png"
+    },
+    {
+        "id": 2,
+        "titulo": "Control de asignaciones",
+        "descripcion": "Registra tus asignaciones con fechas límite, descripciones y lleva el control de tus notas obtenidas.",
+        "imagen": "assets/images/asignaciones.png"
+    },
+    {
+        "id": 3,
+        "titulo": "Calculadora independiente",
+        "descripcion": "Calcula tus promedios de forma rápida ingresando rubros y porcentajes sin necesidad de iniciar sesión.",
+        "imagen": "assets/images/calculadoraInde.png"
+    },
+    {
+        "id": 4,
+        "titulo": "Calculadora automática",
+        "descripcion": "Calcula automáticamente la nota final de cada curso al ingresar tus asignaciones.",
+        "imagen": "assets/images/calculadora.png"
+    }
+]
