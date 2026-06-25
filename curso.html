@@ -43,7 +43,6 @@
 
     </header>
     <main>
-
         <section id="toolbar" class="courses-container">
             <h1 class="page-title">Mis cursos</h1>
 
@@ -87,6 +86,35 @@
                 Mostrando 0 de 0 Cursos
             </div>
         </section>
+
+        <section id="courseDetail" class="course-detail hidden">
+            <div class="detail-header">
+                <h2 id="detailCourseName">Nombre del curso</h2>
+                <p id="detailCourseDescription">Descripción del curso</p>
+
+                <div class="detail-progress">
+                    <span id="detailPercentageUsed">0%</span> de rubros asignados (máximo 100%)
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill" id="progressBarFill"></div>
+                    </div>
+                </div>
+
+                <button id="btnCloseDetail" class="btn-secondary">Cerrar detalle</button>
+            </div>
+
+            <div class="rubros-section">
+                <div class="rubros-header">
+                    <h3>Rubros</h3>
+                    <button id="btnAddRubro" class="btn-primary">+ Agregar Rubro</button>
+                </div>
+
+                <div id="rubrosList" class="rubros-list">
+                    <!-- Se carga con JS -->
+                </div>
+            </div>
+        </section>
+
+
 
         <!--Floating window to create courses-->
         <div id="windowOverlay" class="window-overlay hidden">
@@ -139,9 +167,81 @@
         </div>
     </main>
 
-    <section id="rubros">
-        Aquí van los rubros
-    </section>
+    <div id="rubroWindowOverlay" class="window-overlay hidden">
+        <div class="window-box">
+            <div class="window-header">
+                <h2>Agregar Rubro</h2>
+                <button id="btnCloseRubroWindow" class="window-close" type="button">&times;</button>
+            </div>
+
+            <form id="formCreateRubro" class="window-form">
+                <div class="form-group">
+                    <label for="inputRubroName">Nombre del rubro</label>
+                    <input type="text" id="inputRubroName" required>
+                    <span class="error-message" id="errorRubroName"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputRubroDescription">Descripción</label>
+                    <textarea id="inputRubroDescription" rows="2"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputRubroPercentage">Porcentaje del curso (%)</label>
+                    <input type="number" id="inputRubroPercentage" min="1" max="100" required>
+                    <span class="error-message" id="errorRubroPercentage"></span>
+                </div>
+
+                <div class="window-actions">
+                    <button type="button" id="btnCancelRubro" class="btn-secondary">Cancelar</button>
+                    <button type="submit" class="btn-primary">Guardar Rubro</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="assignmentWindowOverlay" class="window-overlay hidden">
+        <div class="window-box">
+            <div class="window-header">
+                <h2>Agregar Asignación</h2>
+                <button id="btnCloseAssignmentWindow" class="window-close" type="button">X</button>
+            </div>
+
+            <form id="formCreateAssignment" class="window-form">
+                <div class="form-group">
+                    <label for="inputAssignmentName">Nombre de la asignación</label>
+                    <input type="text" id="inputAssignmentName" required>
+                    <span class="error-message" id="errorAssignmentName"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputAssignmentDescription">Descripción</label>
+                    <textarea id="inputAssignmentDescription" rows="2"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputAssignmentStartDate">Fecha de inicio</label>
+                    <input type="date" id="inputAssignmentStartDate">
+                </div>
+
+                <div class="form-group">
+                    <label for="inputAssignmentDueDate">Fecha de entrega</label>
+                    <input type="date" id="inputAssignmentDueDate">
+                </div>
+
+                <div class="form-group">
+                    <label for="inputAssignmentPercentage">Porcentaje del rubro (%)</label>
+                    <input type="number" id="inputAssignmentPercentage" min="1" max="100" required>
+                    <span class="error-message" id="errorAssignmentPercentage"></span>
+                </div>
+
+                <div class="window-actions">
+                    <button type="button" id="btnCancelAssignment" class="btn-secondary">Cancelar</button>
+                    <button type="submit" class="btn-primary">Guardar Asignación</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <footer id="contact">
         <h2>Contacto</h2>
