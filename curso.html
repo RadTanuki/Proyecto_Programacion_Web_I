@@ -28,28 +28,25 @@
         <div class="menu-nav">
             <nav>
                 <select class="header-interactables" id="sections">
-                    <option value="">Secciones</option>
-                    <option value="#hero">Inicio</option>
-                    <option value="#about">Acerca de</option>
-                    <option value="#funcionamiento">Tutorial</option>
+                    <option>Secciones</option>
+                    <option value="#toolbar">Cursos</option>
+                    <option value="#rubros">Rubros</option>
                     <option value="#contact">Contacto</option>
                 </select>
                 <select class="header-interactables" id="solutions">
                     <option>Soluciones</option>
-                    <option>Asignaciones</option>
-                    <option>Calcular notas</option>
+                    <option value="#toolbar">Asignaciones</option>
+                    <option value="calculoNota.html">Calcular notas</option>
                 </select>
             </nav>
             <nav>
-                <button class="header-interactables">Acceder</button>
-                <button class="header-interactables">Registrarse</button>
+                <button class="header-interactables" data-href="index.html">Cerrar Sesión</button>
             </nav>
         </div>
 
     </header>
     <main>
-
-        <section class="courses-container">
+        <section id="toolbar" class="courses-container">
             <h1 class="page-title">Mis cursos</h1>
 
             <!--Toolbar-->
@@ -93,6 +90,35 @@
             </div>
         </section>
 
+        <section id="courseDetail" class="course-detail hidden">
+            <div class="detail-header">
+                <h2 id="detailCourseName">Nombre del curso</h2>
+                <p id="detailCourseDescription">Descripción del curso</p>
+
+                <div class="detail-progress">
+                    <span id="detailPercentageUsed">0%</span> de rubros asignados (máximo 100%)
+                    <div class="progress-bar">
+                        <div class="progress-bar-fill" id="progressBarFill"></div>
+                    </div>
+                </div>
+
+                <button id="btnCloseDetail" class="btn-secondary">Cerrar detalle</button>
+            </div>
+
+            <div class="rubros-section">
+                <div class="rubros-header">
+                    <h3>Rubros</h3>
+                    <button id="btnAddRubro" class="btn-primary">+ Agregar Rubro</button>
+                </div>
+
+                <div id="rubrosList" class="rubros-list">
+                    <!-- Se carga con JS -->
+                </div>
+            </div>
+        </section>
+
+
+
         <!--Floating window to create courses-->
         <div id="windowOverlay" class="window-overlay hidden">
             <div class="window-box">
@@ -118,15 +144,15 @@
 
                     <div class="form-group">
                         <label for="CourseCategory">Categoría</label>
-                        <select id="CourseCategory">
-                            <option value="it">Tecnología</option>
-                            <option value="math">Matemáticas</option>
-                            <option value="science">Ciencias</option>
-                            <option value="languages">Idiomas</option>
-                            <option value="socialSciences">Sociales</option>
-                            <option value="sports">Deportes</option>
-                            <option value="economics">Economía</option>
-                            <option value="others">Otros</option>
+                        <select id="CourseCategory" class="window-select">
+                            <option value="it">Tecnología &#x1F4BB</option>
+                            <option value="math">Matemáticas &#x1F4D0</option>
+                            <option value="science">Ciencias &#x1F52C</option>
+                            <option value="languages">Idiomas &#x1F5E3</option>
+                            <option value="socialSciences">Sociales &#x1F30E</option>
+                            <option value="sports">Deportes &#x1F3C6</option>
+                            <option value="economics">Economía &#x1F4B5</option>
+                            <option value="others">Otros &#x1F5FF</option>
                         </select>
                     </div>
 
@@ -144,7 +170,81 @@
         </div>
     </main>
 
-    <div></div>
+    <div id="rubroWindowOverlay" class="window-overlay hidden">
+        <div class="window-box">
+            <div class="window-header">
+                <h2>Agregar Rubro</h2>
+                <button id="btnCloseRubroWindow" class="window-close" type="button">&times;</button>
+            </div>
+
+            <form id="formCreateRubro" class="window-form">
+                <div class="form-group">
+                    <label for="inputRubroName">Nombre del rubro</label>
+                    <input type="text" id="inputRubroName" required>
+                    <span class="error-message" id="errorRubroName"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputRubroDescription">Descripción</label>
+                    <textarea id="inputRubroDescription" rows="2"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputRubroPercentage">Porcentaje del curso (%)</label>
+                    <input type="number" id="inputRubroPercentage" min="1" max="100" required>
+                    <span class="error-message" id="errorRubroPercentage"></span>
+                </div>
+
+                <div class="window-actions">
+                    <button type="button" id="btnCancelRubro" class="btn-secondary">Cancelar</button>
+                    <button type="submit" class="btn-primary">Guardar Rubro</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div id="assignmentWindowOverlay" class="window-overlay hidden">
+        <div class="window-box">
+            <div class="window-header">
+                <h2>Agregar Asignación</h2>
+                <button id="btnCloseAssignmentWindow" class="window-close" type="button">X</button>
+            </div>
+
+            <form id="formCreateAssignment" class="window-form">
+                <div class="form-group">
+                    <label for="inputAssignmentName">Nombre de la asignación</label>
+                    <input type="text" id="inputAssignmentName" required>
+                    <span class="error-message" id="errorAssignmentName"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputAssignmentDescription">Descripción</label>
+                    <textarea id="inputAssignmentDescription" rows="2"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="inputAssignmentStartDate">Fecha de inicio</label>
+                    <input type="date" id="inputAssignmentStartDate">
+                </div>
+
+                <div class="form-group">
+                    <label for="inputAssignmentDueDate">Fecha de entrega</label>
+                    <input type="date" id="inputAssignmentDueDate">
+                </div>
+
+                <div class="form-group">
+                    <label for="inputAssignmentPercentage">Porcentaje del rubro (%)</label>
+                    <input type="number" id="inputAssignmentPercentage" min="1" max="100" required>
+                    <span class="error-message" id="errorAssignmentPercentage"></span>
+                </div>
+
+                <div class="window-actions">
+                    <button type="button" id="btnCancelAssignment" class="btn-secondary">Cancelar</button>
+                    <button type="submit" class="btn-primary">Guardar Asignación</button>
+                </div>
+            </form>
+        </div>
+    </div>
 
     <footer id="contact">
         <h2>Contacto</h2>

@@ -19,7 +19,25 @@ const coursesData = [
         status: "approved",
         creationDate: "2026-01-15",
         lastUpdate: "2026-02-10",
-        rubros: []
+        rubros: [
+            {
+            id: 1,
+            name: "Exámenes",
+            description: "Pruebas parciales del curso",
+            percentage: 40,
+            assignments: [
+                {
+                    id: 1,
+                    name: "Examen 1",
+                    description: "Primer parcial",
+                    startDate: "2026-03-01",
+                    dueDate: "2026-03-10",
+                    percentage: 20,
+                    obtainedScore: null
+                }
+            ]
+            }
+        ]
     },
     {
         id: 3,
@@ -30,86 +48,31 @@ const coursesData = [
         status: "approved",
         creationDate: "2026-01-15",
         lastUpdate: "2026-02-10",
-        rubros: []
-    },
-    {
-        id: 4,
-        name: "Programación en Ambiente Web I",
-        category: "it",
-        description: "Curso introductorio a HTML, CSS y JavaScript para construir sitios interactivos.",
-        semester: "II",
-        status: "approved",
-        creationDate: "2026-01-15",
-        lastUpdate: "2026-02-10",
-        rubros: []
-    },
-    {
-        id: 5,
-        name: "Programación en Ambiente Web I",
-        category: "it",
-        description: "Curso introductorio a HTML, CSS y JavaScript para construir sitios interactivos.",
-        semester: "II",
-        status: "approved",
-        creationDate: "2026-01-15",
-        lastUpdate: "2026-02-10",
-        rubros: []
-    },
-    {
-        id: 6,
-        name: "Programación en Ambiente Web I",
-        category: "it",
-        description: "Curso introductorio a HTML, CSS y JavaScript para construir sitios interactivos.",
-        semester: "II",
-        status: "approved",
-        creationDate: "2026-01-15",
-        lastUpdate: "2026-02-10",
-        rubros: []
-    },
-    {
-        id: 7,
-        name: "Programación en Ambiente Web I",
-        category: "it",
-        description: "Curso introductorio a HTML, CSS y JavaScript para construir sitios interactivos.",
-        semester: "II",
-        status: "approved",
-        creationDate: "2026-01-15",
-        lastUpdate: "2026-02-10",
-        rubros: []
-    },
-    {
-        id: 8,
-        name: "Programación en Ambiente Web I",
-        category: "it",
-        description: "Curso introductorio a HTML, CSS y JavaScript para construir sitios interactivos.",
-        semester: "II",
-        status: "approved",
-        creationDate: "2026-01-15",
-        lastUpdate: "2026-02-10",
-        rubros: []
-    },
-    {
-        id: 9,
-        name: "Programación en Ambiente Web I",
-        category: "it",
-        description: "Curso introductorio a HTML, CSS y JavaScript para construir sitios interactivos.",
-        semester: "II",
-        status: "approved",
-        creationDate: "2026-01-15",
-        lastUpdate: "2026-02-10",
-        rubros: []
-    },
-    {
-        id: 10,
-        name: "Programación en Ambiente Web I",
-        category: "it",
-        description: "Curso introductorio a HTML, CSS y JavaScript para construir sitios interactivos.",
-        semester: "II",
-        status: "approved",
-        creationDate: "2026-01-15",
-        lastUpdate: "2026-02-10",
-        rubros: []
+        rubros: [
+            {
+            id: 1,
+            name: "Exámenes",
+            description: "Pruebas parciales del curso",
+            percentage: 40,
+            assignments: [
+                {
+                    id: 1,
+                    name: "Examen 1",
+                    description: "Primer parcial",
+                    startDate: "2026-03-01",
+                    dueDate: "2026-03-10",
+                    percentage: 20,
+                    obtainedScore: null
+                }
+            ]
+            }
+        ]
     }
 ];
+
+/*============================
+Courses variables
+============================*/
 
 let courses = [];
 let filteredCourses = [];
@@ -126,6 +89,32 @@ const windowOverlay = document.getElementById('windowOverlay');
 const btnCloseWindow = document.getElementById('btnCloseWindow');
 const btnCancelCreate = document.getElementById('btnCancelCreate');
 const formCreateCourse = document.getElementById('formCreateCourse');
+
+/*============================
+Rubros variables
+============================*/
+
+let selectedCourseId = null;
+let selectedRubroId = null;
+
+const courseDetail = document.getElementById('courseDetail');
+const detailCourseName = document.getElementById('detailCourseName');
+const detailCourseDescription = document.getElementById('detailCourseDescription');
+const detailPercentageUsed = document.getElementById('detailPercentageUsed');
+const progressBarFill = document.getElementById('progressBarFill');
+const btnCloseDetail = document.getElementById('btnCloseDetail');
+const btnAddRubro = document.getElementById('btnAddRubro');
+const rubrosList = document.getElementById('rubrosList');
+
+const rubroWindowOverlay = document.getElementById('rubroWindowOverlay');
+const btnCloseRubroWindow = document.getElementById('btnCloseRubroWindow');
+const btnCancelRubro = document.getElementById('btnCancelRubro');
+const formCreateRubro = document.getElementById('formCreateRubro');
+
+const assignmentWindowOverlay = document.getElementById('assignmentWindowOverlay');
+const btnCloseAssignmentWindow = document.getElementById('btnCloseAssignmentWindow');
+const btnCancelAssignment = document.getElementById('btnCancelAssignment');
+const formCreateAssignment = document.getElementById('formCreateAssignment');
 
 // function loadCourses() {
 //     fetch('../data/coursesData.js')
@@ -189,7 +178,7 @@ function renderCourses(list) {
     if (list.length === 0) {
         coursesContainer.innerHTML = `
             <div class="empty-state">
-                <span class="empty-icon">Cursos</span>
+                <span class="empty-icon">📚</span>
                 <p>Aquí aparecerán los cursos creados</p>
             </div>
         `;
@@ -199,12 +188,21 @@ function renderCourses(list) {
     list.forEach(function (course) {
         const card = document.createElement('div');
         card.classList.add('course-card');
+        card.setAttribute('data-course-id', course.id);
+
+        if (course.id === selectedCourseId) {
+            card.classList.add('active');
+        }
 
         card.innerHTML = `
             <h3>${course.name}</h3>
             <p>${course.description || 'Sin descripción'}</p>
             <small>Semestre: ${course.semester || 'N/A'}</small>
         `;
+
+        card.addEventListener('click', function () {
+            selectCourse(course.id);
+        });
 
         coursesContainer.appendChild(card);
     });
@@ -259,6 +257,346 @@ function manageCourseCreation(event) {
     applyFilters();
 }
 
+/*============================
+Course detail
+============================*/
+
+function selectCourse(courseId) {
+    selectedCourseId = courseId;
+
+    renderCourses(filteredCourses);
+
+    const course = courses.find(function (c) {
+        return c.id === courseId;
+    });
+
+    if (!course) return;
+
+    renderCourseDetail(course);
+    courseDetail.classList.remove('hidden');
+    courseDetail.scrollIntoView({ behavior: 'smooth' });
+}
+
+function renderCourseDetail(course) {
+    detailCourseName.textContent = course.name;
+    detailCourseDescription.textContent = course.description || 'Sin descripción';
+
+    renderRubros(course);
+    updateProgressBar(course);
+}
+
+btnCloseDetail.addEventListener('click', function () {
+    selectedCourseId = null;
+    courseDetail.classList.add('hidden');
+    renderCourses(filteredCourses);
+});
+
+function renderRubros(course) {
+    rubrosList.innerHTML = '';
+
+    if (course.rubros.length === 0) {
+        rubrosList.innerHTML = `
+            <div class="empty-state">
+                <span class="empty-icon">📋</span>
+                <p>Este curso aún no tiene rubros.</p>
+            </div>
+        `;
+        return;
+    }
+
+    course.rubros.forEach(function (rubro) {
+        const rubroCard = document.createElement('div');
+        rubroCard.classList.add('rubro-card');
+
+        rubroCard.innerHTML = `
+            <div class="rubro-header">
+                <h4>${rubro.name} (${rubro.percentage}%)</h4>
+                <div class="rubro-actions">
+                    <button class="btn-small btn-add-assignment" data-rubro-id="${rubro.id}">+ Asignación</button>
+                    <button class="btn-small btn-delete-rubro" data-rubro-id="${rubro.id}">Eliminar</button>
+                </div>
+            </div>
+            <p class="rubro-description">${rubro.description || ''}</p>
+            <div class="assignments-list">
+                ${renderAssignmentsHtml(rubro)}
+            </div>
+        `;
+
+        rubrosList.appendChild(rubroCard);
+    });
+}
+
+function renderAssignmentsHtml(rubro) {
+    if (rubro.assignments.length === 0) {
+        return `<p class="assignments-empty">Sin asignaciones todavía.</p>`;
+    }
+
+    return rubro.assignments.map(function (assignment) {
+        return `
+            <div class="assignment-card">
+                <span class="assignment-name">${assignment.name} (${assignment.percentage}%)</span>
+                <span class="assignment-dates">${assignment.startDate || '—'} → ${assignment.dueDate || '—'}</span>
+                <button class="btn-small btn-delete-assignment" data-rubro-id="${rubro.id}" data-assignment-id="${assignment.id}">Eliminar</button>
+            </div>
+        `;
+    }).join('');
+}
+
+/*============================
+Progress bar
+============================*/
+
+function calculatePercentageUsed(course) {
+    return course.rubros.reduce(function (total, rubro) {
+        return total + rubro.percentage;
+    }, 0);
+}
+
+function updateProgressBar(course) {
+    const used = calculatePercentageUsed(course);
+
+    detailPercentageUsed.textContent = used + '%';
+    progressBarFill.style.width = Math.min(used, 100) + '%';
+}
+
+/*============================
+Course percentage validations
+============================*/
+
+function canAddRubro(course, newPercentage) {
+    const currentSum = calculatePercentageUsed(course);
+    return (currentSum + newPercentage) <= 100;
+}
+
+function canAddAssignment(rubro, newPercentage) {
+    const currentSum = rubro.assignments.reduce(function (total, assignment) {
+        return total + assignment.percentage;
+    }, 0);
+    return (currentSum + newPercentage) <= rubro.percentage;
+}
+
+/*============================
+Rubro Window
+============================*/
+
+function openRubroWindow() {
+    rubroWindowOverlay.classList.remove('hidden');
+}
+
+function closeRubroWindow() {
+    rubroWindowOverlay.classList.add('hidden');
+    formCreateRubro.reset();
+    document.getElementById('errorRubroName').classList.remove('visible');
+    document.getElementById('errorRubroPercentage').classList.remove('visible');
+}
+
+function manageRubroCreation(event) {
+    event.preventDefault();
+
+    const course = courses.find(function (c) {
+        return c.id === selectedCourseId;
+    });
+
+    if (!course) return;
+
+    const name = document.getElementById('inputRubroName').value.trim();
+    const description = document.getElementById('inputRubroDescription').value.trim();
+    const percentage = Number(document.getElementById('inputRubroPercentage').value);
+
+    const errorName = document.getElementById('errorRubroName');
+    const errorPercentage = document.getElementById('errorRubroPercentage');
+
+    errorName.classList.remove('visible');
+    errorPercentage.classList.remove('visible');
+
+    if (name === '') {
+        errorName.textContent = 'El nombre del rubro es obligatorio.';
+        errorName.classList.add('visible');
+        return;
+    }
+
+    if (!percentage || percentage <= 0) {
+        errorPercentage.textContent = 'Ingrese un porcentaje válido.';
+        errorPercentage.classList.add('visible');
+        return;
+    }
+
+    if (!canAddRubro(course, percentage)) {
+        const currentSum = calculatePercentageUsed(course);
+        errorPercentage.textContent = `
+                                        Los rubros ya suman ${currentSum}%. 
+                                        El rubro no puede superar ${100 - currentSum}%.
+                                        `;
+        errorPercentage.classList.add('visible');
+        return;
+    }
+
+    const newRubro = {
+        id: Date.now(),
+        name: name,
+        description: description,
+        percentage: percentage,
+        assignments: []
+    };
+
+    course.rubros.push(newRubro);
+    course.lastUpdate = new Date().toISOString();
+
+    closeRubroWindow();
+    renderCourseDetail(course);
+}
+
+/*============================
+Assignment Window
+============================*/
+
+function openAssignmentWindow(rubroId) {
+    selectedRubroId = rubroId;
+    assignmentWindowOverlay.classList.remove('hidden');
+}
+
+function closeAssignmentWindow() {
+    assignmentWindowOverlay.classList.add('hidden');
+    formCreateAssignment.reset();
+    selectedRubroId = null;
+    document.getElementById('errorAssignmentName').classList.remove('visible');
+    document.getElementById('errorAssignmentPercentage').classList.remove('visible');
+}
+
+function manageAssignmentCreation(event) {
+    event.preventDefault();
+
+    const course = courses.find(function (c) {
+        return c.id === selectedCourseId;
+    });
+
+    if (!course) return;
+
+    const rubro = course.rubros.find(function (r) {
+        return r.id === selectedRubroId;
+    });
+
+    if (!rubro) return;
+
+    const name = document.getElementById('inputAssignmentName').value.trim();
+    const description = document.getElementById('inputAssignmentDescription').value.trim();
+    const startDate = document.getElementById('inputAssignmentStartDate').value;
+    const dueDate = document.getElementById('inputAssignmentDueDate').value;
+    const percentage = Number(document.getElementById('inputAssignmentPercentage').value);
+
+    const errorName = document.getElementById('errorAssignmentName');
+    const errorPercentage = document.getElementById('errorAssignmentPercentage');
+
+    errorName.classList.remove('visible');
+    errorPercentage.classList.remove('visible');
+
+    if (name === '') {
+        errorName.textContent = 'El nombre de la asignación es obligatorio.';
+        errorName.classList.add('visible');
+        return;
+    }
+
+    if (!percentage || percentage <= 0) {
+        errorPercentage.textContent = 'Ingrese un porcentaje válido.';
+        errorPercentage.classList.add('visible');
+        return;
+    }
+
+    if (!canAddAssignment(rubro, percentage)) {
+        const currentSum = rubro.assignments.reduce(function (total, a) {
+            return total + a.percentage;
+        }, 0);
+
+        errorPercentage.textContent = `
+                                        Las asignaciones ya suman ${currentSum}% de 
+                                        ${rubro.percentage}%. Esta no puede superar 
+                                        ${rubro.percentage - currentSum}%.
+                                    `;
+        errorPercentage.classList.add('visible');
+        return;
+    }
+
+    const newAssignment = {
+        id: Date.now(),
+        name: name,
+        description: description,
+        startDate: startDate,
+        dueDate: dueDate,
+        percentage: percentage,
+        obtainedScore: null
+    };
+
+
+    rubro.assignments.push(newAssignment);
+    course.lastUpdate = new Date().toISOString();
+
+    closeAssignmentWindow();
+    renderCourseDetail(course);
+}
+
+/*============================
+Delete Rubros and Assignments
+============================*/
+rubrosList.addEventListener('click', function (event) {
+    const target = event.target;
+
+    if (target.classList.contains('btn-add-assignment')) {
+        const rubroId = Number(target.getAttribute('data-rubro-id'));
+        openAssignmentWindow(rubroId);
+    }
+
+    if (target.classList.contains('btn-delete-rubro')) {
+        const rubroId = Number(target.getAttribute('data-rubro-id'));
+        deleteRubro(rubroId);
+    }
+
+    if (target.classList.contains('btn-delete-assignment')) {
+        const rubroId = Number(target.getAttribute('data-rubro-id'));
+        const assignmentId = Number(target.getAttribute('data-assignment-id'));
+        deleteAssignment(rubroId, assignmentId);
+    }
+});
+
+function deleteRubro(rubroId) {
+    const course = courses.find(function (c) {
+        return c.id === selectedCourseId;
+    });
+
+    if (!course) return;
+
+    course.rubros = course.rubros.filter(function (rubro) {
+        return rubro.id !== rubroId;
+    });
+
+    course.lastUpdate = new Date().toISOString();
+    renderCourseDetail(course);
+}
+
+function deleteAssignment(rubroId, assignmentId) {
+    const course = courses.find(function (c) {
+        return c.id === selectedCourseId;
+    });
+
+    if (!course) return;
+
+    const rubro = course.rubros.find(function (r) {
+        return r.id === rubroId;
+    });
+
+    if (!rubro) return;
+
+    rubro.assignments = rubro.assignments.filter(function (assignment) {
+        return assignment.id !== assignmentId;
+    });
+
+    course.lastUpdate = new Date().toISOString();
+    renderCourseDetail(course);
+}
+
+/*============================
+Course eventListeners
+============================*/
+
 searchInput.addEventListener('input', applyFilters);
 filterOrder.addEventListener('change', applyFilters);
 filterStatus.addEventListener('change', applyFilters);
@@ -277,4 +615,24 @@ formCreateCourse.addEventListener('submit', manageCourseCreation);
 
 loadCourses();
 
+/*========================================
+Rubros and assignments eventListeners
+==========================================*/
+btnAddRubro.addEventListener('click', function () {
+    if (selectedCourseId === null) return;
+    openRubroWindow();
+});
 
+btnCloseRubroWindow.addEventListener('click', closeRubroWindow);
+btnCancelRubro.addEventListener('click', closeRubroWindow);
+rubroWindowOverlay.addEventListener('click', function (event) {
+    if (event.target === rubroWindowOverlay) closeRubroWindow();
+});
+formCreateRubro.addEventListener('submit', manageRubroCreation);
+
+btnCloseAssignmentWindow.addEventListener('click', closeAssignmentWindow);
+btnCancelAssignment.addEventListener('click', closeAssignmentWindow);
+assignmentWindowOverlay.addEventListener('click', function (event) {
+    if (event.target === assignmentWindowOverlay) closeAssignmentWindow();
+});
+formCreateAssignment.addEventListener('submit', manageAssignmentCreation);
