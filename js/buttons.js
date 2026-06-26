@@ -1,5 +1,4 @@
 //Función para que los select de inicio funcionen correctamente
-
 function useSelect (selectElement){
     selectElement.addEventListener('change', function() {
         if (this.value) {
@@ -13,7 +12,6 @@ useSelect(document.getElementById('solutions'));
 
 //Método para permitir el funcionamiento de los botones
 function navButtons(reference) {
-    //Si es una referencia a una sección
     if(reference.startsWith('#')) {
         const element = document.querySelector(reference);
         if (element) {

@@ -162,14 +162,12 @@ Create course window
 .window-close {
   background: none;
   border: none;
-  font-size: 24px;
+  font-size: 18px;
   cursor: pointer;
-  color: #6b7280;
 }
 
 .window-close:hover {
-    color: black;
-    font-weight: bolder;
+    font-size: 20px;
 }
 
 .window-form .form-group {
