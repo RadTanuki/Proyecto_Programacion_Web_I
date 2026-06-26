@@ -289,6 +289,7 @@ About Section
 
 .about-image img {
   width: 60%;
+  margin-right: 80px;
 }
 
 .about-info {
@@ -349,6 +350,10 @@ Funcionamiento
 }
 
 .funcionamiento-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 650px;
   background-color: antiquewhite;
   border: 1px solid #dbeafe;
   border-radius: 14px;
@@ -362,16 +367,16 @@ Funcionamiento
 }
 
 .funcionamiento-image {
+  display: flex;
+  justify-content: center;
   flex: 1;
-  background-color: #1f2937;
+  background-color: transparent;
   padding: 10px;
-  border-radius: 20px;
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
+  margin: 10px;
 }
 
 .funcionamiento-image img {
-  width: 100%;
-  border-radius: 12px;
+  width: 70%;
 }
 
 .funcionamiento-h2 {
@@ -392,6 +397,7 @@ Funcionamiento
   list-style: number;
   line-height: 2;
 }
+
 
 /*============================
 Utilities
@@ -465,7 +471,8 @@ footer li img {
   }
 
   .logo {
-    margin-left: 93px;
+    margin-left: 0;
+    height: 75px;
   }
 
   #menu-toggle:checked ~ .menu-nav {

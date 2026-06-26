@@ -11,6 +11,7 @@
         Students, Time management, Programming, 
         Artificial Inteligence, Chemistry, Phisics, Biology">
     <link rel="stylesheet" href="CSS/style.css">
+    <link rel="stylesheet" href="CSS/styleCalculoNota.css">
     <title>Grade Manager | Inicio</title>
 </head>
 
@@ -98,7 +99,6 @@
             </div>
         </section>
 
-
         <hr>
 
         <section id="funcionamiento" class="funcionamiento">
@@ -110,56 +110,107 @@
                 <article class="funcionamiento-card">
                     <h4 class="funcionamiento-h4">Cálculo de nota manual</h4>
                     <ol class="funcionamiento-ol">
-                        <li>Agrega los rubros que desees.</li>
-                        <li>Ingresa la nota que obtuviste y el valor porcentual de cada uno.</li>
+                        <li>Agrega cuantos rubros desees con el botón "+ Agregar rubro".</li>
+                        <li>Ingresa la nota que obtuviste y el valor porcentual de cada uno. 
+                            Las notas y los porcentajes deben estar entre 0 y 100.</li>
                         <li>Opcionalmente, ingresa la nota mínima para aprobar y conocer tu condición.</li>
                         <li>Haz clic en el botón de "Calcular nota".</li>
                     </ol>
                     <figure class="funcionamiento-image">
-                        <img src="assets/images/despicable-me-minion.gif" alt="">
+                        <img src="assets/images/calc.svg">
                     </figure>
                 </article>
 
                 <article class="funcionamiento-card">
-                    <h4 class="funcionamiento-h4">Paso 2</h4>
-                    <ul class="funcionamiento-ul">
-                        <li>Intruccion 1</li>
-                        <li>Intruccion 2</li>
-                        <li>Intruccion 3</li>
-                        <li>Intruccion 4</li>
-                    </ul>
+                    <h4 class="funcionamiento-h4">Gestión de cursos</h4>
+                    <ol class="funcionamiento-ol">
+                        <li>Inicia sesión o regístrate para poder almacenar tus cursos de forma segura.</li>
+                        <li>Haz clic en el botón de "Crear curso" para añadir las materias que desees.</li>
+                        <li>Se abrirá un formulario donde deberás ingresar los datos solicitados.</li>
+                        <li>Completa los campos y haz clic en el botón de "Guardar curso".</li>
+                    </ol>
                     <figure class="funcionamiento-image">
-                        <img src="assets/images/notas.jpg" alt="">
+                        <img src="assets/images/course.svg">
                     </figure>
                 </article>
 
                 <article class="funcionamiento-card">
-                    <h4 class="funcionamiento-h4">Paso 3</h4>
-                    <ul class="funcionamiento-ul">
-                        <li>Intruccion 1</li>
-                        <li>Intruccion 2</li>
-                        <li>Intruccion 3</li>
-                        <li>Intruccion 4</li>
-                    </ul>
+                    <h4 class="funcionamiento-h4">Configuración de rubros</h4>
+                    <ol class="funcionamiento-ol">
+                        <li>Selecciona cualquier curso y haz clic en el botón de "+ Añadir rubro".</li>
+                        <li>Ingresa el nombre, descripción y valor porcentual en la ventana emergente.</li>
+                        <li>Asegúrate de que la totalidad de los rubros sume 100%.</li>
+                        <li>Haz clic en el botón de "Guardar rubro" para registrar los cambios.</li>
+                    </ol>
                     <figure class="funcionamiento-image">
-                        <img src="assets/images/notas.jpg" alt="">
+                        <img src="assets/images/rubros.svg">
                     </figure>
                 </article>
 
                 <article class="funcionamiento-card">
-                    <h4 class="funcionamiento-h4">Paso 4</h4>
-                    <ul class="funcionamiento-ul">
-                        <li>Intruccion 1</li>
-                        <li>Intruccion 2</li>
-                        <li>Intruccion 3</li>
-                        <li>Intruccion 4</li>
-                    </ul>
+                    <h4 class="funcionamiento-h4">Control de asignaciones</h4>
+                    <ol class="funcionamiento-ol">
+                        <li>Dentro del rubro correspondiente, haz clic en el botón de "+ Asignación".</li>
+                        <li>Completa los campos requeridos en la ventana emergente.</li>
+                        <li>Luego, haz clic en el botón de "Guardar asignación" para registrarla.</li>
+                        <li>Adicionalmente, cuentas con la opción de eliminar cada asignación.</li>
+                    </ol>
                     <figure class="funcionamiento-image">
-                        <img src="assets/images/notas.jpg" alt="">
+                        <img src="assets/images/asig.svg">
                     </figure>
                 </article>
 
             </div>
+        </section>
+
+        <hr>
+
+        <section id="#calculoNota">
+
+            <form class="container-calculo">
+
+            <h1>Cálculo de nota</h1>
+
+            <div class="rubros-container">
+                
+                <div class="rubro-card">
+
+                    <label>Rubro #1</label> 
+                    <input type="number" class="input-nota" required placeholder="Nota" min="0" max="100">
+                    <input type="number" class="input-porcentaje" required placeholder="%" min="1" max="100">
+                </div>
+
+                <div class="rubro-card">
+
+                    <label>Rubro #2</label>
+                    <input class="btn-eliminar" type="button" value="❌">
+                    <input type="number" class="input-nota" required placeholder="Nota" min="0" max="100">
+                    <input type="number" class="input-porcentaje" required placeholder="%" min="1" max="100">
+
+                </div>
+
+                <div class="notaMinima-card" >
+
+                    <label>Nota mínima para aprobar (opcional)</label>
+                    <input type="number" id="notaMinima" placeholder="Mínima" min="0" max="100">
+
+                </div>
+
+                <div class="acciones">
+                    <button class="btn-primary-calculo" id="agregarRubro">+ Agregar rubro</button>
+                    <button class="btn-primary-calculo" id="limpiar">Limpiar</button>
+                    <button class="btn-primary-calculo" id="calcularNota">Calcular nota</button>
+                </div>
+
+            </div>
+
+            <div id="result">
+                <h3>Aquí se mostrará un detalle de la nota</h3>
+            </div>
+
+        </form>
+
+
         </section>
 
     </main>
@@ -201,5 +252,6 @@
     </footer>
     <script src="js/buttons.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/grade.js"></script>
 </body>
 </html>
