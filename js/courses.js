@@ -283,6 +283,7 @@ function renderCourseDetail(course) {
 
     renderRubros(course);
     updateProgressBar(course);
+    document.getElementById('detailFinalGrade').textContent = calculateFinalGrade(course);
 }
 
 btnCloseDetail.addEventListener('click', function () {
@@ -290,6 +291,10 @@ btnCloseDetail.addEventListener('click', function () {
     courseDetail.classList.add('hidden');
     renderCourses(filteredCourses);
 });
+
+/*============================
+Rubro detail
+============================*/
 
 function renderRubros(course) {
     rubrosList.innerHTML = '';
@@ -310,7 +315,7 @@ function renderRubros(course) {
 
         rubroCard.innerHTML = `
             <div class="rubro-header">
-                <h4>${rubro.name} (${rubro.percentage}%)</h4>
+                <h4>${rubro.name} — ${rubro.percentage}% del curso (${calculateRubroEarned(rubro)} obtenido)</h4>
                 <div class="rubro-actions">
                     <button class="btn-small btn-add-assignment" data-rubro-id="${rubro.id}">+ Asignación</button>
                     <button class="btn-small btn-delete-rubro" data-rubro-id="${rubro.id}">Eliminar</button>
@@ -326,20 +331,104 @@ function renderRubros(course) {
     });
 }
 
+function calculateRubroEarned(rubro) {
+    const total = rubro.assignments.reduce(function (sum, assignment) {
+        if (assignment.obtainedScore === null || assignment.obtainedScore === undefined) {
+            return sum;
+        }
+        return sum + (assignment.percentage * (assignment.obtainedScore / 100));
+    }, 0);
+
+    return Math.round(total * 100) / 100;
+}
+
+function calculateFinalGrade(course) {
+    const total = course.rubros.reduce(function (sum, rubro) {
+        return sum + calculateRubroEarned(rubro);
+    }, 0);
+
+    return Math.round(total * 100) / 100;
+}
+
+function showScoreFeedback(message, type) {
+    const feedback = document.getElementById('scoreFeedback');
+    feedback.textContent = message;
+    feedback.classList.remove('success', 'error');
+    feedback.classList.add(type, 'visible');
+
+    setTimeout(function () {
+        feedback.classList.remove('visible');
+    }, 3000);
+}
+
+/*============================
+Assignment detail
+============================*/
+
 function renderAssignmentsHtml(rubro) {
     if (rubro.assignments.length === 0) {
         return `<p class="assignments-empty">Sin asignaciones todavía.</p>`;
     }
 
     return rubro.assignments.map(function (assignment) {
+        const scoreValue = (assignment.obtainedScore === null || assignment.obtainedScore === undefined)
+            ? ''
+            : assignment.obtainedScore;
+
         return `
             <div class="assignment-card">
                 <span class="assignment-name">${assignment.name} (${assignment.percentage}%)</span>
                 <span class="assignment-dates">${assignment.startDate || '—'} → ${assignment.dueDate || '—'}</span>
+                <input
+                    type="number"
+                    class="assignment-score-input"
+                    placeholder="Nota"
+                    min="0"
+                    max="100"
+                    value="${scoreValue}"
+                    data-rubro-id="${rubro.id}"
+                    data-assignment-id="${assignment.id}">
                 <button class="btn-small btn-delete-assignment" data-rubro-id="${rubro.id}" data-assignment-id="${assignment.id}">Eliminar</button>
             </div>
         `;
     }).join('');
+}
+
+function updateAssignmentScore(rubroId, assignmentId, rawValue) {
+    const course = courses.find(function (c) {
+        return c.id === selectedCourseId;
+    });
+    if (!course) return;
+
+    const rubro = course.rubros.find(function (r) {
+        return r.id === rubroId;
+    });
+    if (!rubro) return;
+
+    const assignment = rubro.assignments.find(function (a) {
+        return a.id === assignmentId;
+    });
+    if (!assignment) return;
+
+    if (rawValue.trim() === '') {
+        assignment.obtainedScore = null;
+        renderCourseDetail(course);
+        return;
+    }
+
+    const score = Number(rawValue);
+
+    if (score < 0 || score > 100) {
+        showScoreFeedback('La nota debe estar entre 0 y 100.', 'error');
+        renderCourseDetail(course); // vuelve a pintar con el valor anterior
+        return;
+    }
+
+    assignment.obtainedScore = score;
+    course.lastUpdate = new Date().toISOString();
+
+    showScoreFeedback(`Nota guardada para "${assignment.name}".`, 'success');
+    renderCourseDetail(course);
 }
 
 /*============================
@@ -554,6 +643,16 @@ rubrosList.addEventListener('click', function (event) {
         const rubroId = Number(target.getAttribute('data-rubro-id'));
         const assignmentId = Number(target.getAttribute('data-assignment-id'));
         deleteAssignment(rubroId, assignmentId);
+    }
+});
+
+rubrosList.addEventListener('change', function (event) {
+    const target = event.target;
+
+    if (target.classList.contains('assignment-score-input')) {
+        const rubroId = Number(target.getAttribute('data-rubro-id'));
+        const assignmentId = Number(target.getAttribute('data-assignment-id'));
+        updateAssignmentScore(rubroId, assignmentId, target.value);
     }
 });
 
