@@ -11,7 +11,7 @@
 
 <body>
     <header class="site-header" id="header">
-        
+
         <a href="index.html">
             <img src="assets/images/logoHeader.png" class="logo" alt="Logo de Grade Manager">
         </a>
@@ -73,6 +73,10 @@
                         <option value="all">Todos los Semestres</option>
                         <option value="asdasd">(Cargarlos por el JSON)</option>
                     </select>
+
+                    <button type="button" id="btnClearFilters" class="btn-secondary">
+                        Limpiar filtros
+                    </button>
                 </div>
 
                 <button id="btnCreateCourse" class="btn-primary">
@@ -101,12 +105,12 @@
                         <div class="progress-bar-fill" id="progressBarFill"></div>
                     </div>
                 </div>
-                
+
                 <div class="detail-grade">
                     Nota actual del curso: <strong id="detailFinalGrade">0</strong> / 100
                 </div>
 
-<div id="scoreFeedback" class="feedback-message"></div>
+                <div id="scoreFeedback" class="feedback-message"></div>
                 <button id="btnCloseDetail" class="btn-secondary">Cerrar detalle</button>
             </div>
 
@@ -128,7 +132,7 @@
         <div id="windowOverlay" class="window-overlay hidden">
             <div class="window-box">
                 <div class="window-header">
-                    <h2>Crear curso</h2>
+                    <h2 id="courseWindowTitle">Crear curso</h2>
                     <button id="btnCloseWindow" class="window-close" type="button">&#x274C</button>
                 </div>
 
@@ -166,7 +170,7 @@
 
                     <div class="window-actions">
                         <button type="button" id="btnCancelCreate" class="btn-secondary">Cancelar</button>
-                        <button id="btn" type="submit" class="btn-primary">Guardar Curso</button>
+                        <button id="btnSubmitCourse" type="submit" class="btn-primary">Guardar Curso</button>
                     </div>
                 </form>
             </div>
@@ -246,6 +250,18 @@
                     <button type="submit" class="btn-primary">Guardar Asignación</button>
                 </div>
             </form>
+        </div>
+    </div>
+
+    <div id="confirmWindowOverlay" class="window-overlay hidden">
+        <div class="window-box confirm-box">
+            <h3 id="confirmTitle">¿Estás seguro?</h3>
+            <p id="confirmMessage">Esta acción no se puede deshacer.</p>
+
+            <div class="window-actions">
+                <button type="button" id="btnConfirmCancel" class="btn-secondary">Cancelar</button>
+                <button type="button" id="btnConfirmAccept" class="btn-danger">Eliminar</button>
+            </div>
         </div>
     </div>
 

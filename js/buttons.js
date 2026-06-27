@@ -32,3 +32,15 @@ document.addEventListener('click', function(e) {
         navButtons(button.dataset.href);
     }
 })
+
+btnClearFilters = document.getElementById('btnClearFilters');
+
+function clearFilters(){
+    searchInput.value = '';
+    filterOrder.value = 'name';
+    filterStatus.value = 'all';
+    filterSemester.value = 'all';
+    applyFilters();
+}
+
+btnClearFilters.addEventListener('click', clearFilters);

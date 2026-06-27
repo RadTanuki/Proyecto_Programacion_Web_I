@@ -90,6 +90,10 @@ const btnCloseWindow = document.getElementById('btnCloseWindow');
 const btnCancelCreate = document.getElementById('btnCancelCreate');
 const formCreateCourse = document.getElementById('formCreateCourse');
 
+const courseWindowTitle = document.getElementById('courseWindowTitle');
+const btnSubmitCourse = document.getElementById('btnSubmitCourse');
+let editingCourseId = null;
+
 /*============================
 Rubros variables
 ============================*/
@@ -116,15 +120,20 @@ const btnCloseAssignmentWindow = document.getElementById('btnCloseAssignmentWind
 const btnCancelAssignment = document.getElementById('btnCancelAssignment');
 const formCreateAssignment = document.getElementById('formCreateAssignment');
 
-// function loadCourses() {
-//     fetch('../data/coursesData.js')
-//         .then(function (answer) {
-//             return answer.json();
-//         })
-//         .then(function (error) {
-//             console.log('Cant load the courses', error);
-//         })
-// }
+/*============================
+Confirm window
+============================*/
+
+const confirmWindowOverlay = document.getElementById('confirmWindowOverlay');
+const confirmMessage = document.getElementById('confirmMessage');
+const btnConfirmCancel = document.getElementById('btnConfirmCancel');
+const btnConfirmAccept = document.getElementById('btnConfirmAccept');
+
+let pendingConfirmAction = null;
+
+/*============================
+Filter courses
+============================*/
 
 function loadCourses() {
     courses = coursesData;
@@ -195,14 +204,17 @@ function renderCourses(list) {
         }
 
         card.innerHTML = `
+            <div class="course-card-menu">
+                <button class="btn-mini-menu" type="button" data-course-id="${course.id}">&#x22EE;</button>
+                <div class="dropdown-menu hidden" data-course-id="${course.id}">
+                    <button class="dropdown-item btn-edit-course" type="button" data-course-id="${course.id}">Editar</button>
+                    <button class="dropdown-item btn-delete-course danger" type="button" data-course-id="${course.id}">Eliminar</button>
+                </div>
+            </div>
             <h3>${course.name}</h3>
             <p>${course.description || 'Sin descripción'}</p>
             <small>Semestre: ${course.semester || 'N/A'}</small>
         `;
-
-        card.addEventListener('click', function () {
-            selectCourse(course.id);
-        });
 
         coursesContainer.appendChild(card);
     });
@@ -220,6 +232,10 @@ function closeWindow() {
     windowOverlay.classList.add('hidden');
     formCreateCourse.reset();
     document.getElementById('errorName').classList.remove('visible');
+
+    editingCourseId = null;
+    courseWindowTitle.textContent = 'Crear nuevo curso';
+    btnSubmitCourse.textContent = 'Guardar Curso';
 }
 
 function manageCourseCreation(event) {
@@ -239,22 +255,112 @@ function manageCourseCreation(event) {
 
     errorName.classList.remove('visible');
 
-    const newCourse = {
-        id: Date.now(),
-        name: name,
-        description: description,
-        category: category,
-        semester: semester,
-        status: 'pending',
-        creationDate: new Date().toISOString(),
-        lastUpdate: new Date().toISOString(),
-        rubros: []
-    };
+    if (editingCourseId !== null) {
+        const course = courses.find(function (c) {
+            return c.id === editingCourseId;
+        });
 
-    courses.push(newCourse);
+        if (course) {
+            course.name = name;
+            course.description = description;
+            course.category = category;
+            course.semester = semester;
+            course.lastUpdate = new Date().toISOString();
+        }
+    } else {
+        const newCourse = {
+            id: Date.now(),
+            name: name,
+            description: description,
+            category: category,
+            semester: semester,
+            status: 'pending',
+            creationDate: new Date().toISOString(),
+            lastUpdate: new Date().toISOString(),
+            rubros: []
+        };
+
+        courses.push(newCourse);
+    }
 
     closeWindow();
     applyFilters();
+}
+
+/*============================
+Courses CRUD
+============================*/
+
+function toggleDropdown(courseId) {
+    const dropdown = document.querySelector('.dropdown-menu[data-course-id="' + courseId + '"]');
+    if (!dropdown) return;
+
+    const wasHidden = dropdown.classList.contains('hidden');
+    closeAllDropdowns();
+
+    if (wasHidden) {
+        dropdown.classList.remove('hidden');
+    }
+}
+
+function closeAllDropdowns() {
+    document.querySelectorAll('.dropdown-menu').forEach(function (menu) {
+        menu.classList.add('hidden');
+    });
+}
+
+function openEditCourseWindow(courseId) {
+    const course = courses.find(function (c) {
+        return c.id === courseId;
+    });
+    if (!course) return;
+
+    editingCourseId = courseId;
+
+    document.getElementById('inputCourseName').value = course.name;
+    document.getElementById('inputCourseDescription').value = course.description;
+    document.getElementById('CourseCategory').value = course.category;
+    document.getElementById('inputCourseSemester').value = course.semester;
+
+    courseWindowTitle.textContent = 'Editar curso';
+    btnSubmitCourse.textContent = 'Guardar cambios';
+
+    openWindow();
+}
+
+function showConfirm(message, toConfirm) {
+    confirmMessage.textContent = message;
+    pendingConfirmAction = toConfirm;
+    confirmWindowOverlay.classList.remove('hidden');
+}
+
+function closeConfirm() {
+    confirmWindowOverlay.classList.add('hidden');
+    pendingConfirmAction = null;
+}
+
+btnConfirmCancel.addEventListener('click', closeConfirm);
+
+btnConfirmAccept.addEventListener('click', function () {
+    if (pendingConfirmAction) {
+        pendingConfirmAction(); // ejecuta la acción guardada
+    }
+    closeConfirm();
+});
+
+function deleteCourse(courseId) {
+    showConfirm('¿Seguro que deseas eliminar este curso? Esta acción no se puede deshacer.', function () {
+        courses = courses.filter(function (c) {
+            return c.id !== courseId;
+        });
+
+        if (selectedCourseId === courseId) {
+            selectedCourseId = null;
+            courseDetail.classList.add('hidden');
+        }
+
+        applyFilters();
+    });
 }
 
 /*============================
@@ -700,7 +806,14 @@ searchInput.addEventListener('input', applyFilters);
 filterOrder.addEventListener('change', applyFilters);
 filterStatus.addEventListener('change', applyFilters);
 filterSemester.addEventListener('change', applyFilters);
-btnCreateCourse.addEventListener('click', openWindow);
+
+btnCreateCourse.addEventListener('click', function () {
+    editingCourseId = null;
+    courseWindowTitle.textContent = 'Crear nuevo curso';
+    btnSubmitCourse.textContent = 'Guardar Curso';
+    openWindow();
+});
+
 btnCloseWindow.addEventListener('click', closeWindow);
 btnCancelCreate.addEventListener('click', closeWindow);
 
@@ -735,3 +848,42 @@ assignmentWindowOverlay.addEventListener('click', function (event) {
     if (event.target === assignmentWindowOverlay) closeAssignmentWindow();
 });
 formCreateAssignment.addEventListener('submit', manageAssignmentCreation);
+
+document.addEventListener('click', function (event) {
+    if (!event.target.closest('.course-card-menu')) {
+        closeAllDropdowns();
+    }
+});
+
+coursesContainer.addEventListener('click', function (event) {
+    const btnMiniMenu = event.target.closest('.btn-mini-menu');
+    if (btnMiniMenu) {
+        toggleDropdown(Number(btnMiniMenu.getAttribute('data-course-id')));
+        return;
+    }
+
+    const editButton = event.target.closest('.btn-edit-course');
+    if (editButton) {
+        closeAllDropdowns();
+        openEditCourseWindow(Number(editButton.getAttribute('data-course-id')));
+        return;
+    }
+
+    const deleteButton = event.target.closest('.btn-delete-course');
+    if (deleteButton) {
+        closeAllDropdowns();
+        deleteCourse(Number(deleteButton.getAttribute('data-course-id')));
+        return;
+    }
+
+    const card = event.target.closest('.course-card');
+    if (card) {
+        selectCourse(Number(card.getAttribute('data-course-id')));
+    }
+});
+
+confirmWindowOverlay.addEventListener('click', function (event) {
+    if (event.target === confirmWindowOverlay) {
+        closeConfirm();
+    }
+});

@@ -477,9 +477,105 @@ Course card selected
 
 .course-card {
     border: 2px solid transparent;
+    position: relative;
 }
 
 .course-card.active {
     border-color: #00b4d8;
 }
 
+/*============================
+Course CRUD
+============================*/
+
+.course-card-menu {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+}
+
+.btn-mini-menu {
+    background: none;
+    border: none;
+    font-size: 20px;
+    line-height: 1;
+    cursor: pointer;
+    color: #6b7280;
+    padding: 4px 8px;
+    border-radius: 6px;
+}
+
+.btn-mini-menu:hover {
+    background-color: #f3f4f6;
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    min-width: 140px;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.dropdown-menu.hidden {
+    display: none;
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 10px 14px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    font-size: 14px;
+    color: #374151;
+}
+
+.dropdown-item:hover {
+    background-color: #f3f4f6;
+}
+
+.dropdown-item.danger {
+    color: #b91c1c;
+}
+
+/*============================
+Confirm delete
+============================*/
+
+.confirm-box {
+    max-width: 380px;
+    text-align: center;
+}
+
+.confirm-box h3 {
+    margin-bottom: 10px;
+}
+
+.confirm-box p {
+    color: #6b7280;
+    margin-bottom: 20px;
+}
+
+.btn-danger {
+  display: inline-block;
+  background-color: #801010;
+  color: white;
+  border-radius: 25px;
+  font-weight: bold;
+  margin: 15px 15px 9px 15px;
+  padding: 15px 18px 15px 18px;
+  font-size: 15px;
+}
+
+.btn-danger:hover {
+    background-color: #b91c1c;
+    transition: background-color 0.3s;
+}
