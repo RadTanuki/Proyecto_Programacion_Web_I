@@ -117,6 +117,29 @@ Header
   gap: 10px;
 }
 
+#toggle {
+
+    display: none;
+
+  }
+
+#label_toggle {
+
+  color: white;
+  cursor: pointer;
+
+}
+
+.dark {
+
+  background-color: #333;
+  color: white;
+  transition: all 1.5s;
+
+}
+
+
+
 /* --------------------------
 Hero Section
 --------------------------- */
