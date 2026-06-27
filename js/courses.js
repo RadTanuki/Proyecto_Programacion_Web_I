@@ -827,28 +827,6 @@ formCreateCourse.addEventListener('submit', manageCourseCreation);
 
 loadCourses();
 
-/*========================================
-Rubros and assignments eventListeners
-==========================================*/
-btnAddRubro.addEventListener('click', function () {
-    if (selectedCourseId === null) return;
-    openRubroWindow();
-});
-
-btnCloseRubroWindow.addEventListener('click', closeRubroWindow);
-btnCancelRubro.addEventListener('click', closeRubroWindow);
-rubroWindowOverlay.addEventListener('click', function (event) {
-    if (event.target === rubroWindowOverlay) closeRubroWindow();
-});
-formCreateRubro.addEventListener('submit', manageRubroCreation);
-
-btnCloseAssignmentWindow.addEventListener('click', closeAssignmentWindow);
-btnCancelAssignment.addEventListener('click', closeAssignmentWindow);
-assignmentWindowOverlay.addEventListener('click', function (event) {
-    if (event.target === assignmentWindowOverlay) closeAssignmentWindow();
-});
-formCreateAssignment.addEventListener('submit', manageAssignmentCreation);
-
 document.addEventListener('click', function (event) {
     if (!event.target.closest('.course-card-menu')) {
         closeAllDropdowns();
@@ -887,3 +865,26 @@ confirmWindowOverlay.addEventListener('click', function (event) {
         closeConfirm();
     }
 });
+
+/*========================================
+Rubros and assignments eventListeners
+==========================================*/
+btnAddRubro.addEventListener('click', function () {
+    if (selectedCourseId === null) return;
+    openRubroWindow();
+});
+
+btnCloseRubroWindow.addEventListener('click', closeRubroWindow);
+btnCancelRubro.addEventListener('click', closeRubroWindow);
+rubroWindowOverlay.addEventListener('click', function (event) {
+    if (event.target === rubroWindowOverlay) closeRubroWindow();
+});
+formCreateRubro.addEventListener('submit', manageRubroCreation);
+
+btnCloseAssignmentWindow.addEventListener('click', closeAssignmentWindow);
+btnCancelAssignment.addEventListener('click', closeAssignmentWindow);
+assignmentWindowOverlay.addEventListener('click', function (event) {
+    if (event.target === assignmentWindowOverlay) closeAssignmentWindow();
+});
+formCreateAssignment.addEventListener('submit', manageAssignmentCreation);
+

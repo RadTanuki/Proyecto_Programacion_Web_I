@@ -318,7 +318,6 @@ Course Detail
 
 .course-detail {
     background-color: white;
-    border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
     padding: 25px;
     margin-top: 30px;
@@ -332,6 +331,7 @@ Course Detail
     border-bottom: 2px solid #e5e7eb;
     padding-bottom: 15px;
     margin-bottom: 20px;
+    
 }
 
 .detail-progress {
