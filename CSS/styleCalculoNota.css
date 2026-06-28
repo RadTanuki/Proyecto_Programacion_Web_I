@@ -188,13 +188,115 @@ td {
   background-color: antiquewhite;
 }
 
-@media (max-width: 768px) {
+/*===========================
+    Dark Mode CalculoNota
+===========================*/
 
-  html,
-  body {
-  overflow-x: hidden;
+.dark .container-calculo {
+  background-color: #161b27;
+  transition: all 0.8s;
 }
 
+.dark .rubro-card {
+  background-color: #1e2436;
+  border: 1px solid #2d3550;
+  color: #e8eaf0;
+}
+
+.dark .rubro-card label {
+  color: #e8eaf0;
+}
+
+.dark .rubro-card input {
+  border-color: #3d4a6a;
+  background-color: #252c3f;
+  color: #e8eaf0;
+}
+
+.dark .notaMinima-card {
+  background-color: #1e2436;
+  border: 1px solid #2d3550;
+  color: #e8eaf0;
+}
+
+.dark .notaMinima-card input {
+  border: 3px solid #3d4a6a;
+  background-color: #252c3f;
+  color: #e8eaf0;
+}
+
+.dark .aprobado {
+  background-color: #14532d;
+  color: #22c55e;
+}
+
+.dark .reprobado {
+  background-color: #450a0a;
+  color: #ef4444;
+}
+
+.dark .input-error {
+  border-color: #ef4444 !important;
+  background-color: #450a0a !important;
+}
+
+.dark .input-success {
+  border-color: #22c55e !important;
+  background-color: #14532d !important;
+}
+
+.dark .warning {
+  background-color: #f59e0b;
+}
+
+.dark .btn-primary-calculo {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+.dark .btn-primary-calculo:hover {
+  background-color: #2563eb;
+  color: #ffffff;
+}
+
+.dark .btn-eliminar:hover {
+  background-color: #2563eb;
+}
+
+.dark #result {
+  background-color: #1e2436;
+  border: 1px solid #2d3550;
+  color: #e8eaf0;
+}
+
+.dark #result h2 {
+  color: #e8eaf0;
+}
+
+.dark #result h3 {
+  color: #e8eaf0;
+}
+
+.dark .table-detalleNota th {
+  border: 2px solid #2d3550;
+  color: #e8eaf0;
+}
+
+.dark .table-detalleNota td {
+  border: 2px solid #2d3550;
+  color: #e8eaf0;
+}
+
+.dark .table-detalleNota th {
+  background-color: #252c3f;
+  color: #9aa3b8;
+}
+
+@media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
 
   .hamburguesa {
     display: block;
