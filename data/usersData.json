@@ -1,0 +1,438 @@
+{
+    "users": [
+        {
+            "id": 1,
+            "name": "Cuenta prueba",
+            "email": "prueba@gmail.com",
+            "password": "1234",
+            "category": "admin",
+            "status": "active",
+            "registrationDate": "2026-06-27",
+            "courses": [
+                {
+                    "id": 1,
+                    "name": "Programación en Ambiente Web I",
+                    "category": "it",
+                    "description": "Curso introductorio a HTML, CSS y JavaScript para construir sitios interactivos.",
+                    "semester": "II",
+                    "status": "approved",
+                    "creationDate": "2026-01-15",
+                    "lastUpdate": "2026-02-10",
+                    "rubros": [
+                        {
+                            "id": 1,
+                            "name": "Mini-Proyecto",
+                            "description": "Mini proyecto de mitad de curso",
+                            "percentage": 30,
+                            "assignments": [
+                                {
+                                    "id": 1,
+                                    "name": "Avance 1",
+                                    "description": "Avance 1 del mini-proyecto",
+                                    "startDate": "2026-03-01",
+                                    "dueDate": "2026-03-10",
+                                    "percentage": 1.5,
+                                    "obtainedScore": null
+                                },
+                                {
+                                    "id": 2,
+                                    "name": "Presentación",
+                                    "description": "Presentación en clase del mini-proyecto",
+                                    "startDate": "2026-04-01",
+                                    "dueDate": "2026-06-10",
+                                    "percentage": 28.5,
+                                    "obtainedScore": null
+                                }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "name": "Quizes",
+                            "description": "Quizes del curso",
+                            "percentage": 30,
+                            "assignments": [
+                                {
+                                    "id": 1,
+                                    "name": "Quiz I",
+                                    "description": "Quiz I del curso",
+                                    "startDate": "2026-03-01",
+                                    "dueDate": "2026-03-10",
+                                    "percentage": 10,
+                                    "obtainedScore": null
+                                },
+                                {
+                                    "id": 2,
+                                    "name": "Quiz II",
+                                    "description": "Quiz II del curso",
+                                    "startDate": "2026-03-01",
+                                    "dueDate": "2026-03-10",
+                                    "percentage": 10,
+                                    "obtainedScore": null
+                                },
+                                {
+                                    "id": 3,
+                                    "name": "Quiz III",
+                                    "description": "Quiz III del curso",
+                                    "startDate": "2026-03-01",
+                                    "dueDate": "2026-03-10",
+                                    "percentage": 10,
+                                    "obtainedScore": null
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "name": "Proyecto Final",
+                            "description": "Proyecto final del curso",
+                            "percentage": 40,
+                            "assignments": [
+                                {
+                                    "id": 1,
+                                    "name": "Avance 1",
+                                    "description": "Avance 1 del proyecto final",
+                                    "startDate": "2026-03-01",
+                                    "dueDate": "2026-03-10",
+                                    "percentage": 1.5,
+                                    "obtainedScore": null
+                                },
+                                {
+                                    "id": 2,
+                                    "name": "Presentación",
+                                    "description": "Presentación en clase del proyecto final",
+                                    "startDate": "2026-04-01",
+                                    "dueDate": "2026-06-10",
+                                    "percentage": 38.5,
+                                    "obtainedScore": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 2,
+                    "name": "Estructuras de Datos Avanzadas",
+                    "category": "it",
+                    "description": "Estudio a fondo de estructuras lineales y no lineales, árboles equilibrados, grafos y algoritmos de optimización de rutas.",
+                    "semester": "II",
+                    "status": "in_progress",
+                    "creationDate": "2026-01-15",
+                    "lastUpdate": "2026-02-20",
+                    "rubros": [
+                        {
+                            "id": 1,
+                            "name": "Exámenes Teórico-Prácticos",
+                            "description": "Evaluaciones parciales de algoritmos sobre árboles y grafos.",
+                            "percentage": 40,
+                            "assignments": [
+                                {
+                                    "id": 1,
+                                    "name": "Parcial I: Árboles AVL y B",
+                                    "description": "Examen sobre rotaciones e inserciones eficientes.",
+                                    "startDate": "2026-03-05",
+                                    "dueDate": "2026-03-12",
+                                    "percentage": 20,
+                                    "obtainedScore": null
+                                },
+                                {
+                                    "id": 2,
+                                    "name": "Parcial II: Teoría de Grafos",
+                                    "description": "Evaluación de algoritmos de Dijkstra y A*.",
+                                    "startDate": "2026-05-10",
+                                    "dueDate": "2026-05-17",
+                                    "percentage": 20,
+                                    "obtainedScore": null
+                                }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "name": "Tareas Programadas",
+                            "description": "Implementaciones prácticas en código limpio.",
+                            "percentage": 30,
+                            "assignments": [
+                                {
+                                    "id": 1,
+                                    "name": "Tarea 1: Simulador de Red Vial",
+                                    "description": "Modelado de una red de transporte usando matrices y listas de adyacencia.",
+                                    "startDate": "2026-02-15",
+                                    "dueDate": "2026-03-01",
+                                    "percentage": 15,
+                                    "obtainedScore": null
+                                },
+                                {
+                                    "id": 2,
+                                    "name": "Tarea 2: Balanceo de Árboles",
+                                    "description": "Implementar operaciones completas de inserción y cálculo de rango.",
+                                    "startDate": "2026-04-01",
+                                    "dueDate": "2026-04-15",
+                                    "percentage": 15,
+                                    "obtainedScore": null
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "name": "Proyecto de Simulación",
+                            "description": "Proyecto final grupal aplicando estructuras complejas.",
+                            "percentage": 30,
+                            "assignments": [
+                                {
+                                    "id": 1,
+                                    "name": "Definición y Modelado",
+                                    "description": "Propuesta técnica y diseño de clases inicial.",
+                                    "startDate": "2026-04-20",
+                                    "dueDate": "2026-05-02",
+                                    "percentage": 5,
+                                    "obtainedScore": null
+                                },
+                                {
+                                    "id": 2,
+                                    "name": "Defensa del Software",
+                                    "description": "Presentación interactiva y pruebas de estrés del sistema.",
+                                    "startDate": "2026-05-20",
+                                    "dueDate": "2026-06-15",
+                                    "percentage": 25,
+                                    "obtainedScore": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 3,
+                    "name": "Diseño y Desarrollo Backend",
+                    "category": "it",
+                    "description": "Construcción de arquitecturas de servidor robustas, manejo de entornos y despliegue de microservicios.",
+                    "semester": "II",
+                    "status": "in_progress",
+                    "creationDate": "2026-01-18",
+                    "lastUpdate": "2026-03-01",
+                    "rubros": [
+                        {
+                            "id": 1,
+                            "name": "Laboratorios Prácticos",
+                            "description": "Configuración de servidores locales y variables de entorno.",
+                            "percentage": 30,
+                            "assignments": [
+                                {
+                                    "id": 1,
+                                    "name": "Lab 1: Entorno y Rutas",
+                                    "description": "Configuración inicial del servidor y manejo de peticiones HTTP.",
+                                    "startDate": "2026-02-10",
+                                    "dueDate": "2026-02-18",
+                                    "percentage": 15,
+                                    "obtainedScore": null
+                                },
+                                {
+                                    "id": 2,
+                                    "name": "Lab 2: Middlewares de Seguridad",
+                                    "description": "Implementación de validaciones y control de accesos.",
+                                    "startDate": "2026-03-10",
+                                    "dueDate": "2026-03-18",
+                                    "percentage": 15,
+                                    "obtainedScore": null
+                                }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "name": "Casos de Estudio",
+                            "description": "Análisis de fallos de escalabilidad en sistemas reales.",
+                            "percentage": 20,
+                            "assignments": [
+                                {
+                                    "id": 1,
+                                    "name": "Análisis de Concurrencia",
+                                    "description": "Identificar cuellos de botella en APIs de alto tráfico.",
+                                    "startDate": "2026-04-05",
+                                    "dueDate": "2026-04-12",
+                                    "percentage": 20,
+                                    "obtainedScore": null
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "name": "Proyecto: API RESTful",
+                            "description": "Desarrollo completo de un servicio backend para autenticación y negocio.",
+                            "percentage": 50,
+                            "assignments": [
+                                {
+                                    "id": 1,
+                                    "name": "Diseño de Endpoints",
+                                    "description": "Documentación inicial en formato OpenAPI/Swagger.",
+                                    "startDate": "2026-04-15",
+                                    "dueDate": "2026-04-30",
+                                    "percentage": 10,
+                                    "obtainedScore": null
+                                },
+                                {
+                                    "id": 2,
+                                    "name": "Código y Despliegue",
+                                    "description": "Entrega del repositorio con testing automatizado y login funcional.",
+                                    "startDate": "2026-05-01",
+                                    "dueDate": "2026-06-20",
+                                    "percentage": 40,
+                                    "obtainedScore": null
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 4,
+                    "name": "Bases de Datos NoSQL",
+                    "category": "it",
+                    "description": "Modelado de datos no relacionales, optimización de consultas en documentos y gestión de almacenamiento masivo.",
+                    "semester": "I",
+                    "status": "approved",
+                    "creationDate": "2025-07-20",
+                    "lastUpdate": "2025-11-30",
+                    "rubros": [
+                        {
+                            "id": 1,
+                            "name": "Investigaciones",
+                            "description": "Comparativas entre motores NoSQL de tipo documento, clave-valor y grafos.",
+                            "percentage": 20,
+                            "assignments": [
+                                {
+                                    "id": 1,
+                                    "name": "Ensayo Teorema CAP",
+                                    "description": "Análisis de consistencia y disponibilidad en sistemas distribuidos.",
+                                    "startDate": "2025-08-10",
+                                    "dueDate": "2025-08-20",
+                                    "percentage": 20,
+                                    "obtainedScore": 95
+                                }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "name": "Prácticas de Consola",
+                            "description": "Ejecución de agregaciones y queries complejas desde la shell.",
+                            "percentage": 40,
+                            "assignments": [
+                                {
+                                    "id": 1,
+                                    "name": "Práctica 1: CRUD de Documentos",
+                                    "description": "Instalación local del motor, seteo de variables Path e inserción de colecciones.",
+                                    "startDate": "2025-09-01",
+                                    "dueDate": "2025-09-10",
+                                    "percentage": 20,
+                                    "obtainedScore": 100
+                                },
+                                {
+                                    "id": 2,
+                                    "name": "Práctica 2: Pipelines de Agregación",
+                                    "description": "Filtrado avanzado, joins lógicos y ordenamiento de Big Data.",
+                                    "startDate": "2025-10-01",
+                                    "dueDate": "2025-10-10",
+                                    "percentage": 20,
+                                    "obtainedScore": 88
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "name": "Examen Técnico Integrador",
+                            "description": "Prueba práctica cronometrada de diseño de índices y sharding.",
+                            "percentage": 40,
+                            "assignments": [
+                                {
+                                    "id": 1,
+                                    "name": "Examen Final Definitivo",
+                                    "description": "Resolución de un caso real de migración hacia bases orientadas a documentos.",
+                                    "startDate": "2025-11-15",
+                                    "dueDate": "2025-11-15",
+                                    "percentage": 40,
+                                    "obtainedScore": 90
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "id": 5,
+                    "name": "Desarrollo de Interfaces Web Avanzadas",
+                    "category": "it",
+                    "description": "Maquetación profesional, sistemas de diseño dinámicos con Flexbox/Grid, animaciones interactivas y transiciones CSS de alto rendimiento.",
+                    "semester": "I",
+                    "status": "approved",
+                    "creationDate": "2025-07-20",
+                    "lastUpdate": "2025-11-28",
+                    "rubros": [
+                        {
+                            "id": 1,
+                            "name": "Talleres Semanales",
+                            "description": "Ejercicios rápidos de layouts responsivos.",
+                            "percentage": 30,
+                            "assignments": [
+                                {
+                                    "id": 1,
+                                    "name": "Taller: Estilos de Formularios modernos",
+                                    "description": "Creación de un login-box estético con efectos hover y transiciones suaves.",
+                                    "startDate": "2025-08-05",
+                                    "dueDate": "2025-08-12",
+                                    "percentage": 15,
+                                    "obtainedScore": 98
+                                },
+                                {
+                                    "id": 2,
+                                    "name": "Taller: Dashboards con CSS Grid",
+                                    "description": "Estructura de rejilla fluida para paneles de control administrativos.",
+                                    "startDate": "2025-09-05",
+                                    "dueDate": "2025-09-12",
+                                    "percentage": 15,
+                                    "obtainedScore": 92
+                                }
+                            ]
+                        },
+                        {
+                            "id": 2,
+                            "name": "Portafolio de Componentes",
+                            "description": "Construcción de una librería propia de UI interactiva.",
+                            "percentage": 35,
+                            "assignments": [
+                                {
+                                    "id": 1,
+                                    "name": "Entrega Única de Componentes",
+                                    "description": "Modales, menús colapsables y tarjetas dinámicas puras con HTML/CSS.",
+                                    "startDate": "2025-10-01",
+                                    "dueDate": "2025-10-25",
+                                    "percentage": 35,
+                                    "obtainedScore": 100
+                                }
+                            ]
+                        },
+                        {
+                            "id": 3,
+                            "name": "Proyecto de UI/UX Homologado",
+                            "description": "Rediseño completo de un sitio institucional aplicando accesibilidad.",
+                            "percentage": 35,
+                            "assignments": [
+                                {
+                                    "id": 1,
+                                    "name": "Evaluación de Accesibilidad (W3C)",
+                                    "description": "Auditoría de contrastes, fuentes y etiquetas semánticas.",
+                                    "startDate": "2025-11-01",
+                                    "dueDate": "2025-11-10",
+                                    "percentage": 10,
+                                    "obtainedScore": 95
+                                },
+                                {
+                                    "id": 2,
+                                    "name": "Despliegue Final de la UI",
+                                    "description": "Página en producción completamente responsiva y animada.",
+                                    "startDate": "2025-11-12",
+                                    "dueDate": "2025-11-26",
+                                    "percentage": 25,
+                                    "obtainedScore": 94
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
