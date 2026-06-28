@@ -1,3 +1,7 @@
+#calculoNota {
+  scroll-margin-top: 200px;
+}
+
 .container-calculo {
   display: flex;
   flex-wrap: wrap;
@@ -8,6 +12,7 @@
   gap: 20px;
   align-items: flex-start;
   border-radius: 20px;
+  scroll-margin-top: 80px;
 }
 
 .container-calculo h1 {

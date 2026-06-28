@@ -52,7 +52,7 @@ hr {
 }
 
 /*============================
-Header
+            Header
 ============================*/
 .site-header {
   padding: 5px 45px;
@@ -130,9 +130,9 @@ Header
   text-align: center;
 }
 
-/* --------------------------
-Hero Section
---------------------------- */
+/*==========================
+        Hero Section
+============================*/
 
 .hero {
   background-image: url(../assets/images/wallpaper.jpg);
@@ -140,6 +140,7 @@ Hero Section
   background-attachment: fixed;
   background-size: cover;
   padding: 20px;
+  scroll-margin-top: 80px;
 }
 
 .hero-content {
@@ -211,9 +212,9 @@ Hero Section
   border-radius: 12px;
 }
 
-/* -------------------------
-Buttons
----------------------------- */
+/*==========================
+           Buttons
+============================*/
 
 .btn-primary {
   display: inline-block;
@@ -250,12 +251,13 @@ Buttons
 }
 
 /*============================
-About Section
+        About Section
 ============================*/
 
 .about {
   background-color: antiquewhite;
   padding: 70px;
+  scroll-margin-top: 80px;
 }
 
 .about-content {
@@ -338,7 +340,7 @@ About Section
 }
 
 /*============================
-Funcionamiento
+        Funcionamiento
 ============================*/
 
 .funcionamiento {
@@ -347,6 +349,7 @@ Funcionamiento
   background-attachment: fixed;
   background-size: cover;
   padding: 50px;
+  scroll-margin-top: 80px;
 }
 
 .funcionamiento-content {
@@ -421,7 +424,7 @@ p {
 }
 
 /*============================
-Footer
+           Footer
 ============================*/
 
 footer {
@@ -479,6 +482,10 @@ footer li img {
   background-color: white;
 }
 
+/*===========================
+      Dark Mode Header
+===========================*/
+
 .dark .site-header {
   background-color: #161b27;
   transition: all 0.8s;
@@ -492,6 +499,10 @@ footer li img {
   background-color: #3b82f6;
   color: #ffffff;
 }
+
+/*===========================
+       Dark Mode Hero
+===========================*/
 
 .dark .hero {
   background-image: url(../assets/images/wallpaperDark.jpg);
@@ -519,6 +530,10 @@ footer li img {
 .dark .hero-text li {
   color: #e8eaf0;
 }
+
+/*===========================
+      Dark Mode Buttons
+===========================*/
 
 .dark .btn-primary {
   background-color: #3b82f6;
@@ -631,6 +646,10 @@ footer li img {
 .dark .menu-nav {
   background-color: #161b27;
 }
+
+/*===========================
+       Responsividad
+===========================*/
 
 @media (max-width: 768px) {
   html,
@@ -814,7 +833,7 @@ footer li img {
 }
 
 /*============================
-Feedback
+          Feedback
 ============================*/
 
 .error-message {
