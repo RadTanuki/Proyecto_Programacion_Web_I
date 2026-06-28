@@ -122,6 +122,76 @@ Login Page
   text-decoration: underline;
 }
 
+/*===========================
+       Dark Mode Login
+===========================*/
+
+.dark .login-container {
+  background-image: url(../assets/images/wallpaperDark.jpg);
+}
+
+.dark .login-box {
+  background-color: #1e2436;
+  border: 1px solid #2d3550;
+  transition: all 0.8s;
+}
+
+.dark .tabs-container {
+  background-color: #161b27;
+  border-bottom: 1px solid #2d3550;
+}
+
+.dark .login-tab {
+  color: #5c6680;
+}
+
+.dark .login-tab:hover {
+  background-color: #252c3f;
+  color: #9aa3b8;
+}
+
+.dark .login-tab.active {
+  color: #e8eaf0;
+  background-color: #1e2436;
+  border-bottom: 2px solid #3b82f6;
+}
+
+.dark .form-group label {
+  color: #9aa3b8;
+}
+
+.dark .form-group[type="text"] {
+  border: 2px solid #2d3550;
+  background-color: #252c3f;
+  color: #e8eaf0;
+}
+
+.dark .form-group[type="email"] {
+  border: 2px solid #2d3550;
+  background-color: #252c3f;
+  color: #e8eaf0;
+}
+
+.dark .form-group[type="password"] {
+  border: 2px solid #2d3550;
+  background-color: #252c3f;
+  color: #e8eaf0;
+}
+
+.dark .login-form .btn-primary {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.dark .login-form .btn-primary:hover {
+  background-color: #2563eb;
+  color: white;
+}
+
+.dark .login-link a {
+  color: #93c5fd;
+}
+
 @media (max-width: 768px) {
   html,
   body {
@@ -134,9 +204,7 @@ Login Page
   }
 
   #register h2 {
-
     text-align: center;
     margin-bottom: 20px;
-
   }
 }

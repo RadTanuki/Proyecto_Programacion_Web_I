@@ -87,6 +87,7 @@ Header
   border-radius: 30px;
   padding: 8px;
   align-items: center;
+  cursor: pointer;
 }
 
 .header-interactables:hover {
@@ -119,27 +120,18 @@ Header
 }
 
 #toggle {
-
-    display: none;
-
-  }
+  display: none;
+}
 
 #label_toggle {
-
   color: white;
   cursor: pointer;
-
 }
 
-.dark {
-
-  background-color: #333;
-  color: white;
-  transition: all 1.5s;
-
+#botonDark {
+  width: 50px;
+  text-align: center;
 }
-
-
 
 /* --------------------------
 Hero Section
@@ -382,7 +374,9 @@ Funcionamiento
   border: 1px solid #dbeafe;
   border-radius: 14px;
   padding: 20px;
-  transition: transform 0.3s, box-shadow 0.3s;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s;
 }
 
 .funcionamiento-card:hover {
@@ -421,7 +415,6 @@ Funcionamiento
   list-style: number;
   line-height: 2;
 }
-
 
 /*============================
 Utilities
@@ -467,10 +460,185 @@ footer li img {
   padding: 20px;
 }
 
+/*===========================
+       Dark Mode Index
+===========================*/
+
+.dark {
+  background-color: #0f1117;
+  color: #e8eaf0;
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4,
+.dark h5,
+.dark h6 {
+  color: #e8eaf0;
+}
+
+.dark hr {
+  background-color: white;
+}
+
+.dark .site-header {
+  background-color: #161b27;
+  transition: all 0.8s;
+}
+
+.dark .header-interactables {
+  background-color: #252c3f;
+}
+
+.dark .header-interactables:hover {
+  background-color: #3b82f6;
+  color: #ffffff;
+}
+
+.dark .hero {
+  background-image: url(../assets/images/wallpaperDark.jpg);
+  transition: all 0.8s;
+}
+
+.dark .hero-text {
+  background-color: rgba(15, 17, 23, 0.75);
+  border: 1px solid #2d3550;
+}
+
+.dark .hero-text h1 {
+  color: #e8eaf0;
+}
+
+.dark .hero-text p {
+  color: #bac0d1;
+}
+
+.dark .hero-text span {
+  background-color: #1e3a6e;
+  color: #93c5fd;
+}
+
+.dark .hero-text li {
+  color: #e8eaf0;
+}
+
+.dark .btn-primary {
+  background-color: #3b82f6;
+  color: white;
+}
+
+.dark .btn-primary:hover {
+  background-color: #2563eb;
+  color: white;
+}
+
+/*===========================
+       Dark Mode About
+===========================*/
+
+.dark .about {
+  transition: all 0.8s;
+}
+
+.dark .about {
+  background-color: #0f1117;
+}
+
+.dark .about-text p {
+  color: #9aa3b8;
+}
+
+.dark .about-image {
+  background-color: transparent;
+}
+
+.dark .about-image img {
+  filter: invert(1);
+}
+
+.dark .about-info {
+  background-color: rgba(30, 36, 54, 0.85);
+}
+
+.dark .about-card {
+  background-color: #1e2436;
+  border: 1px solid #2d3550;
+}
+
+.dark .about .about-card h3,
+.dark .about .about-card h4,
+.dark .about .about-card p {
+  color: #e8eaf0;
+}
+
+.dark .about-card img {
+  filter: invert(1);
+}
+
+/*===========================
+   Dark Mode Funcionamiento
+===========================*/
+
+.dark .funcionamiento {
+  background-image: url(../assets/images/fondo-funcionamientoDark.jpg);
+  transition: all 0.8s;
+}
+
+.dark .funcionamiento-card {
+  background-color: #161b27;
+  border: 1px solid #2d3550;
+}
+
+.dark .funcionamiento-card img {
+  filter: invert(1);
+}
+
+.dark .funcionamiento-card h2,
+.dark .funcionamiento-card h4,
+.dark .funcionamiento-card p,
+.dark .funcionamiento-card li {
+  color: #e8eaf0;
+}
+
+.dark .funcionamiento-ol {
+  color: #9aa3b8;
+}
+
+/*===========================
+       Dark Mode Footer
+===========================*/
+
+.dark footer {
+  transition: all 0.8s;
+}
+
+.dark footer {
+  background-color: #161b27;
+  border-top: 1px solid #2d3550;
+  color: #9aa3b8;
+}
+
+.dark footer h2 {
+  color: #e8eaf0;
+}
+
+.dark footer a {
+  color: #93c5fd;
+}
+
+.dark footer img {
+  filter: invert(1);
+}
+
 @media (max-width: 768px) {
   .hamburguesa {
     display: block;
     margin-right: 30px;
+  }
+
+  #botonDark {
+    align-self: center;
   }
 
   .menu-nav {
