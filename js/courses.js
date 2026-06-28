@@ -343,7 +343,7 @@ btnConfirmCancel.addEventListener('click', closeConfirm);
 
 btnConfirmAccept.addEventListener('click', function () {
     if (pendingConfirmAction) {
-        pendingConfirmAction(); // ejecuta la acción guardada
+        pendingConfirmAction();
     }
     closeConfirm();
 });

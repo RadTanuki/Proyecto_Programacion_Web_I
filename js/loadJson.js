@@ -1,3 +1,7 @@
+/*============================
+JSON index
+============================*/
+
 let beneficios = []
 
 const aboutGrid = document.getElementById("about-grid")
@@ -31,14 +35,12 @@ function cargarAboutCards() {
                 <img src="${beneficio.imagen}" alt="${beneficio.titulo}">
             </article>
         `;
-
     }
-
 }
 
 document.addEventListener("DOMContentLoaded", async function () {
 
     await cargarBeneficios()
     cargarAboutCards()
-   
-})
+});
+
