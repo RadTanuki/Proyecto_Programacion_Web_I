@@ -31,7 +31,7 @@ Login Page
   border: none;
   background-color: transparent;
   color: rgba(255, 255, 255, 0.7);
-  font-size: 16px;
+  font-size: 1rem;
   cursor: pointer;
   transition: all 0.3s;
   font-family: inherit;
@@ -74,7 +74,7 @@ Login Page
   padding: 12px;
   border: 2px solid #e5e7eb;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 1rem;
   transition: border-color 0.3s;
   box-sizing: border-box;
 }
@@ -93,7 +93,7 @@ Login Page
 .login-form .btn-primary {
   width: 100%;
   padding: 14px;
-  font-size: 16px;
+  font-size: 1rem;
   margin: 10px 0;
   background-color: #1f2937;
   color: white;
