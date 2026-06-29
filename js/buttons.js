@@ -7,8 +7,15 @@ function useSelect (selectElement){
     });
 }
 
-useSelect(document.getElementById('sections'));
-useSelect(document.getElementById('solutions'));
+selectSolutions = document.getElementById('solutions');
+selectSections = document.getElementById('sections'); 
+
+if (selectSections && selectSolutions) {
+    useSelect(selectSections);
+    useSelect(selectSolutions);
+} else {
+    useSelect(selectSections);
+}
 
 //Método para permitir el funcionamiento de los botones
 function navButtons(reference) {
@@ -43,4 +50,7 @@ function clearFilters(){
     applyFilters();
 }
 
-btnClearFilters.addEventListener('click', clearFilters);
+if (btnClearFilters) {
+    btnClearFilters.addEventListener('click', clearFilters);
+}
+
