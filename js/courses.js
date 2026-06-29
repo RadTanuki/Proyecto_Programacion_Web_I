@@ -87,36 +87,34 @@ Load and filter courses
 let currentUser = null;
 
 async function loadCourses() {
-    async function loadCourses() {
-        const stored = localStorage.getItem('users');
-        let allUsers = [];
+    const stored = localStorage.getItem('users');
+    let allUsers = [];
 
-        if (stored) {
-            allUsers = JSON.parse(stored);
-        } else {
-            try {
-                const response = await fetch('..data/usersData.json');
-                const data = await response.json();
-                allUsers = data.users;
-                localStorage.setItem('users', JSON.stringify(allUsers));
-            } catch (error) {
-                console.log('Error cargando usuarios:', error);
-                allUsers = [];
-            }
+    if (stored) {
+        allUsers = JSON.parse(stored);
+    } else {
+        try {
+            const response = await fetch('data/usersData.json');
+            const data = await response.json();
+            allUsers = data.users;
+            localStorage.setItem('users', JSON.stringify(allUsers));
+        } catch (error) {
+            console.log('Error cargando usuarios:', error);
+            allUsers = [];
         }
-
-        currentUser = allUsers.find(function (u) {
-            return u.id === currentUserSession.id;
-        });
-
-        if (!currentUser) {
-            window.location.href = 'login.html';
-            return;
-        }
-
-        courses = currentUser.courses;
-        applyFilters();
     }
+
+    currentUser = allUsers.find(function (u) {
+        return u.id === currentUserSession.id;
+    });
+
+    if (!currentUser) {
+        window.location.href = 'login.html';
+        return;
+    }
+
+    courses = currentUser.courses;
+    applyFilters();
 }
 
 function applyFilters() {
@@ -262,6 +260,7 @@ function manageCourseCreation(event) {
         courses.push(newCourse);
     }
 
+    persistUsers();
     closeWindow();
     applyFilters();
 }
@@ -332,12 +331,14 @@ function deleteCourse(courseId) {
         courses = courses.filter(function (c) {
             return c.id !== courseId;
         });
+        currentUser.courses = courses;
 
         if (selectedCourseId === courseId) {
             selectedCourseId = null;
             courseDetail.classList.add('hidden');
         }
 
+        persistUsers();
         applyFilters();
     });
 }
@@ -505,13 +506,14 @@ function updateAssignmentScore(rubroId, assignmentId, rawValue) {
 
     if (score < 0 || score > 100) {
         showScoreFeedback('La nota debe estar entre 0 y 100.', 'error');
-        renderCourseDetail(course); // vuelve a pintar con el valor anterior
+        renderCourseDetail(course);
         return;
     }
 
     assignment.obtainedScore = score;
     course.lastUpdate = new Date().toISOString();
 
+    persistUsers();
     showScoreFeedback(`Nota guardada para "${assignment.name}".`, 'success');
     renderCourseDetail(course);
 }
@@ -616,6 +618,7 @@ function manageRubroCreation(event) {
     course.rubros.push(newRubro);
     course.lastUpdate = new Date().toISOString();
 
+    persistUsers();
     closeRubroWindow();
     renderCourseDetail(course);
 }
@@ -704,6 +707,7 @@ function manageAssignmentCreation(event) {
     rubro.assignments.push(newAssignment);
     course.lastUpdate = new Date().toISOString();
 
+    persistUsers();
     closeAssignmentWindow();
     renderCourseDetail(course);
 }
@@ -753,6 +757,8 @@ function deleteRubro(rubroId) {
     });
 
     course.lastUpdate = new Date().toISOString();
+
+    persistUsers();
     renderCourseDetail(course);
 }
 
@@ -774,6 +780,8 @@ function deleteAssignment(rubroId, assignmentId) {
     });
 
     course.lastUpdate = new Date().toISOString();
+
+    persistUsers();
     renderCourseDetail(course);
 }
 
@@ -803,8 +811,6 @@ windowOverlay.addEventListener('click', function (event) {
 });
 
 formCreateCourse.addEventListener('submit', manageCourseCreation);
-
-loadCourses();
 
 document.addEventListener('click', function (event) {
     if (!event.target.closest('.course-card-menu')) {
@@ -867,3 +873,4 @@ assignmentWindowOverlay.addEventListener('click', function (event) {
 });
 formCreateAssignment.addEventListener('submit', manageAssignmentCreation);
 
+loadCourses();
