@@ -557,11 +557,11 @@ Confirm delete
   background-color: #1e2436;
 }
 
-.window-overlay {
+.dark .window-overlay {
   background-color: rgba(0, 0, 0, 0.7);
 }
 
-.window-box {
+.dark .window-box {
   background-color: #1e2436;
   border: 1px solid #2d3550;
 }
