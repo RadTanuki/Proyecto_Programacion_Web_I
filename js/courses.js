@@ -1,74 +1,23 @@
-const coursesData = [
-    {
-        id: 1,
-        name: "Programación en Ambiente Web I",
-        category: "it",
-        description: "Curso introductorio a HTML, CSS y JavaScript para construir sitios interactivos.",
-        semester: "II",
-        status: "approved",
-        creationDate: "2026-01-15",
-        lastUpdate: "2026-02-10",
-        rubros: []
-    },
-    {
-        id: 2,
-        name: "Programación en Ambiente Web I",
-        category: "it",
-        description: "Curso introductorio a HTML, CSS y JavaScript para construir sitios interactivos.",
-        semester: "II",
-        status: "approved",
-        creationDate: "2026-01-15",
-        lastUpdate: "2026-02-10",
-        rubros: [
-            {
-            id: 1,
-            name: "Exámenes",
-            description: "Pruebas parciales del curso",
-            percentage: 40,
-            assignments: [
-                {
-                    id: 1,
-                    name: "Examen 1",
-                    description: "Primer parcial",
-                    startDate: "2026-03-01",
-                    dueDate: "2026-03-10",
-                    percentage: 20,
-                    obtainedScore: null
-                }
-            ]
-            }
-        ]
-    },
-    {
-        id: 3,
-        name: "Programación en Ambiente Web I",
-        category: "it",
-        description: "Curso introductorio a HTML, CSS y JavaScript para construir sitios interactivos.",
-        semester: "II",
-        status: "approved",
-        creationDate: "2026-01-15",
-        lastUpdate: "2026-02-10",
-        rubros: [
-            {
-            id: 1,
-            name: "Exámenes",
-            description: "Pruebas parciales del curso",
-            percentage: 40,
-            assignments: [
-                {
-                    id: 1,
-                    name: "Examen 1",
-                    description: "Primer parcial",
-                    startDate: "2026-03-01",
-                    dueDate: "2026-03-10",
-                    percentage: 20,
-                    obtainedScore: null
-                }
-            ]
-            }
-        ]
-    }
-];
+/*============================
+JSON Managment
+============================*/
+
+const currentUserSession = getCurrentUserSession();
+
+if (!currentUserSession) {
+    window.location.href = 'login.html';
+}
+
+function persistUsers() {
+    const stored = localStorage.getItem('users');
+    let allUsers = stored ? JSON.parse(stored) : [];
+
+    allUsers = allUsers.map(function (u) {
+        return (u.id === currentUser.id) ? currentUser : u;
+    });
+
+    localStorage.setItem('users', JSON.stringify(allUsers));
+}
 
 /*============================
 Courses variables
@@ -132,12 +81,42 @@ const btnConfirmAccept = document.getElementById('btnConfirmAccept');
 let pendingConfirmAction = null;
 
 /*============================
-Filter courses
+Load and filter courses
 ============================*/
 
-function loadCourses() {
-    courses = coursesData;
-    applyFilters();
+let currentUser = null;
+
+async function loadCourses() {
+    async function loadCourses() {
+        const stored = localStorage.getItem('users');
+        let allUsers = [];
+
+        if (stored) {
+            allUsers = JSON.parse(stored);
+        } else {
+            try {
+                const response = await fetch('..data/usersData.json');
+                const data = await response.json();
+                allUsers = data.users;
+                localStorage.setItem('users', JSON.stringify(allUsers));
+            } catch (error) {
+                console.log('Error cargando usuarios:', error);
+                allUsers = [];
+            }
+        }
+
+        currentUser = allUsers.find(function (u) {
+            return u.id === currentUserSession.id;
+        });
+
+        if (!currentUser) {
+            window.location.href = 'login.html';
+            return;
+        }
+
+        courses = currentUser.courses;
+        applyFilters();
+    }
 }
 
 function applyFilters() {

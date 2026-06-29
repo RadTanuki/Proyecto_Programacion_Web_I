@@ -172,6 +172,8 @@ Start the session
 ============================*/
 
 function startSession(user, remember) {
+    //Solo usar la información necesaria para iniciar sesión, si se agarra todo
+    //se pueden duplicar datos y errores de desincronización 
     const sessionData = JSON.stringify({ id: user.id, name: user.name, email: user.email });
 
     if (remember) {
@@ -282,3 +284,26 @@ async function init() {
 }
 
 init();
+
+/*============================
+Get current User
+============================*/
+
+function getCurrentUserSession() {
+    const fromLocal = localStorage.getItem('currentUser');
+    const fromSession = sessionStorage.getItem('currentUser');
+
+    const current = fromLocal || fromSession;
+    if (!current) return null;
+    return JSON.parse(current);
+}
+
+function logout() {
+    localStorage.removeItem('currentUser');
+    sessionStorage.removeItem('currentUser');
+    window.location.href = 'index.html';
+}
+
+//No funciona?
+const btnLogout = document.getElementById('btn-logout').addEventListener('click', logout);
+
