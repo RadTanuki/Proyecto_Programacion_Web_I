@@ -1,5 +1,3 @@
-/*Dark Mode*/
-
 const botonDark = document.getElementById("botonDark");
 
 botonDark.addEventListener("click", () => {

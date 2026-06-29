@@ -1,3 +1,7 @@
+#calculoNota {
+  scroll-margin-top: 200px;
+}
+
 .container-calculo {
   display: flex;
   flex-wrap: wrap;
@@ -8,6 +12,7 @@
   gap: 20px;
   align-items: flex-start;
   border-radius: 20px;
+  scroll-margin-top: 80px;
 }
 
 .container-calculo h1 {
@@ -129,7 +134,7 @@
   font-weight: bold;
   margin: 15px 15px 9px 15px;
   padding: 15px 18px 15px 18px;
-  font-size: 15px;
+  font-size: 1rem;
 }
 
 .btn-primary-calculo:hover {
@@ -293,54 +298,6 @@ td {
 }
 
 @media (max-width: 768px) {
-  html,
-  body {
-    overflow-x: hidden;
-  }
-
-  .hamburguesa {
-    display: block;
-    margin-right: 30px;
-  }
-
-  .menu-nav {
-    display: none;
-    position: absolute;
-    top: 70px;
-    left: 0;
-    width: 100%;
-    background-color: #34393f;
-    padding: 20px;
-    flex-direction: column;
-  }
-
-  .menu-nav nav {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .menu-nav select {
-    text-align: center;
-  }
-
-  .logo {
-    margin-left: 93px;
-  }
-
-  #menu-toggle:checked ~ .menu-nav {
-    display: flex;
-  }
-
-  .main-nav ul {
-    gap: 6px;
-  }
-
-  .main-nav a {
-    font-size: 0.9rem;
-    padding: 7px 8px;
-  }
-
   .container-calculo {
     margin-top: 35px;
     margin-bottom: 35px;
@@ -348,10 +305,17 @@ td {
     padding: 20px 5px;
   }
 
+  .rubros-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
   .rubro-card {
-    padding: 20px;
-    margin-left: 5px;
-    width: 82%;
+    margin: 0 auto;
+    width: 90%;
   }
 
   .rubro-card label {
@@ -359,9 +323,10 @@ td {
   }
 
   .notaMinima-card {
+    text-align: center;
     padding: 20px;
-    margin-left: 5px;
-    width: 82%;
+    margin: 0 auto;
+    width: 90%;
   }
 
   .acciones {

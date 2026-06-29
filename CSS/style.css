@@ -25,7 +25,7 @@ h6 {
 }
 
 html {
-  font-size: 16px;
+  font-size: 1rem;
   scroll-behavior: smooth;
 }
 
@@ -52,7 +52,7 @@ hr {
 }
 
 /*============================
-Header
+            Header
 ============================*/
 .site-header {
   padding: 5px 45px;
@@ -68,8 +68,6 @@ Header
 .logo {
   height: 75px;
   width: auto;
-  object-fit: contain;
-  margin-left: 30px;
 }
 
 .logo:hover {
@@ -102,15 +100,14 @@ Header
 
 .hamburguesa {
   display: none;
-  cursor: pointer;
 }
 
 .hamburguesa span {
   display: block;
-  width: 30px;
-  height: 4px;
+  width: 40px;
+  height: 5px;
   background-color: white;
-  margin: 5px 0;
+  margin: 4px 0;
   border-radius: 2px;
 }
 
@@ -133,9 +130,9 @@ Header
   text-align: center;
 }
 
-/* --------------------------
-Hero Section
---------------------------- */
+/*==========================
+        Hero Section
+============================*/
 
 .hero {
   background-image: url(../assets/images/wallpaper.jpg);
@@ -143,6 +140,7 @@ Hero Section
   background-attachment: fixed;
   background-size: cover;
   padding: 20px;
+  scroll-margin-top: 80px;
 }
 
 .hero-content {
@@ -163,7 +161,7 @@ Hero Section
 }
 
 .hero-text h1 {
-  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-size: 2.5rem;
   color: black;
   margin-bottom: 1px;
   margin-top: 5px;
@@ -184,7 +182,7 @@ Hero Section
   background-color: #34393f;
   color: white;
   font-weight: 500;
-  font-size: 14px;
+  font-size: 0.875rem;
   padding: 5px 16px;
   border-radius: 20px;
   font-family: "Fuente", serif;
@@ -214,9 +212,9 @@ Hero Section
   border-radius: 12px;
 }
 
-/* -------------------------
-Buttons
----------------------------- */
+/*==========================
+           Buttons
+============================*/
 
 .btn-primary {
   display: inline-block;
@@ -226,7 +224,7 @@ Buttons
   font-weight: bold;
   margin: 15px 15px 9px 15px;
   padding: 15px 18px 15px 18px;
-  font-size: 15px;
+  font-size: 1rem;
 }
 
 .btn-primary:hover {
@@ -243,7 +241,7 @@ Buttons
   font-weight: bold;
   margin: 15px 15px 9px 15px;
   padding: 15px 18px 15px 18px;
-  font-size: 15px;
+  font-size: 1rem;
 }
 
 .btn-secondary:hover {
@@ -253,12 +251,13 @@ Buttons
 }
 
 /*============================
-About Section
+        About Section
 ============================*/
 
 .about {
   background-color: antiquewhite;
   padding: 70px;
+  scroll-margin-top: 80px;
 }
 
 .about-content {
@@ -341,7 +340,7 @@ About Section
 }
 
 /*============================
-Funcionamiento
+        Funcionamiento
 ============================*/
 
 .funcionamiento {
@@ -350,6 +349,7 @@ Funcionamiento
   background-attachment: fixed;
   background-size: cover;
   padding: 50px;
+  scroll-margin-top: 80px;
 }
 
 .funcionamiento-content {
@@ -406,7 +406,7 @@ Funcionamiento
 }
 
 .funcionamiento-h4 {
-  font-size: larger;
+  font-size: 1.25rem;
   text-align: center;
 }
 
@@ -424,7 +424,7 @@ p {
 }
 
 /*============================
-Footer
+           Footer
 ============================*/
 
 footer {
@@ -482,6 +482,10 @@ footer li img {
   background-color: white;
 }
 
+/*===========================
+      Dark Mode Header
+===========================*/
+
 .dark .site-header {
   background-color: #161b27;
   transition: all 0.8s;
@@ -495,6 +499,10 @@ footer li img {
   background-color: #3b82f6;
   color: #ffffff;
 }
+
+/*===========================
+       Dark Mode Hero
+===========================*/
 
 .dark .hero {
   background-image: url(../assets/images/wallpaperDark.jpg);
@@ -522,6 +530,10 @@ footer li img {
 .dark .hero-text li {
   color: #e8eaf0;
 }
+
+/*===========================
+      Dark Mode Buttons
+===========================*/
 
 .dark .btn-primary {
   background-color: #3b82f6;
@@ -631,21 +643,41 @@ footer li img {
   filter: invert(1);
 }
 
+.dark .menu-nav {
+  background-color: #161b27;
+}
+
+/*===========================
+       Responsividad
+===========================*/
+
 @media (max-width: 768px) {
+  html,
+  body {
+    overflow-x: hidden;
+  }
+
+  .site-header {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 16px;
+  }
+
   .hamburguesa {
-    display: block;
-    margin-right: 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%);
   }
-
-  #botonDark {
-    align-self: center;
-  }
-
   .menu-nav {
     display: none;
     position: absolute;
-    top: 70px;
-    left: 0;
+    top: 95px;
     width: 100%;
     background-color: #34393f;
     padding: 20px;
@@ -660,11 +692,38 @@ footer li img {
 
   .menu-nav select {
     text-align: center;
+    width: 100%;
+  }
+
+  .menu-nav button {
+    width: 100%;
+  }
+
+  .menu-nav #botonDark {
+    width: 25%;
+    margin: 0 auto;
   }
 
   .logo {
-    margin-left: 0;
     height: 75px;
+    width: auto;
+    display: block;
+  }
+
+  .hamburguesa span {
+    transition: 0.5s ease;
+  }
+
+  #menu-toggle:checked + .hamburguesa span:nth-child(1) {
+    transform: rotate(45deg) translate(15px, 3px);
+  }
+
+  #menu-toggle:checked + .hamburguesa span:nth-child(2) {
+    transform: scale(0);
+  }
+
+  #menu-toggle:checked + .hamburguesa span:nth-child(3) {
+    transform: rotate(-45deg) translate(15px, -4px);
   }
 
   #menu-toggle:checked ~ .menu-nav {
@@ -678,12 +737,11 @@ footer li img {
   .hero-content {
     flex-direction: column;
     align-items: center;
-    /*width: 77%;*/
+    width: 95%;
   }
 
-  .hero-text,
-  .hero-image {
-    /*width: 150%;*/
+  .hero-image img {
+    width: 100%;
   }
 
   .hero-text {
@@ -692,11 +750,11 @@ footer li img {
   }
 
   .hero-text h1 {
-    font-size: 35px;
+    font-size: 2.25rem;
   }
 
   .hero-text p {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .hero-image {
@@ -724,16 +782,17 @@ footer li img {
 
   .about-text {
     text-align: center;
-    font-size: 20px;
+    font-size: 1.25rem;
     margin-bottom: 40px;
   }
 
   .about-image img {
-    width: 150px;
+    margin-left: 90px;
+    width: 75%;
   }
 
   .about-title {
-    font-size: 30px;
+    font-size: 1.875rem;
     margin-bottom: 30px;
   }
 
@@ -742,11 +801,11 @@ footer li img {
   }
 
   .about-card p {
-    font-size: 20px;
+    font-size: 1.25rem;
   }
 
   .about-card h3 {
-    font-size: 25px;
+    font-size: 1.25rem;
     margin-bottom: 10px;
   }
 
@@ -755,22 +814,26 @@ footer li img {
   }
 
   .funcionamiento-h2 {
-    font-size: 30px;
+    font-size: 1.875rem;
     margin-bottom: 30px;
   }
 
   .funcionamiento-h4 {
-    font-size: 25px;
+    font-size: 1.5rem;
     margin-bottom: 10px;
   }
 
   .funcionamiento-ul {
-    font-size: 20px;
+    font-size: 1.25rem;
+  }
+
+  #contact {
+    padding: 30px;
   }
 }
 
 /*============================
-Feedback
+          Feedback
 ============================*/
 
 .error-message {
@@ -785,23 +848,23 @@ Feedback
 }
 
 .feedback-message {
-    margin-top: 10px;
-    padding: 10px 14px;
-    border-radius: 8px;
-    font-size: 14px;
-    display: none;
+  margin-top: 10px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 14px;
+  display: none;
 }
 
 .feedback-message.visible {
-    display: block;
+  display: block;
 }
 
 .feedback-message.success {
-    background-color: #dcfce7;
-    color: #166534;
+  background-color: #dcfce7;
+  color: #166534;
 }
 
 .feedback-message.error {
-    background-color: #fee2e2;
-    color: #b91c1c;
+  background-color: #fee2e2;
+  color: #b91c1c;
 }

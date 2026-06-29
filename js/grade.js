@@ -20,7 +20,7 @@ function crearRubro(event) {
 
     nuevoRubro.innerHTML = `
         <label>Rubro #${cantidadRubros}</label>
-        <input class="btn-eliminar" type="button" value="❌">
+        <input class="btn-eliminar" type="button" value="&#x274C">
         <input type="number" class="input-nota" placeholder="Nota" min="0" max="100">
         <input type="number" class="input-porcentaje" placeholder="%" min="1" max="100">
     `;
@@ -37,7 +37,6 @@ function actualizarNumero(event) {
 
     const rubros = document.querySelectorAll(".rubro-card");
 
-    
     rubros.forEach(function (rubro, numero) {
 
         const label = rubro.querySelector("label");
@@ -46,9 +45,7 @@ function actualizarNumero(event) {
 
     });
 
-
 }
-
 
 function eliminarRubro(event) {
 
@@ -74,7 +71,7 @@ function mostrarExito(input) {
   input.classList.add('input-success');
 }
 
-function validarNota() {
+function validarNotaVacio() {
 
     let esValido = true;
 
@@ -142,11 +139,10 @@ function validarNotaValor() {
 
         }
 
-        
-
     });
 
     return esValido;
+    
 }
 
 function validarPorcentajeValor() {
@@ -186,7 +182,7 @@ function validarNotaMinima() {
 
     if (notaMinima.value === "") {
 
-        return true;
+        return esValido;
 
     }
 
@@ -234,7 +230,7 @@ function calcularNota(event) {
 
     event.preventDefault();
 
-    if (!validarNota()) {
+    if (!validarNotaVacio()) {
         cuadroResultado.innerHTML = `<h3 class="warning">Existen campos vacios, por favor varificar</h3> 
         <br><h4>Por favor, verificar</h4>`;
         return;

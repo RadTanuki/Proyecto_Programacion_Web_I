@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Grade Manager is a webpage dedicated to
     help students manage their university assignments and projects">
-    <meta name="keywords" 
-        content="College, Study, Knowledge, Management,
+    <meta name="keywords" content="College, Study, Knowledge, Management,
         Students, Time management, Programming, 
         Artificial Inteligence, Chemistry, Phisics, Biology">
     <link rel="stylesheet" href="CSS/style.css">
@@ -17,7 +16,7 @@
 
 <body>
     <header class="site-header" id="header">
-        
+
         <a href="index.html">
             <img src="assets/images/logoHeader.png" class="logo" alt="Logo de Grade Manager">
         </a>
@@ -34,7 +33,7 @@
             <nav>
 
                 <button id="botonDark" class="header-interactables"> &#x1F319; </button>
-        
+
                 <select class="header-interactables" id="sections">
                     <option value="">Secciones</option>
                     <option value="#hero">Inicio</option>
@@ -62,10 +61,10 @@
                     <span class="hero-badge">Plataforma académica</span>
                     <h1> Grade Manager </h1>
                     <p> <strong>Calcula tus notas y organiza tus
-                        tareas en segundos</strong>
-                        <br>Herramienta diseñada para ayudarte a 
+                            tareas en segundos</strong>
+                        <br>Herramienta diseñada para ayudarte a
                         administrar <br>tu progreso y mejorar tu rendimiento
-                        académico. 
+                        académico.
                     </p>
                     <ul>
                         <li><strong>&#x2714 Cálculo automático</strong></li>
@@ -91,12 +90,13 @@
                 <div>
                     <h1 class="about-title">Acerca de Grade Manager</h1>
                     <p class="about-text">
-                        Somos una aplicación web enfocada en ayudar a los estudiantes a administrar mejor sus 
-                        responsabilidades <br> académicas, permitiendo organizar cursos, llevar un control de sus asignaciones y calcular promedios.
+                        Somos una aplicación web enfocada en ayudar a los estudiantes a administrar mejor sus
+                        responsabilidades <br> académicas, permitiendo organizar cursos, llevar un control de sus
+                        asignaciones y calcular promedios.
                     </p>
 
                     <div id="about-grid">
-                        
+
                     </div>
                 </div>
             </div>
@@ -114,7 +114,7 @@
                     <h4 class="funcionamiento-h4">Cálculo de nota manual</h4>
                     <ol class="funcionamiento-ol">
                         <li>Agrega cuantos rubros desees con el botón "+ Agregar rubro".</li>
-                        <li>Ingresa la nota que obtuviste y el valor porcentual de cada uno. 
+                        <li>Ingresa la nota que obtuviste y el valor porcentual de cada uno.
                             Las notas y los porcentajes deben estar entre 0 y 100.</li>
                         <li>Opcionalmente, ingresa la nota mínima para aprobar y conocer tu condición.</li>
                         <li>Haz clic en el botón de "Calcular nota".</li>
@@ -172,46 +172,46 @@
 
             <form class="container-calculo">
 
-            <h1>Cálculo de nota</h1>
+                <h1>Cálculo de nota</h1>
 
-            <div class="rubros-container">
-                
-                <div class="rubro-card">
+                <div class="rubros-container">
 
-                    <label>Rubro #1</label> 
-                    <input type="number" class="input-nota" required placeholder="Nota" min="0" max="100">
-                    <input type="number" class="input-porcentaje" required placeholder="%" min="1" max="100">
+                    <div class="rubro-card">
+
+                        <label>Rubro #1</label>
+                        <input type="number" class="input-nota" required placeholder="Nota" min="0" max="100">
+                        <input type="number" class="input-porcentaje" required placeholder="%" min="1" max="100">
+                    </div>
+
+                    <div class="rubro-card">
+
+                        <label>Rubro #2</label>
+                        <input class="btn-eliminar" type="button" value="&#x274C">
+                        <input type="number" class="input-nota" required placeholder="Nota" min="0" max="100">
+                        <input type="number" class="input-porcentaje" required placeholder="%" min="1" max="100">
+
+                    </div>
+
+                    <div class="notaMinima-card">
+
+                        <label>Nota mínima para aprobar (opcional)</label>
+                        <input type="number" id="notaMinima" placeholder="Mínima" min="0" max="100">
+
+                    </div>
+
+                    <div class="acciones">
+                        <button class="btn-primary-calculo" id="agregarRubro">+ Agregar rubro</button>
+                        <button class="btn-primary-calculo" id="limpiar">Limpiar</button>
+                        <button class="btn-primary-calculo" id="calcularNota">Calcular nota</button>
+                    </div>
+
                 </div>
 
-                <div class="rubro-card">
-
-                    <label>Rubro #2</label>
-                    <input class="btn-eliminar" type="button" value="&#x274C">
-                    <input type="number" class="input-nota" required placeholder="Nota" min="0" max="100">
-                    <input type="number" class="input-porcentaje" required placeholder="%" min="1" max="100">
-
+                <div id="result">
+                    <h3>Aquí se mostrará un detalle de la nota</h3>
                 </div>
 
-                <div class="notaMinima-card" >
-
-                    <label>Nota mínima para aprobar (opcional)</label>
-                    <input type="number" id="notaMinima" placeholder="Mínima" min="0" max="100">
-
-                </div>
-
-                <div class="acciones">
-                    <button class="btn-primary-calculo" id="agregarRubro">+ Agregar rubro</button>
-                    <button class="btn-primary-calculo" id="limpiar">Limpiar</button>
-                    <button class="btn-primary-calculo" id="calcularNota">Calcular nota</button>
-                </div>
-
-            </div>
-
-            <div id="result">
-                <h3>Aquí se mostrará un detalle de la nota</h3>
-            </div>
-
-        </form>
+            </form>
 
 
         </section>
@@ -261,5 +261,7 @@
     <script src="js/darkMode.js"></script>
     <script src="js/index.js"></script>
     <script src="js/grade.js"></script>
+    <script src="js/closeMenuNav.js"></script>
 </body>
+
 </html>

@@ -40,7 +40,7 @@ Search Bar
   padding: 12px 40px 12px 15px;
   border: 2px solid #e5e7eb;
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 1rem;
   transition: border-color 0.3s;
   box-sizing: border-box;
   background-color: white;
@@ -67,7 +67,7 @@ Filters
   padding: 11px 15px;
   border: 2px solid #e5e7eb;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 0.875rem;
   background-color: white;
   color: #4b5563;
   transition: border-color 0.3s;
@@ -115,7 +115,7 @@ Counter
 
 .courses-counter {
   color: #6b7280;
-  font-size: 14px;
+  font-size: 0.875rem;
   margin-top: 14px;
   text-align: center;
 }
@@ -162,12 +162,12 @@ Create course window
 .window-close {
   background: none;
   border: none;
-  font-size: 18px;
+  font-size: 1.125rem;
   cursor: pointer;
 }
 
 .window-close:hover {
-  font-size: 20px;
+  font-size: 1.25rem;
 }
 
 .window-form .form-group {
@@ -178,7 +178,7 @@ Create course window
 
 .window-form label {
   margin-bottom: 5px;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #4b5563;
 }
 
@@ -188,7 +188,7 @@ Create course window
   border: 2px solid #868686;
   border-radius: 8px;
   font-family: inherit;
-  font-size: 14px;
+  font-size: 0.875rem;
 }
 
 .window-select {
@@ -198,7 +198,7 @@ Create course window
   border-radius: 25px;
   font-weight: bold;
   padding: 10px 10px 10px 10px;
-  font-size: 15px;
+  font-size: 1rem;
 }
 
 .window-select:hover {
@@ -211,6 +211,17 @@ Create course window
 .window-form textarea:focus {
   outline: none;
   border-color: #00b4d8;
+}
+
+.error-message {
+  color: #e11d48;
+  font-size: 0.875rem;
+  margin-top: 4px;
+  display: none;
+}
+
+.error-message.visible {
+  display: block;
 }
 
 .window-action {
@@ -240,7 +251,7 @@ Empty course
 }
 
 .empty-state .empty-icon {
-  font-size: 48px;
+  font-size: 3rem;
   display: block;
   margin-bottom: 15px;
 }
@@ -268,7 +279,7 @@ Course Detail
 
 .detail-progress {
   margin-top: 10px;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #4b5563;
 }
 
@@ -325,7 +336,7 @@ Rubros
 
 .btn-small {
   padding: 6px 12px;
-  font-size: 13px;
+  font-size: 0.875rem;
   border-radius: 6px;
   border: none;
   cursor: pointer;
@@ -348,7 +359,7 @@ Grade details
 
 .detail-grade {
   margin-top: 10px;
-  font-size: 16px;
+  font-size: 1rem;
   color: #1f2937;
 }
 
@@ -356,7 +367,7 @@ Grade details
   margin-top: 10px;
   padding: 10px 14px;
   border-radius: 8px;
-  font-size: 14px;
+  font-size: 0.875rem;
   display: none;
 }
 
@@ -429,7 +440,7 @@ Course CRUD
 .btn-mini-menu {
   background: none;
   border: none;
-  font-size: 20px;
+  font-size: 1.25rem;
   line-height: 1;
   cursor: pointer;
   color: #6b7280;
@@ -466,7 +477,7 @@ Course CRUD
   border: none;
   background: none;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 0.875rem;
   color: #374151;
 }
 
@@ -504,7 +515,7 @@ Confirm delete
   font-weight: bold;
   margin: 15px 15px 9px 15px;
   padding: 15px 18px 15px 18px;
-  font-size: 15px;
+  font-size: 0.875rem;
 }
 
 .btn-danger:hover {
@@ -764,8 +775,14 @@ Confirm delete
   }
 
   #btnCreateCourse {
-    width: 70%;
+    width: 80%;
     margin: 0 auto;
+  }
+
+  #btnClearFilters {
+    width: 80%;
+    margin-top: 20px;
+    margin-left: 27px;
   }
 
   .window-header h2 {
@@ -786,5 +803,30 @@ Confirm delete
     align-items: center;
     text-align: center;
     gap: 10px;
+  }
+
+  .detail-header {
+
+    text-align: center;
+
+  }
+
+
+  .rubro-card {
+
+    text-align: center;
+
+  }
+
+  .rubro-actions {
+
+    margin: 0 auto;
+
+  }
+
+  .assignment-card span{
+
+    margin: 0 auto;
+
   }
 }
