@@ -305,10 +305,17 @@ td {
     padding: 20px 5px;
   }
 
+  .rubros-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+  }
+
   .rubro-card {
-    padding: 20px;
-    margin-left: 5px;
-    width: 82%;
+    margin: 0 auto;
+    width: 90%;
   }
 
   .rubro-card label {
@@ -316,9 +323,10 @@ td {
   }
 
   .notaMinima-card {
+    text-align: center;
     padding: 20px;
-    margin-left: 5px;
-    width: 82%;
+    margin: 0 auto;
+    width: 90%;
   }
 
   .acciones {
