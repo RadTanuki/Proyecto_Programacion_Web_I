@@ -26,6 +26,8 @@ Courses variables
 let courses = [];
 let filteredCourses = [];
 
+const coursesTitle = document.getElementById('coursesTitle');
+
 const coursesContainer = document.getElementById('coursesContainer');
 const coursesCounter = document.getElementById('coursesCounter');
 const searchInput = document.getElementById('searchCourses');
@@ -112,6 +114,8 @@ async function loadCourses() {
         window.location.href = 'login.html';
         return;
     }
+
+    coursesTitle.textContent = `Cursos de ${currentUser.name}`; 
 
     courses = currentUser.courses;
     applyFilters();
@@ -480,6 +484,22 @@ function renderAssignmentsHtml(rubro) {
     }).join('');
 }
 
+function updateCourseStatus(course) {
+    const finalGrade = calculateFinalGrade(course);
+
+    if (finalGrade >= 70 && course.status !== 'approved'){
+        course.status = 'approved';
+        return true;
+    }
+
+    if (finalGrade < 70 && course.status === 'approved') {
+        course.status = 'pending';
+        return true;
+    }
+
+    return false;
+}
+
 function updateAssignmentScore(rubroId, assignmentId, rawValue) {
     const course = courses.find(function (c) {
         return c.id === selectedCourseId;
@@ -498,6 +518,7 @@ function updateAssignmentScore(rubroId, assignmentId, rawValue) {
 
     if (rawValue.trim() === '') {
         assignment.obtainedScore = null;
+        updateCourseStatus(course);
         renderCourseDetail(course);
         return;
     }
@@ -513,8 +534,16 @@ function updateAssignmentScore(rubroId, assignmentId, rawValue) {
     assignment.obtainedScore = score;
     course.lastUpdate = new Date().toISOString();
 
+    const statusChanged = updateCourseStatus(course);
+
     persistUsers();
-    showScoreFeedback(`Nota guardada para "${assignment.name}".`, 'success');
+
+    if (statusChanged && course.status === 'approved'){
+        showScoreFeedback(`Nota guardada, el curso ${course.name} está !Aprobado¡`, 'success');
+    } else {
+        showScoreFeedback(`Nota guardada para "${assignment.name}".`, 'success');
+    }
+    
     renderCourseDetail(course);
 }
 

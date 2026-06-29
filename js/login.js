@@ -283,7 +283,9 @@ async function init() {
     initAuthForms();
 }
 
-init();
+document.addEventListener('DOMContentLoaded', function () {
+    init();
+});
 
 /*============================
 Get current User
@@ -304,6 +306,9 @@ function logout() {
     window.location.href = 'index.html';
 }
 
-//No funciona?
-const btnLogout = document.getElementById('btn-logout').addEventListener('click', logout);
+const btnLogout = document.getElementById('btn-logout');
+
+if (btnLogout) {
+    btnLogout.addEventListener('click', logout);
+}
 
