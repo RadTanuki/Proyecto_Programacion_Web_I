@@ -311,4 +311,3 @@ const btnLogout = document.getElementById('btn-logout');
 if (btnLogout) {
     btnLogout.addEventListener('click', logout);
 }
-
