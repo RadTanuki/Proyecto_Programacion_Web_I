@@ -67,6 +67,7 @@ hr {
 }
 
 .logo {
+  margin-top: 5px;
   height: 75px;
   width: auto;
 }
@@ -74,13 +75,12 @@ hr {
 .logo:hover {
   transform: scale(1.1);
   cursor: pointer;
-  transition: transform 0.3s;
+  transition: transform 0.4s;
 }
 
 .header-interactables {
   font-size: 1rem;
-  margin-bottom: 0;
-  margin-right: 10px;
+  margin-left: 15px;
   background-color: #1f2937;
   color: seashell;
   border-radius: 30px;
@@ -498,6 +498,7 @@ footer li img {
 
 .dark .header-interactables {
   background-color: #252c3f;
+  border: 2px solid #3b82f6;
 }
 
 .dark .header-interactables:hover {
