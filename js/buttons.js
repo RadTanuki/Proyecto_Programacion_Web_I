@@ -46,7 +46,7 @@ function clearFilters(){
     searchInput.value = '';
     filterOrder.value = 'name';
     filterStatus.value = 'all';
-    filterSemester.value = 'all';
+    filterCategory.value = 'all';
     applyFilters();
 }
 

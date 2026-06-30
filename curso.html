@@ -64,6 +64,8 @@
                         <option value="name">Ordenar por: Nombre</option>
                         <option value="creationDate">Ordenar por: Más reciente</option>
                         <option value="lastUpdate">Ordenar por: Última modificación</option>
+                        <option value="semesterAsc">Semestre: Ascendente</option>
+                        <option value="semesterDesc">Semestre: Descendente</option>
                     </select>
 
                     <select id="filterStatus" class="filter-select">
@@ -72,9 +74,16 @@
                         <option value="pending">Pendientes</option>
                     </select>
 
-                    <select id="filterSemester" class="filter-select">
-                        <option value="all">Todos los Semestres</option>
-                        <option value="asdasd">(Cargarlos por el JSON)</option>
+                    <select id="filterCategory" class="filter-select">
+                        <option value="all">Categorías</option>
+                        <option value="it">Tecnología &#x1F4BB</option>
+                        <option value="math">Matemáticas &#x1F4D0</option>
+                        <option value="science">Ciencias &#x1F52C</option>
+                        <option value="languages">Idiomas &#x1F5E3</option>
+                        <option value="socialSciences">Sociales &#x1F30E</option>
+                        <option value="sports">Deportes &#x1F3C6</option>
+                        <option value="economics">Economía &#x1F4B5</option>
+                        <option value="others">Otros &#x1F5FF</option>
                     </select>
 
                     <button type="button" id="btnClearFilters" class="btn-secondary">
@@ -168,7 +177,7 @@
 
                     <div class="form-group">
                         <label for="inputCourseSemester">Semestre</label>
-                        <input type="text" id="inputCourseSemester" placeholder="I, II, III, IV...">
+                        <input type="number" id="inputCourseSemester" min="1" max="25" required>
                     </div>
 
                     <div class="window-actions">
@@ -299,7 +308,7 @@
         <ul>
             <li><a href="index.html">Inicio</a></li>
             <li><a href="login.html">Login</a></li>
-            <li><a href="login.html">Asignaciones</a></li>
+            <li><a href="#toolbar">Asignaciones</a></li>
             <!--Habría que poner un if sesión iniciada mandar a esa ventana, sino, a login-->
         </ul>
     </footer>
