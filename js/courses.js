@@ -33,7 +33,7 @@ const coursesCounter = document.getElementById('coursesCounter');
 const searchInput = document.getElementById('searchCourses');
 const filterOrder = document.getElementById('filterOrder');
 const filterStatus = document.getElementById('filterStatus');
-const filterSemester = document.getElementById('filterSemester');
+const filterCategory = document.getElementById('filterCategory');
 const btnCreateCourse = document.getElementById('btnCreateCourse');
 
 const windowOverlay = document.getElementById('windowOverlay');
@@ -124,15 +124,15 @@ async function loadCourses() {
 function applyFilters() {
     const text = searchInput.value.toLowerCase().trim();
     const status = filterStatus.value;
-    const semester = filterSemester.value;
+    const category = filterCategory.value;
     const order = filterOrder.value;
 
     let result = courses.filter(function (course) {
         const textMatch = course.name.toLowerCase().includes(text);
         const statusMatch = (status === 'all') || (course.status === status);
-        const semesterMatch = (semester === 'all') || (course.semester === semester);
+        const categoryMatch = (category === 'all') || (course.category === category);
 
-        return (textMatch && statusMatch && semesterMatch);
+        return (textMatch && statusMatch && categoryMatch);
     });
 
     result = orderCourses(result, order);
@@ -157,9 +157,28 @@ function orderCourses(list, criteria) {
         temp.sort(function (a, b) {
             return new Date(b.lastUpdate) - new Date(a.lastUpdate);
         });
+    } else if (criteria === 'semesterAsc') {
+        temp.sort(function (a, b) {
+            return Number(a.semester) - Number(b.semester);
+        });
+    } else if (criteria === 'semesterDesc') {
+        temp.sort(function (a, b) {
+            return Number(b.semester) - Number(a.semester);
+        });
     }
 
     return temp;
+}
+
+const categoryLabels = {
+    it: 'Tecnología &#x1F4BB',
+    math: 'Matemáticas &#x1F4D0',
+    science: 'Ciencias &#x1F52C',
+    languages: 'Idiomas &#x1F5E3',
+    socialSciences: 'Sociales &#x1F30E',
+    sports: 'Deportes &#x1F3C6',
+    economics: 'Economía &#x1F4B5',
+    others: 'Otros &#x1F5FF'
 }
 
 function renderCourses(list) {
@@ -184,6 +203,7 @@ function renderCourses(list) {
             card.classList.add('active');
         }
 
+        const categoryInfo = categoryLabels[course.category] || 'Otros &#x1F5FF';
         card.innerHTML = `
             <div class="course-card-menu">
                 <button class="btn-mini-menu" type="button" data-course-id="${course.id}">&#x22EE;</button>
@@ -194,6 +214,7 @@ function renderCourses(list) {
             </div>
             <h3>${course.name}</h3>
             <p>${course.description || 'Sin descripción'}</p>
+            <span class="category-tag">${categoryInfo}</span>
             <small>Semestre: ${course.semester || 'N/A'}</small>
         `;
 
@@ -821,7 +842,7 @@ Course eventListeners
 searchInput.addEventListener('input', applyFilters);
 filterOrder.addEventListener('change', applyFilters);
 filterStatus.addEventListener('change', applyFilters);
-filterSemester.addEventListener('change', applyFilters);
+filterCategory.addEventListener('change', applyFilters);
 
 btnCreateCourse.addEventListener('click', function () {
     editingCourseId = null;
