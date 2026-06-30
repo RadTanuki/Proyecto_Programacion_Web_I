@@ -13,7 +13,7 @@
   align-items: flex-start;
   border-radius: 20px;
   scroll-margin-top: 80px;
-  transition: all 5s;
+  transition: all 0.8s;
 }
 
 .container-calculo h1 {
@@ -147,9 +147,6 @@
 
 .btn-eliminar {
   width: 30px;
-  padding: 0;
-  background-color: transparent;
-  border-color: transparent;
 }
 
 .btn-eliminar:hover {
@@ -226,7 +223,7 @@ td {
 }
 
 .dark .notaMinima-card input {
-  border: 3px solid #3d4a6a;
+  border-color: #3d4a6a;
   background-color: #252c3f;
   color: #e8eaf0;
 }
