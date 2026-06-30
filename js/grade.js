@@ -290,7 +290,7 @@ function calcularNota(event) {
                 <td>#${numero + 1}</td>
                 <td>${notaValor}</td>
                 <td>${porcentajeValor}%</td>
-                <td>${notaRubro}</td>
+                <td>${notaRubro.toFixed(2)}</td>
             </tr>
         `;
 
@@ -326,7 +326,7 @@ function calcularNota(event) {
             ${filas}
         </table>
 
-        <h3>Resultado final: ${sumaNota}</h3>
+        <h3>Resultado final: ${sumaNota.toFixed(2)}</h3>
 
         ${estado}
         
@@ -368,6 +368,28 @@ function limpiarDatos (event) {
     actualizarNumero();
 
 }
+
+const caracteresInvalidos = ["e", "E", "+", "-", "*", "/", "="];
+
+contenedorRubros.addEventListener("keydown", function (e) {
+
+    if (e.target.classList.contains("input-nota") || e.target.classList.contains("input-porcentaje")) {
+
+        if (caracteresInvalidos.includes(e.key)) {
+            e.preventDefault();
+        }
+
+    }
+
+});
+
+notaMinima.addEventListener("keydown", function (e) {
+
+    if (caracteresInvalidos.includes(e.key)) {
+        e.preventDefault();
+    }
+
+});
 
 botonAgregarRubro.addEventListener("click", crearRubro);
 contenedorRubros.addEventListener("click", eliminarRubro);
