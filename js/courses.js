@@ -212,7 +212,7 @@ function renderCourses(list) {
                     <button class="dropdown-item btn-delete-course danger" type="button" data-course-id="${course.id}">Eliminar</button>
                 </div>
             </div>
-            <h3>${course.name}</h3>
+            <h3 class="course-title">${course.name}</h3>
             <p>${course.description || 'Sin descripción'}</p>
             <span class="category-tag">${categoryInfo}</span>
             <small>Semestre: ${course.semester || 'N/A'}</small>
