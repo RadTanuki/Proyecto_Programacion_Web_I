@@ -114,7 +114,7 @@
                     "category": "it",
                     "description": "Estudio a fondo de estructuras lineales y no lineales, árboles equilibrados, grafos y algoritmos de optimización de rutas.",
                     "semester": 2,
-                    "status": "in_progress",
+                    "status": "pending",
                     "creationDate": "2026-01-15",
                     "lastUpdate": "2026-02-20",
                     "rubros": [
@@ -204,7 +204,7 @@
                     "category": "it",
                     "description": "Construcción de arquitecturas de servidor robustas, manejo de entornos y despliegue de microservicios.",
                     "semester": 3,
-                    "status": "in_progress",
+                    "status": "pending",
                     "creationDate": "2026-01-18",
                     "lastUpdate": "2026-03-01",
                     "rubros": [
