@@ -1,4 +1,4 @@
-                    /*Close menu nav*/
+//Método para cerrar el menu-nav
 const menuToggle = document.getElementById("menu-toggle");
 const menuNav = document.querySelector(".menu-nav");
 const header = document.querySelector(".site-header");

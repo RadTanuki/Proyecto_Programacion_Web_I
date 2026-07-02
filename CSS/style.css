@@ -55,7 +55,7 @@ hr {
             Header
 ============================*/
 .site-header {
-  padding: 5px 45px;
+  padding: 5px 40px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -80,7 +80,6 @@ hr {
 
 .header-interactables {
   font-size: 1rem;
-  margin-left: 15px;
   background-color: #1f2937;
   color: seashell;
   border-radius: 30px;

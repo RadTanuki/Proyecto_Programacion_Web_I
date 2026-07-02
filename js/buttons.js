@@ -40,6 +40,7 @@ document.addEventListener('click', function(e) {
     }
 })
 
+//Método para limpiar los filtros
 btnClearFilters = document.getElementById('btnClearFilters');
 
 function clearFilters(){

@@ -187,7 +187,7 @@ function renderCourses(list) {
     if (list.length === 0) {
         coursesContainer.innerHTML = `
             <div class="empty-state">
-                <span class="empty-icon">📚</span>
+                <span class="empty-icon">"\u{1F4DA}"</span>
                 <p>Aquí aparecerán los cursos creados</p>
             </div>
         `;
@@ -911,6 +911,7 @@ btnAddRubro.addEventListener('click', function () {
 
 btnCloseRubroWindow.addEventListener('click', closeRubroWindow);
 btnCancelRubro.addEventListener('click', closeRubroWindow);
+
 rubroWindowOverlay.addEventListener('click', function (event) {
     if (event.target === rubroWindowOverlay) closeRubroWindow();
 });

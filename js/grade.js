@@ -263,7 +263,7 @@ function calcularNota(event) {
         `<h3 class="warning">La suma de los porcentajes debe ser exactamente 100%</h3>
         <br><h4>Por favor, verificar</h4>`;
         return;
-}
+    }
 
     const rubros = document.querySelectorAll(".rubro-card");
     
@@ -359,8 +359,6 @@ function limpiarDatos (event) {
         }
 
     });
-
-    
 
     cuadroResultado.innerHTML =
         "<h3>Aquí se mostrará un detalle de la nota</h3>";
